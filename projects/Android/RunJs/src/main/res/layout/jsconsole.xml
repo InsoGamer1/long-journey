@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1">
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.2"
+        >
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/input"
+            android:text="(function(){\n\tconsole.log('Hello World!');\n\treturn document.URL.toString();\n}"
+            android:hint="Code goes here"
+            android:inputType="textMultiLine"
+
+            android:fontFamily="sans-serif"
+            android:textSize="15sp"
+            android:layout_marginBottom="-5dp"
+            android:textAlignment="textStart"
+            android:layout_gravity="top"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:scrollbarSize="50dp"
+            android:background="@drawable/border" />
+        <LinearLayout
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/transparent"
+            android:id="@+id/action_input"
+            >
+            <Button
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:drawableTop="?android:attr/actionModeCopyDrawable"
+                android:background="@android:color/transparent"
+                android:layout_marginTop="-3dp"
+                android:onClick="clearActions"
+                android:clickable="true"
+                android:id="@+id/copy_input" />
+            <Button
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:drawableTop="@android:drawable/ic_notification_clear_all"
+                android:onClick="clearActions"
+                android:background="@android:color/transparent"
+                android:clickable="true"
+                android:id="@+id/clr_input"
+                />
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/jsButtons"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/border"
+        >
+
+
+        <Button
+            android:drawableTop="@android:drawable/ic_media_play"
+            android:background="@android:color/transparent"
+            android:hint="Run"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:id="@+id/run"
+            android:layout_weight="0.25"
+            android:onClick="editActions"
+            android:contentDescription="Run"
+            android:clickable="true"
+             />
+
+        <Button
+            android:drawableTop="@android:drawable/ic_menu_save"
+            android:background="@android:color/transparent"
+            android:hint="save"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_weight="0.25"
+            android:id="@+id/save"
+            android:onClick="editActions"
+            android:clickable="true"/>
+
+        <Button
+            android:drawableTop="@drawable/ic_menu_gallery"
+            android:background="@android:color/transparent"
+            android:hint="load"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:id="@+id/load"
+            android:onClick="editActions"
+            android:clickable="true"/>
+
+        <Button
+            android:drawableTop="@android:drawable/ic_menu_close_clear_cancel"
+            android:background="@android:color/transparent"
+            android:hint="clear"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:onClick="editActions"
+            android:id="@+id/clear"
+            android:clickable="true"
+            android:layout_weight="0.25"
+            />
+    </LinearLayout>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.38"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:background="@drawable/border"
+        >
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:ems="10"
+            android:id="@+id/console"
+            android:background="@android:color/white"
+            android:contextClickable="true"
+            android:textColor="@android:color/white"
+            android:hint="Console"
+            android:textSize="14sp"
+            />
+        <LinearLayout
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:background="@android:color/transparent"
+            android:visibility="gone"
+            android:id="@+id/action_console"
+            >
+            <Button
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:drawableTop="?android:attr/actionModeCopyDrawable"
+                android:layout_marginTop="-3dp"
+                android:onClick="clearActions"
+                android:background="@android:color/transparent"
+                android:id="@+id/copy_console" />
+            <Button
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:drawableTop="@android:drawable/ic_notification_clear_all"
+                android:onClick="clearActions"
+                android:background="@android:color/transparent"
+                android:id="@+id/clr_console"
+                />
+        </LinearLayout>
+
+    </RelativeLayout>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.42"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:background="@drawable/border"
+        >
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:ems="10"
+        android:id="@+id/output"
+        android:background="@android:color/white"
+        android:contextClickable="true"
+        android:textColor="@android:color/white"
+        android:hint="Output"
+        android:textSize="15sp"
+        />
+        <LinearLayout
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:background="@android:color/transparent"
+            android:visibility="gone"
+            android:id="@+id/action_output"
+            >
+            <Button
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:drawableTop="?android:attr/actionModeCopyDrawable"
+                android:onClick="clearActions"
+                android:layout_marginTop="-3dp"
+                android:background="@android:color/transparent"
+                android:id="@+id/copy_output" />
+            <Button
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:drawableTop="@android:drawable/ic_notification_clear_all"
+                android:onClick="clearActions"
+                android:background="@android:color/transparent"
+                android:id="@+id/clr_output"
+                />
+        </LinearLayout>
+    </RelativeLayout>
+
+
+</LinearLayout>

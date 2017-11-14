@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/menu">
+    <item
+        android:orderInCategory="100"
+        android:title="@string/Search"
+        app:showAsAction="always"
+        app:actionViewClass="android.widget.SearchView"
+        android:textSize="10sp"
+        android:icon="@android:drawable/ic_menu_search"
+        android:id="@+id/action_search" />
+    <item
+        android:id="@+id/action_reload"
+        android:icon="@android:drawable/ic_media_next"
+        android:orderInCategory="100"
+        android:title="Refresh"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_forward"
+        android:icon="@android:drawable/ic_media_next"
+        android:orderInCategory="100"
+        android:title="Forward"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_cancel"
+        android:icon="@android:drawable/ic_menu_close_clear_cancel"
+        android:orderInCategory="100"
+        android:title="Cancel"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="@string/action_settings"
+        android:visible="false"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/bookmark"
+        android:orderInCategory="100"
+        android:title="Bookmarks"
+        android:visible="false"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/savePage"
+        android:orderInCategory="100"
+        android:title="Save Page"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/clearHistory"
+        android:orderInCategory="100"
+        android:title="Clear History"
+        app:showAsAction="never" />
+
+</menu>
