@@ -1,0 +1,854 @@
+
+E:\songs\Download>rename.py
+in here
+renaming to  Break Up Party (Yo Yo Honey Singh Ft. Leo) - DJ TEJAS [DJM].mp3
+rename done : . Break Up Party (Yo Yo Honey Singh Ft. Leo) - DJ TEJAS [DJM].mp3 ->  Break Up Party (Yo Yo Honey Singh Ft. Leo) - DJ TEJAS [DJM].mp3
+renaming to  Lady Gaga - Judas (www.SongsLover.com).mp3
+rename done : . Lady Gaga - Judas (www.SongsLover.com).mp3 ->  Lady Gaga - Judas (www.SongsLover.com).mp3
+renaming to  my dil goes.mp3
+rename done : . my dil goes.mp3 ->  my dil goes.mp3
+renaming to  Out Of Town Girl.mp3
+rename done : . Out Of Town Girl.mp3 ->  Out Of Town Girl.mp3
+renaming to  Red (www.SongsLover.pk).mp3
+rename done : . Red (www.SongsLover.pk).mp3 ->  Red (www.SongsLover.pk).mp3
+renaming to  Sean Paul ft. Alexis Jordan - Got 2 Luv U (www.SongsLover.com).mp3
+rename done : . Sean Paul ft. Alexis Jordan - Got 2 Luv U (www.SongsLover.com).mp3 ->  Sean Paul ft. Alexis Jordan - Got 2 Luv U (www.SongsLover.com).mp3
+renaming to  The Boys (Feat. Cassie) (www.SongsLover.pk).mp3
+rename done : . The Boys (Feat. Cassie) (www.SongsLover.pk).mp3 ->  The Boys (Feat. Cassie) (www.SongsLover.pk).mp3
+renaming to  Titanium (Feat. Sia).mp3
+rename done : . Titanium (Feat. Sia).mp3 ->  Titanium (Feat. Sia).mp3
+renaming to  Va Va Voom (www.SongsLover.pk).mp3
+rename done : . Va Va Voom (www.SongsLover.pk).mp3 ->  Va Va Voom (www.SongsLover.pk).mp3
+renaming to mp3
+rename done : .mp3 -> mp3
+renaming to um Ho Toh.mp3
+rename done : .Tum Ho Toh.mp3 -> um Ho Toh.mp3
+renaming to  Square B Square (Female).mp3
+rename done : A Square B Square (Female).mp3 ->  Square B Square (Female).mp3
+renaming to  Square B Square (Male).mp3
+rename done : A Square B Square (Male).mp3 ->  Square B Square (Male).mp3
+renaming to  very sad song for broken hea-(Stevebasu.Net)-.mp3
+rename done : A very sad song for broken hea-(Stevebasu.Net)-.mp3 ->  very sad song for broken hea-(Stevebasu.Net)-.mp3
+renaming to aj Ki Raat.mp3
+rename done : Aaj Ki Raat.mp3 -> aj Ki Raat.mp3
+renaming to aj Phir.mp3
+rename done : Aaj Phir.mp3 -> aj Phir.mp3
+renaming to alam_Guzrne_Ko.mp3
+rename done : Aalam_Guzrne_Ko.mp3 -> alam_Guzrne_Ko.mp3
+renaming to ankhon Hi Aankhon Ne (Duet).mp3
+rename done : Aankhon Hi Aankhon Ne (Duet).mp3 -> ankhon Hi Aankhon Ne (Duet).mp3
+renaming to ankhon Hi Aankhon Ne.mp3
+rename done : Aankhon Hi Aankhon Ne.mp3 -> ankhon Hi Aankhon Ne.mp3
+renaming to  MEIN TERI {FILM _ OM SHANTI OM}.mp3
+rename done : AANKHON MEIN TERI {FILM _ OM SHANTI OM}.mp3 ->  MEIN TERI {FILM _ OM SHANTI OM}.mp3
+renaming to ao na.mp3
+rename done : Aao na.mp3 -> ao na.mp3
+renaming to azma-(Luck_Is_The_Key).mp3
+rename done : Aazma-(Luck_Is_The_Key).mp3 -> azma-(Luck_Is_The_Key).mp3
+renaming to b To Forever.mp3
+rename done : Ab To Forever.mp3 -> b To Forever.mp3
+renaming to  - 02 - Bezubaan.mp3
+rename done : ABCD - 02 - Bezubaan.mp3 ->  - 02 - Bezubaan.mp3
+renaming to bcd - Yaariyan.mp3
+rename done : Abcd - Yaariyan.mp3 -> bcd - Yaariyan.mp3
+renaming to bhi Kuch Dino se.mp3
+rename done : Abhi Kuch Dino se.mp3 -> bhi Kuch Dino se.mp3
+renaming to  TO MOHABBAT.mp3
+rename done : ABHI TO MOHABBAT.mp3 ->  TO MOHABBAT.mp3
+renaming to bhi Toh Party Shuru Hui Hai - 128Kbps.mp3
+rename done : Abhi Toh Party Shuru Hui Hai - 128Kbps.mp3 -> bhi Toh Party Shuru Hui Hai - 128Kbps.mp3
+renaming to gent Vinod - 03 - Raabta.mp3
+rename done : Agent Vinod - 03 - Raabta.mp3 -> gent Vinod - 03 - Raabta.mp3
+renaming to gent Vinod - 08 - Raabta (Kehte Hain Khuda Ne).mp3
+rename done : Agent Vinod - 08 - Raabta (Kehte Hain Khuda Ne).mp3 -> gent Vinod - 08 - Raabta (Kehte Hain Khuda Ne).mp3
+renaming to i zindagee - www.downloadming.com.mp3
+rename done : Ai zindagee - www.downloadming.com.mp3 -> i zindagee - www.downloadming.com.mp3
+renaming to invayi Ainvayi.mp3
+rename done : Ainvayi Ainvayi.mp3 -> invayi Ainvayi.mp3
+renaming to  TANHA.mp3
+rename done : AKELE TANHA.mp3 ->  TANHA.mp3
+renaming to kon Ft-Sexy Bitch.mp3
+rename done : Akon Ft-Sexy Bitch.mp3 -> kon Ft-Sexy Bitch.mp3
+renaming to kon-Holla Holla Ft. T-Pain.mp3
+rename done : Akon-Holla Holla Ft. T-Pain.mp3 -> kon-Holla Holla Ft. T-Pain.mp3
+renaming to kon-Troublemaker Ft. Sweet Rush.mp3
+rename done : Akon-Troublemaker Ft. Sweet Rush.mp3 -> kon-Troublemaker Ft. Sweet Rush.mp3
+renaming to lbumArtSmall.jpg
+rename done : AlbumArtSmall.jpg -> lbumArtSmall.jpg
+renaming to lbumArt_{02CEE3A2-8D9C-4405-8465-6243398DB921}_Large.jpg
+rename done : AlbumArt_{02CEE3A2-8D9C-4405-8465-6243398DB921}_Large.jpg -> lbumArt_{02CEE3A2-8D9C-4405-8465-6243398DB921}_Large.jpg
+renaming to lbumArt_{02CEE3A2-8D9C-4405-8465-6243398DB921}_Small.jpg
+rename done : AlbumArt_{02CEE3A2-8D9C-4405-8465-6243398DB921}_Small.jpg -> lbumArt_{02CEE3A2-8D9C-4405-8465-6243398DB921}_Small.jpg
+renaming to lbumArt_{07362AA2-3501-42D2-B27E-4D0E630F3883}_Large.jpg
+rename done : AlbumArt_{07362AA2-3501-42D2-B27E-4D0E630F3883}_Large.jpg -> lbumArt_{07362AA2-3501-42D2-B27E-4D0E630F3883}_Large.jpg
+renaming to lbumArt_{07362AA2-3501-42D2-B27E-4D0E630F3883}_Small.jpg
+rename done : AlbumArt_{07362AA2-3501-42D2-B27E-4D0E630F3883}_Small.jpg -> lbumArt_{07362AA2-3501-42D2-B27E-4D0E630F3883}_Small.jpg
+renaming to lbumArt_{08AD956F-FDB1-46BF-ACEC-B20EEA0B6CED}_Large.jpg
+rename done : AlbumArt_{08AD956F-FDB1-46BF-ACEC-B20EEA0B6CED}_Large.jpg -> lbumArt_{08AD956F-FDB1-46BF-ACEC-B20EEA0B6CED}_Large.jpg
+renaming to lbumArt_{08AD956F-FDB1-46BF-ACEC-B20EEA0B6CED}_Small.jpg
+rename done : AlbumArt_{08AD956F-FDB1-46BF-ACEC-B20EEA0B6CED}_Small.jpg -> lbumArt_{08AD956F-FDB1-46BF-ACEC-B20EEA0B6CED}_Small.jpg
+renaming to lbumArt_{09C95123-35C3-4615-98EC-FC0F35012168}_Large.jpg
+rename done : AlbumArt_{09C95123-35C3-4615-98EC-FC0F35012168}_Large.jpg -> lbumArt_{09C95123-35C3-4615-98EC-FC0F35012168}_Large.jpg
+renaming to lbumArt_{09C95123-35C3-4615-98EC-FC0F35012168}_Small.jpg
+rename done : AlbumArt_{09C95123-35C3-4615-98EC-FC0F35012168}_Small.jpg -> lbumArt_{09C95123-35C3-4615-98EC-FC0F35012168}_Small.jpg
+renaming to lbumArt_{0C35D12D-66D2-4820-84BD-3E4329EB3F7F}_Large.jpg
+rename done : AlbumArt_{0C35D12D-66D2-4820-84BD-3E4329EB3F7F}_Large.jpg -> lbumArt_{0C35D12D-66D2-4820-84BD-3E4329EB3F7F}_Large.jpg
+renaming to lbumArt_{0C35D12D-66D2-4820-84BD-3E4329EB3F7F}_Small.jpg
+rename done : AlbumArt_{0C35D12D-66D2-4820-84BD-3E4329EB3F7F}_Small.jpg -> lbumArt_{0C35D12D-66D2-4820-84BD-3E4329EB3F7F}_Small.jpg
+renaming to lbumArt_{0D03F3FE-76A6-473B-8C1D-1977DFBE7449}_Large.jpg
+rename done : AlbumArt_{0D03F3FE-76A6-473B-8C1D-1977DFBE7449}_Large.jpg -> lbumArt_{0D03F3FE-76A6-473B-8C1D-1977DFBE7449}_Large.jpg
+renaming to lbumArt_{0D03F3FE-76A6-473B-8C1D-1977DFBE7449}_Small.jpg
+rename done : AlbumArt_{0D03F3FE-76A6-473B-8C1D-1977DFBE7449}_Small.jpg -> lbumArt_{0D03F3FE-76A6-473B-8C1D-1977DFBE7449}_Small.jpg
+renaming to lbumArt_{0F7E6477-3F79-4BAC-85C8-8541C1C6529D}_Large.jpg
+rename done : AlbumArt_{0F7E6477-3F79-4BAC-85C8-8541C1C6529D}_Large.jpg -> lbumArt_{0F7E6477-3F79-4BAC-85C8-8541C1C6529D}_Large.jpg
+renaming to lbumArt_{0F7E6477-3F79-4BAC-85C8-8541C1C6529D}_Small.jpg
+rename done : AlbumArt_{0F7E6477-3F79-4BAC-85C8-8541C1C6529D}_Small.jpg -> lbumArt_{0F7E6477-3F79-4BAC-85C8-8541C1C6529D}_Small.jpg
+renaming to lbumArt_{11BAB016-5E3E-4258-8A26-104A0C8D25B5}_Large.jpg
+rename done : AlbumArt_{11BAB016-5E3E-4258-8A26-104A0C8D25B5}_Large.jpg -> lbumArt_{11BAB016-5E3E-4258-8A26-104A0C8D25B5}_Large.jpg
+renaming to lbumArt_{11BAB016-5E3E-4258-8A26-104A0C8D25B5}_Small.jpg
+rename done : AlbumArt_{11BAB016-5E3E-4258-8A26-104A0C8D25B5}_Small.jpg -> lbumArt_{11BAB016-5E3E-4258-8A26-104A0C8D25B5}_Small.jpg
+renaming to lbumArt_{141B1196-A3BE-4B35-AB72-6235D31BA50D}_Large.jpg
+rename done : AlbumArt_{141B1196-A3BE-4B35-AB72-6235D31BA50D}_Large.jpg -> lbumArt_{141B1196-A3BE-4B35-AB72-6235D31BA50D}_Large.jpg
+renaming to lbumArt_{141B1196-A3BE-4B35-AB72-6235D31BA50D}_Small.jpg
+rename done : AlbumArt_{141B1196-A3BE-4B35-AB72-6235D31BA50D}_Small.jpg -> lbumArt_{141B1196-A3BE-4B35-AB72-6235D31BA50D}_Small.jpg
+renaming to lbumArt_{172F8961-0AE1-4E10-9991-8509E299D72F}_Large.jpg
+rename done : AlbumArt_{172F8961-0AE1-4E10-9991-8509E299D72F}_Large.jpg -> lbumArt_{172F8961-0AE1-4E10-9991-8509E299D72F}_Large.jpg
+renaming to lbumArt_{172F8961-0AE1-4E10-9991-8509E299D72F}_Small.jpg
+rename done : AlbumArt_{172F8961-0AE1-4E10-9991-8509E299D72F}_Small.jpg -> lbumArt_{172F8961-0AE1-4E10-9991-8509E299D72F}_Small.jpg
+renaming to lbumArt_{1981D13A-7161-49E3-AC10-D58855EA1B77}_Large.jpg
+rename done : AlbumArt_{1981D13A-7161-49E3-AC10-D58855EA1B77}_Large.jpg -> lbumArt_{1981D13A-7161-49E3-AC10-D58855EA1B77}_Large.jpg
+renaming to lbumArt_{1981D13A-7161-49E3-AC10-D58855EA1B77}_Small.jpg
+rename done : AlbumArt_{1981D13A-7161-49E3-AC10-D58855EA1B77}_Small.jpg -> lbumArt_{1981D13A-7161-49E3-AC10-D58855EA1B77}_Small.jpg
+renaming to lbumArt_{1CD476EB-906C-4365-AD1B-4EDF06DAE867}_Large.jpg
+rename done : AlbumArt_{1CD476EB-906C-4365-AD1B-4EDF06DAE867}_Large.jpg -> lbumArt_{1CD476EB-906C-4365-AD1B-4EDF06DAE867}_Large.jpg
+renaming to lbumArt_{1CD476EB-906C-4365-AD1B-4EDF06DAE867}_Small.jpg
+rename done : AlbumArt_{1CD476EB-906C-4365-AD1B-4EDF06DAE867}_Small.jpg -> lbumArt_{1CD476EB-906C-4365-AD1B-4EDF06DAE867}_Small.jpg
+renaming to lbumArt_{1DBCE58C-2F86-4B25-B524-8296683D6442}_Large.jpg
+rename done : AlbumArt_{1DBCE58C-2F86-4B25-B524-8296683D6442}_Large.jpg -> lbumArt_{1DBCE58C-2F86-4B25-B524-8296683D6442}_Large.jpg
+renaming to lbumArt_{1DBCE58C-2F86-4B25-B524-8296683D6442}_Small.jpg
+rename done : AlbumArt_{1DBCE58C-2F86-4B25-B524-8296683D6442}_Small.jpg -> lbumArt_{1DBCE58C-2F86-4B25-B524-8296683D6442}_Small.jpg
+renaming to lbumArt_{1FDA712F-50A8-4E62-881E-11C10E7B66BA}_Large.jpg
+rename done : AlbumArt_{1FDA712F-50A8-4E62-881E-11C10E7B66BA}_Large.jpg -> lbumArt_{1FDA712F-50A8-4E62-881E-11C10E7B66BA}_Large.jpg
+renaming to lbumArt_{1FDA712F-50A8-4E62-881E-11C10E7B66BA}_Small.jpg
+rename done : AlbumArt_{1FDA712F-50A8-4E62-881E-11C10E7B66BA}_Small.jpg -> lbumArt_{1FDA712F-50A8-4E62-881E-11C10E7B66BA}_Small.jpg
+renaming to lbumArt_{23D1968B-86ED-44CB-AA1A-D4BB5E21AC79}_Large.jpg
+rename done : AlbumArt_{23D1968B-86ED-44CB-AA1A-D4BB5E21AC79}_Large.jpg -> lbumArt_{23D1968B-86ED-44CB-AA1A-D4BB5E21AC79}_Large.jpg
+renaming to lbumArt_{23D1968B-86ED-44CB-AA1A-D4BB5E21AC79}_Small.jpg
+rename done : AlbumArt_{23D1968B-86ED-44CB-AA1A-D4BB5E21AC79}_Small.jpg -> lbumArt_{23D1968B-86ED-44CB-AA1A-D4BB5E21AC79}_Small.jpg
+renaming to lbumArt_{271A6441-BA9B-471A-B033-80A5D13A27DA}_Large.jpg
+rename done : AlbumArt_{271A6441-BA9B-471A-B033-80A5D13A27DA}_Large.jpg -> lbumArt_{271A6441-BA9B-471A-B033-80A5D13A27DA}_Large.jpg
+renaming to lbumArt_{271A6441-BA9B-471A-B033-80A5D13A27DA}_Small.jpg
+rename done : AlbumArt_{271A6441-BA9B-471A-B033-80A5D13A27DA}_Small.jpg -> lbumArt_{271A6441-BA9B-471A-B033-80A5D13A27DA}_Small.jpg
+renaming to lbumArt_{27B7FC5F-BA6E-4A67-B86D-227C4E872D5E}_Large.jpg
+rename done : AlbumArt_{27B7FC5F-BA6E-4A67-B86D-227C4E872D5E}_Large.jpg -> lbumArt_{27B7FC5F-BA6E-4A67-B86D-227C4E872D5E}_Large.jpg
+renaming to lbumArt_{27B7FC5F-BA6E-4A67-B86D-227C4E872D5E}_Small.jpg
+rename done : AlbumArt_{27B7FC5F-BA6E-4A67-B86D-227C4E872D5E}_Small.jpg -> lbumArt_{27B7FC5F-BA6E-4A67-B86D-227C4E872D5E}_Small.jpg
+renaming to lbumArt_{2923C001-A6B7-4828-A223-CB87A8FDE47C}_Large.jpg
+rename done : AlbumArt_{2923C001-A6B7-4828-A223-CB87A8FDE47C}_Large.jpg -> lbumArt_{2923C001-A6B7-4828-A223-CB87A8FDE47C}_Large.jpg
+renaming to lbumArt_{2923C001-A6B7-4828-A223-CB87A8FDE47C}_Small.jpg
+rename done : AlbumArt_{2923C001-A6B7-4828-A223-CB87A8FDE47C}_Small.jpg -> lbumArt_{2923C001-A6B7-4828-A223-CB87A8FDE47C}_Small.jpg
+renaming to lbumArt_{2FCB82B9-1CDC-4617-B476-21A1065465AE}_Large.jpg
+rename done : AlbumArt_{2FCB82B9-1CDC-4617-B476-21A1065465AE}_Large.jpg -> lbumArt_{2FCB82B9-1CDC-4617-B476-21A1065465AE}_Large.jpg
+renaming to lbumArt_{2FCB82B9-1CDC-4617-B476-21A1065465AE}_Small.jpg
+rename done : AlbumArt_{2FCB82B9-1CDC-4617-B476-21A1065465AE}_Small.jpg -> lbumArt_{2FCB82B9-1CDC-4617-B476-21A1065465AE}_Small.jpg
+renaming to lbumArt_{31C5CD8A-89A3-485D-BF0C-6512AEB4B635}_Large.jpg
+rename done : AlbumArt_{31C5CD8A-89A3-485D-BF0C-6512AEB4B635}_Large.jpg -> lbumArt_{31C5CD8A-89A3-485D-BF0C-6512AEB4B635}_Large.jpg
+renaming to lbumArt_{31C5CD8A-89A3-485D-BF0C-6512AEB4B635}_Small.jpg
+rename done : AlbumArt_{31C5CD8A-89A3-485D-BF0C-6512AEB4B635}_Small.jpg -> lbumArt_{31C5CD8A-89A3-485D-BF0C-6512AEB4B635}_Small.jpg
+renaming to lbumArt_{330E571E-E0F9-4B79-B650-A8EEE7150FB7}_Large.jpg
+rename done : AlbumArt_{330E571E-E0F9-4B79-B650-A8EEE7150FB7}_Large.jpg -> lbumArt_{330E571E-E0F9-4B79-B650-A8EEE7150FB7}_Large.jpg
+renaming to lbumArt_{330E571E-E0F9-4B79-B650-A8EEE7150FB7}_Small.jpg
+rename done : AlbumArt_{330E571E-E0F9-4B79-B650-A8EEE7150FB7}_Small.jpg -> lbumArt_{330E571E-E0F9-4B79-B650-A8EEE7150FB7}_Small.jpg
+renaming to lbumArt_{3474A727-107B-49F1-8651-04D22B2EC81F}_Large.jpg
+rename done : AlbumArt_{3474A727-107B-49F1-8651-04D22B2EC81F}_Large.jpg -> lbumArt_{3474A727-107B-49F1-8651-04D22B2EC81F}_Large.jpg
+renaming to lbumArt_{3474A727-107B-49F1-8651-04D22B2EC81F}_Small.jpg
+rename done : AlbumArt_{3474A727-107B-49F1-8651-04D22B2EC81F}_Small.jpg -> lbumArt_{3474A727-107B-49F1-8651-04D22B2EC81F}_Small.jpg
+renaming to lbumArt_{34BE3992-1ED8-4579-AD53-F137AC074D2A}_Large.jpg
+rename done : AlbumArt_{34BE3992-1ED8-4579-AD53-F137AC074D2A}_Large.jpg -> lbumArt_{34BE3992-1ED8-4579-AD53-F137AC074D2A}_Large.jpg
+renaming to lbumArt_{34BE3992-1ED8-4579-AD53-F137AC074D2A}_Small.jpg
+rename done : AlbumArt_{34BE3992-1ED8-4579-AD53-F137AC074D2A}_Small.jpg -> lbumArt_{34BE3992-1ED8-4579-AD53-F137AC074D2A}_Small.jpg
+renaming to lbumArt_{374EA147-D930-4CB9-A603-141FD18FDE68}_Large.jpg
+rename done : AlbumArt_{374EA147-D930-4CB9-A603-141FD18FDE68}_Large.jpg -> lbumArt_{374EA147-D930-4CB9-A603-141FD18FDE68}_Large.jpg
+renaming to lbumArt_{374EA147-D930-4CB9-A603-141FD18FDE68}_Small.jpg
+rename done : AlbumArt_{374EA147-D930-4CB9-A603-141FD18FDE68}_Small.jpg -> lbumArt_{374EA147-D930-4CB9-A603-141FD18FDE68}_Small.jpg
+renaming to lbumArt_{38E9DB21-3A37-446E-8ACC-9DF0ADBB3A5B}_Large.jpg
+rename done : AlbumArt_{38E9DB21-3A37-446E-8ACC-9DF0ADBB3A5B}_Large.jpg -> lbumArt_{38E9DB21-3A37-446E-8ACC-9DF0ADBB3A5B}_Large.jpg
+renaming to lbumArt_{38E9DB21-3A37-446E-8ACC-9DF0ADBB3A5B}_Small.jpg
+rename done : AlbumArt_{38E9DB21-3A37-446E-8ACC-9DF0ADBB3A5B}_Small.jpg -> lbumArt_{38E9DB21-3A37-446E-8ACC-9DF0ADBB3A5B}_Small.jpg
+renaming to lbumArt_{3D172AA3-AA4A-4371-A821-9D505B1749A7}_Large.jpg
+rename done : AlbumArt_{3D172AA3-AA4A-4371-A821-9D505B1749A7}_Large.jpg -> lbumArt_{3D172AA3-AA4A-4371-A821-9D505B1749A7}_Large.jpg
+renaming to lbumArt_{3D172AA3-AA4A-4371-A821-9D505B1749A7}_Small.jpg
+rename done : AlbumArt_{3D172AA3-AA4A-4371-A821-9D505B1749A7}_Small.jpg -> lbumArt_{3D172AA3-AA4A-4371-A821-9D505B1749A7}_Small.jpg
+renaming to lbumArt_{3F177B2B-7808-4F98-A629-C6EB0032F345}_Large.jpg
+rename done : AlbumArt_{3F177B2B-7808-4F98-A629-C6EB0032F345}_Large.jpg -> lbumArt_{3F177B2B-7808-4F98-A629-C6EB0032F345}_Large.jpg
+renaming to lbumArt_{3F177B2B-7808-4F98-A629-C6EB0032F345}_Small.jpg
+rename done : AlbumArt_{3F177B2B-7808-4F98-A629-C6EB0032F345}_Small.jpg -> lbumArt_{3F177B2B-7808-4F98-A629-C6EB0032F345}_Small.jpg
+renaming to lbumArt_{4BAA8DB2-37D5-4D3E-94A6-1A26DD8E0985}_Large.jpg
+rename done : AlbumArt_{4BAA8DB2-37D5-4D3E-94A6-1A26DD8E0985}_Large.jpg -> lbumArt_{4BAA8DB2-37D5-4D3E-94A6-1A26DD8E0985}_Large.jpg
+renaming to lbumArt_{4BAA8DB2-37D5-4D3E-94A6-1A26DD8E0985}_Small.jpg
+rename done : AlbumArt_{4BAA8DB2-37D5-4D3E-94A6-1A26DD8E0985}_Small.jpg -> lbumArt_{4BAA8DB2-37D5-4D3E-94A6-1A26DD8E0985}_Small.jpg
+renaming to lbumArt_{4BDD2686-F2E4-46A1-B820-EDF26A068542}_Large.jpg
+rename done : AlbumArt_{4BDD2686-F2E4-46A1-B820-EDF26A068542}_Large.jpg -> lbumArt_{4BDD2686-F2E4-46A1-B820-EDF26A068542}_Large.jpg
+renaming to lbumArt_{4BDD2686-F2E4-46A1-B820-EDF26A068542}_Small.jpg
+rename done : AlbumArt_{4BDD2686-F2E4-46A1-B820-EDF26A068542}_Small.jpg -> lbumArt_{4BDD2686-F2E4-46A1-B820-EDF26A068542}_Small.jpg
+renaming to lbumArt_{53EB329B-7BC7-41EA-8530-692DBE695828}_Large.jpg
+rename done : AlbumArt_{53EB329B-7BC7-41EA-8530-692DBE695828}_Large.jpg -> lbumArt_{53EB329B-7BC7-41EA-8530-692DBE695828}_Large.jpg
+renaming to lbumArt_{53EB329B-7BC7-41EA-8530-692DBE695828}_Small.jpg
+rename done : AlbumArt_{53EB329B-7BC7-41EA-8530-692DBE695828}_Small.jpg -> lbumArt_{53EB329B-7BC7-41EA-8530-692DBE695828}_Small.jpg
+renaming to lbumArt_{5406483D-854D-44D6-9FE5-1394EFD77D7C}_Large.jpg
+rename done : AlbumArt_{5406483D-854D-44D6-9FE5-1394EFD77D7C}_Large.jpg -> lbumArt_{5406483D-854D-44D6-9FE5-1394EFD77D7C}_Large.jpg
+renaming to lbumArt_{5406483D-854D-44D6-9FE5-1394EFD77D7C}_Small.jpg
+rename done : AlbumArt_{5406483D-854D-44D6-9FE5-1394EFD77D7C}_Small.jpg -> lbumArt_{5406483D-854D-44D6-9FE5-1394EFD77D7C}_Small.jpg
+renaming to lbumArt_{58F58414-F253-4BD1-9DE7-C0BB66A79050}_Large.jpg
+rename done : AlbumArt_{58F58414-F253-4BD1-9DE7-C0BB66A79050}_Large.jpg -> lbumArt_{58F58414-F253-4BD1-9DE7-C0BB66A79050}_Large.jpg
+renaming to lbumArt_{58F58414-F253-4BD1-9DE7-C0BB66A79050}_Small.jpg
+rename done : AlbumArt_{58F58414-F253-4BD1-9DE7-C0BB66A79050}_Small.jpg -> lbumArt_{58F58414-F253-4BD1-9DE7-C0BB66A79050}_Small.jpg
+renaming to lbumArt_{5C60BF71-6F8C-4C06-B95F-1F3D4178FD92}_Large.jpg
+rename done : AlbumArt_{5C60BF71-6F8C-4C06-B95F-1F3D4178FD92}_Large.jpg -> lbumArt_{5C60BF71-6F8C-4C06-B95F-1F3D4178FD92}_Large.jpg
+renaming to lbumArt_{5C60BF71-6F8C-4C06-B95F-1F3D4178FD92}_Small.jpg
+rename done : AlbumArt_{5C60BF71-6F8C-4C06-B95F-1F3D4178FD92}_Small.jpg -> lbumArt_{5C60BF71-6F8C-4C06-B95F-1F3D4178FD92}_Small.jpg
+renaming to lbumArt_{5FEB62FC-20C6-4511-9649-F1BB71816B7E}_Large.jpg
+rename done : AlbumArt_{5FEB62FC-20C6-4511-9649-F1BB71816B7E}_Large.jpg -> lbumArt_{5FEB62FC-20C6-4511-9649-F1BB71816B7E}_Large.jpg
+renaming to lbumArt_{5FEB62FC-20C6-4511-9649-F1BB71816B7E}_Small.jpg
+rename done : AlbumArt_{5FEB62FC-20C6-4511-9649-F1BB71816B7E}_Small.jpg -> lbumArt_{5FEB62FC-20C6-4511-9649-F1BB71816B7E}_Small.jpg
+renaming to lbumArt_{605F60C5-A646-4AFD-8D6D-D471B93DC035}_Large.jpg
+rename done : AlbumArt_{605F60C5-A646-4AFD-8D6D-D471B93DC035}_Large.jpg -> lbumArt_{605F60C5-A646-4AFD-8D6D-D471B93DC035}_Large.jpg
+renaming to lbumArt_{605F60C5-A646-4AFD-8D6D-D471B93DC035}_Small.jpg
+rename done : AlbumArt_{605F60C5-A646-4AFD-8D6D-D471B93DC035}_Small.jpg -> lbumArt_{605F60C5-A646-4AFD-8D6D-D471B93DC035}_Small.jpg
+renaming to lbumArt_{6341A2C3-A561-4398-A095-C72B8B2925CD}_Large.jpg
+rename done : AlbumArt_{6341A2C3-A561-4398-A095-C72B8B2925CD}_Large.jpg -> lbumArt_{6341A2C3-A561-4398-A095-C72B8B2925CD}_Large.jpg
+renaming to lbumArt_{6341A2C3-A561-4398-A095-C72B8B2925CD}_Small.jpg
+rename done : AlbumArt_{6341A2C3-A561-4398-A095-C72B8B2925CD}_Small.jpg -> lbumArt_{6341A2C3-A561-4398-A095-C72B8B2925CD}_Small.jpg
+renaming to lbumArt_{64862E37-38E3-4E25-93A4-C235254E74BF}_Large.jpg
+rename done : AlbumArt_{64862E37-38E3-4E25-93A4-C235254E74BF}_Large.jpg -> lbumArt_{64862E37-38E3-4E25-93A4-C235254E74BF}_Large.jpg
+renaming to lbumArt_{64862E37-38E3-4E25-93A4-C235254E74BF}_Small.jpg
+rename done : AlbumArt_{64862E37-38E3-4E25-93A4-C235254E74BF}_Small.jpg -> lbumArt_{64862E37-38E3-4E25-93A4-C235254E74BF}_Small.jpg
+renaming to lbumArt_{665AB820-9CEE-4F6B-B07F-8755BA71118E}_Large.jpg
+rename done : AlbumArt_{665AB820-9CEE-4F6B-B07F-8755BA71118E}_Large.jpg -> lbumArt_{665AB820-9CEE-4F6B-B07F-8755BA71118E}_Large.jpg
+renaming to lbumArt_{665AB820-9CEE-4F6B-B07F-8755BA71118E}_Small.jpg
+rename done : AlbumArt_{665AB820-9CEE-4F6B-B07F-8755BA71118E}_Small.jpg -> lbumArt_{665AB820-9CEE-4F6B-B07F-8755BA71118E}_Small.jpg
+renaming to lbumArt_{6F035CB0-5A15-4D29-B975-F4B90815A44D}_Large.jpg
+rename done : AlbumArt_{6F035CB0-5A15-4D29-B975-F4B90815A44D}_Large.jpg -> lbumArt_{6F035CB0-5A15-4D29-B975-F4B90815A44D}_Large.jpg
+renaming to lbumArt_{6F035CB0-5A15-4D29-B975-F4B90815A44D}_Small.jpg
+rename done : AlbumArt_{6F035CB0-5A15-4D29-B975-F4B90815A44D}_Small.jpg -> lbumArt_{6F035CB0-5A15-4D29-B975-F4B90815A44D}_Small.jpg
+renaming to lbumArt_{72BA2568-88E2-456D-94A9-8CCE20028AF1}_Large.jpg
+rename done : AlbumArt_{72BA2568-88E2-456D-94A9-8CCE20028AF1}_Large.jpg -> lbumArt_{72BA2568-88E2-456D-94A9-8CCE20028AF1}_Large.jpg
+renaming to lbumArt_{72BA2568-88E2-456D-94A9-8CCE20028AF1}_Small.jpg
+rename done : AlbumArt_{72BA2568-88E2-456D-94A9-8CCE20028AF1}_Small.jpg -> lbumArt_{72BA2568-88E2-456D-94A9-8CCE20028AF1}_Small.jpg
+renaming to lbumArt_{7D695E16-EEEA-4E52-8B09-807CD0D98F96}_Large.jpg
+rename done : AlbumArt_{7D695E16-EEEA-4E52-8B09-807CD0D98F96}_Large.jpg -> lbumArt_{7D695E16-EEEA-4E52-8B09-807CD0D98F96}_Large.jpg
+renaming to lbumArt_{7D695E16-EEEA-4E52-8B09-807CD0D98F96}_Small.jpg
+rename done : AlbumArt_{7D695E16-EEEA-4E52-8B09-807CD0D98F96}_Small.jpg -> lbumArt_{7D695E16-EEEA-4E52-8B09-807CD0D98F96}_Small.jpg
+renaming to lbumArt_{7FFB50A0-8172-4976-AFDF-112787E5F26C}_Large.jpg
+rename done : AlbumArt_{7FFB50A0-8172-4976-AFDF-112787E5F26C}_Large.jpg -> lbumArt_{7FFB50A0-8172-4976-AFDF-112787E5F26C}_Large.jpg
+renaming to lbumArt_{7FFB50A0-8172-4976-AFDF-112787E5F26C}_Small.jpg
+rename done : AlbumArt_{7FFB50A0-8172-4976-AFDF-112787E5F26C}_Small.jpg -> lbumArt_{7FFB50A0-8172-4976-AFDF-112787E5F26C}_Small.jpg
+renaming to lbumArt_{8BA3B10C-5587-4743-B88D-C01B203BAA75}_Large.jpg
+rename done : AlbumArt_{8BA3B10C-5587-4743-B88D-C01B203BAA75}_Large.jpg -> lbumArt_{8BA3B10C-5587-4743-B88D-C01B203BAA75}_Large.jpg
+renaming to lbumArt_{8BA3B10C-5587-4743-B88D-C01B203BAA75}_Small.jpg
+rename done : AlbumArt_{8BA3B10C-5587-4743-B88D-C01B203BAA75}_Small.jpg -> lbumArt_{8BA3B10C-5587-4743-B88D-C01B203BAA75}_Small.jpg
+renaming to lbumArt_{8E314488-2F64-4A19-AB33-D072A2B43AC9}_Large.jpg
+rename done : AlbumArt_{8E314488-2F64-4A19-AB33-D072A2B43AC9}_Large.jpg -> lbumArt_{8E314488-2F64-4A19-AB33-D072A2B43AC9}_Large.jpg
+renaming to lbumArt_{8E314488-2F64-4A19-AB33-D072A2B43AC9}_Small.jpg
+rename done : AlbumArt_{8E314488-2F64-4A19-AB33-D072A2B43AC9}_Small.jpg -> lbumArt_{8E314488-2F64-4A19-AB33-D072A2B43AC9}_Small.jpg
+renaming to lbumArt_{8F592828-5DC3-4EF2-AEAD-B80BC4F939E2}_Large.jpg
+rename done : AlbumArt_{8F592828-5DC3-4EF2-AEAD-B80BC4F939E2}_Large.jpg -> lbumArt_{8F592828-5DC3-4EF2-AEAD-B80BC4F939E2}_Large.jpg
+renaming to lbumArt_{8F592828-5DC3-4EF2-AEAD-B80BC4F939E2}_Small.jpg
+rename done : AlbumArt_{8F592828-5DC3-4EF2-AEAD-B80BC4F939E2}_Small.jpg -> lbumArt_{8F592828-5DC3-4EF2-AEAD-B80BC4F939E2}_Small.jpg
+renaming to lbumArt_{95109B16-8980-425B-9D75-7C1BD9569130}_Large.jpg
+rename done : AlbumArt_{95109B16-8980-425B-9D75-7C1BD9569130}_Large.jpg -> lbumArt_{95109B16-8980-425B-9D75-7C1BD9569130}_Large.jpg
+renaming to lbumArt_{95109B16-8980-425B-9D75-7C1BD9569130}_Small.jpg
+rename done : AlbumArt_{95109B16-8980-425B-9D75-7C1BD9569130}_Small.jpg -> lbumArt_{95109B16-8980-425B-9D75-7C1BD9569130}_Small.jpg
+renaming to lbumArt_{9A86E231-DF99-4408-B5CB-B4810CB93C6A}_Large.jpg
+rename done : AlbumArt_{9A86E231-DF99-4408-B5CB-B4810CB93C6A}_Large.jpg -> lbumArt_{9A86E231-DF99-4408-B5CB-B4810CB93C6A}_Large.jpg
+renaming to lbumArt_{9A86E231-DF99-4408-B5CB-B4810CB93C6A}_Small.jpg
+rename done : AlbumArt_{9A86E231-DF99-4408-B5CB-B4810CB93C6A}_Small.jpg -> lbumArt_{9A86E231-DF99-4408-B5CB-B4810CB93C6A}_Small.jpg
+renaming to lbumArt_{9F717ED5-0D38-46F6-AB22-BE483F9E8926}_Large.jpg
+rename done : AlbumArt_{9F717ED5-0D38-46F6-AB22-BE483F9E8926}_Large.jpg -> lbumArt_{9F717ED5-0D38-46F6-AB22-BE483F9E8926}_Large.jpg
+renaming to lbumArt_{9F717ED5-0D38-46F6-AB22-BE483F9E8926}_Small.jpg
+rename done : AlbumArt_{9F717ED5-0D38-46F6-AB22-BE483F9E8926}_Small.jpg -> lbumArt_{9F717ED5-0D38-46F6-AB22-BE483F9E8926}_Small.jpg
+renaming to lbumArt_{A758D109-AC42-46BD-A748-0B73C1F63803}_Large.jpg
+rename done : AlbumArt_{A758D109-AC42-46BD-A748-0B73C1F63803}_Large.jpg -> lbumArt_{A758D109-AC42-46BD-A748-0B73C1F63803}_Large.jpg
+renaming to lbumArt_{A758D109-AC42-46BD-A748-0B73C1F63803}_Small.jpg
+rename done : AlbumArt_{A758D109-AC42-46BD-A748-0B73C1F63803}_Small.jpg -> lbumArt_{A758D109-AC42-46BD-A748-0B73C1F63803}_Small.jpg
+renaming to lbumArt_{AFECA088-7695-47D6-B9C5-BBE1444E7BAC}_Large.jpg
+rename done : AlbumArt_{AFECA088-7695-47D6-B9C5-BBE1444E7BAC}_Large.jpg -> lbumArt_{AFECA088-7695-47D6-B9C5-BBE1444E7BAC}_Large.jpg
+renaming to lbumArt_{AFECA088-7695-47D6-B9C5-BBE1444E7BAC}_Small.jpg
+rename done : AlbumArt_{AFECA088-7695-47D6-B9C5-BBE1444E7BAC}_Small.jpg -> lbumArt_{AFECA088-7695-47D6-B9C5-BBE1444E7BAC}_Small.jpg
+renaming to lbumArt_{B2ECD950-E1C6-4CF5-8022-4A57F7958F64}_Large.jpg
+rename done : AlbumArt_{B2ECD950-E1C6-4CF5-8022-4A57F7958F64}_Large.jpg -> lbumArt_{B2ECD950-E1C6-4CF5-8022-4A57F7958F64}_Large.jpg
+renaming to lbumArt_{B2ECD950-E1C6-4CF5-8022-4A57F7958F64}_Small.jpg
+rename done : AlbumArt_{B2ECD950-E1C6-4CF5-8022-4A57F7958F64}_Small.jpg -> lbumArt_{B2ECD950-E1C6-4CF5-8022-4A57F7958F64}_Small.jpg
+renaming to lbumArt_{B5227ABE-07EF-4D45-AACD-81534C36D7AC}_Large.jpg
+rename done : AlbumArt_{B5227ABE-07EF-4D45-AACD-81534C36D7AC}_Large.jpg -> lbumArt_{B5227ABE-07EF-4D45-AACD-81534C36D7AC}_Large.jpg
+renaming to lbumArt_{B5227ABE-07EF-4D45-AACD-81534C36D7AC}_Small.jpg
+rename done : AlbumArt_{B5227ABE-07EF-4D45-AACD-81534C36D7AC}_Small.jpg -> lbumArt_{B5227ABE-07EF-4D45-AACD-81534C36D7AC}_Small.jpg
+renaming to lbumArt_{B902BB4A-042B-49F1-B6CA-F601A4AB5F4D}_Large.jpg
+rename done : AlbumArt_{B902BB4A-042B-49F1-B6CA-F601A4AB5F4D}_Large.jpg -> lbumArt_{B902BB4A-042B-49F1-B6CA-F601A4AB5F4D}_Large.jpg
+renaming to lbumArt_{B902BB4A-042B-49F1-B6CA-F601A4AB5F4D}_Small.jpg
+rename done : AlbumArt_{B902BB4A-042B-49F1-B6CA-F601A4AB5F4D}_Small.jpg -> lbumArt_{B902BB4A-042B-49F1-B6CA-F601A4AB5F4D}_Small.jpg
+renaming to lbumArt_{BE642D38-8A4A-4240-9C4E-7694E6E6DD81}_Large.jpg
+rename done : AlbumArt_{BE642D38-8A4A-4240-9C4E-7694E6E6DD81}_Large.jpg -> lbumArt_{BE642D38-8A4A-4240-9C4E-7694E6E6DD81}_Large.jpg
+renaming to lbumArt_{BE642D38-8A4A-4240-9C4E-7694E6E6DD81}_Small.jpg
+rename done : AlbumArt_{BE642D38-8A4A-4240-9C4E-7694E6E6DD81}_Small.jpg -> lbumArt_{BE642D38-8A4A-4240-9C4E-7694E6E6DD81}_Small.jpg
+renaming to lbumArt_{C0DE61B0-FDDE-448F-86B1-391AFA19B9EA}_Large.jpg
+rename done : AlbumArt_{C0DE61B0-FDDE-448F-86B1-391AFA19B9EA}_Large.jpg -> lbumArt_{C0DE61B0-FDDE-448F-86B1-391AFA19B9EA}_Large.jpg
+renaming to lbumArt_{C0DE61B0-FDDE-448F-86B1-391AFA19B9EA}_Small.jpg
+rename done : AlbumArt_{C0DE61B0-FDDE-448F-86B1-391AFA19B9EA}_Small.jpg -> lbumArt_{C0DE61B0-FDDE-448F-86B1-391AFA19B9EA}_Small.jpg
+renaming to lbumArt_{C1B8EF9D-5AA4-4303-9B2F-332B1C5CEC37}_Large.jpg
+rename done : AlbumArt_{C1B8EF9D-5AA4-4303-9B2F-332B1C5CEC37}_Large.jpg -> lbumArt_{C1B8EF9D-5AA4-4303-9B2F-332B1C5CEC37}_Large.jpg
+renaming to lbumArt_{C1B8EF9D-5AA4-4303-9B2F-332B1C5CEC37}_Small.jpg
+rename done : AlbumArt_{C1B8EF9D-5AA4-4303-9B2F-332B1C5CEC37}_Small.jpg -> lbumArt_{C1B8EF9D-5AA4-4303-9B2F-332B1C5CEC37}_Small.jpg
+renaming to lbumArt_{C37E2D84-99B9-45DB-9DBE-275821DC7746}_Large.jpg
+rename done : AlbumArt_{C37E2D84-99B9-45DB-9DBE-275821DC7746}_Large.jpg -> lbumArt_{C37E2D84-99B9-45DB-9DBE-275821DC7746}_Large.jpg
+renaming to lbumArt_{C37E2D84-99B9-45DB-9DBE-275821DC7746}_Small.jpg
+rename done : AlbumArt_{C37E2D84-99B9-45DB-9DBE-275821DC7746}_Small.jpg -> lbumArt_{C37E2D84-99B9-45DB-9DBE-275821DC7746}_Small.jpg
+renaming to lbumArt_{C694E383-58B1-4B0A-8B5A-4AAE8AF37F33}_Large.jpg
+rename done : AlbumArt_{C694E383-58B1-4B0A-8B5A-4AAE8AF37F33}_Large.jpg -> lbumArt_{C694E383-58B1-4B0A-8B5A-4AAE8AF37F33}_Large.jpg
+renaming to lbumArt_{C694E383-58B1-4B0A-8B5A-4AAE8AF37F33}_Small.jpg
+rename done : AlbumArt_{C694E383-58B1-4B0A-8B5A-4AAE8AF37F33}_Small.jpg -> lbumArt_{C694E383-58B1-4B0A-8B5A-4AAE8AF37F33}_Small.jpg
+renaming to lbumArt_{D96AD679-E871-4877-B4FA-4BA961560000}_Large.jpg
+rename done : AlbumArt_{D96AD679-E871-4877-B4FA-4BA961560000}_Large.jpg -> lbumArt_{D96AD679-E871-4877-B4FA-4BA961560000}_Large.jpg
+renaming to lbumArt_{D96AD679-E871-4877-B4FA-4BA961560000}_Small.jpg
+rename done : AlbumArt_{D96AD679-E871-4877-B4FA-4BA961560000}_Small.jpg -> lbumArt_{D96AD679-E871-4877-B4FA-4BA961560000}_Small.jpg
+renaming to lbumArt_{DA8A072F-9A02-4328-B0C0-639C789D41CD}_Large.jpg
+rename done : AlbumArt_{DA8A072F-9A02-4328-B0C0-639C789D41CD}_Large.jpg -> lbumArt_{DA8A072F-9A02-4328-B0C0-639C789D41CD}_Large.jpg
+renaming to lbumArt_{DA8A072F-9A02-4328-B0C0-639C789D41CD}_Small.jpg
+rename done : AlbumArt_{DA8A072F-9A02-4328-B0C0-639C789D41CD}_Small.jpg -> lbumArt_{DA8A072F-9A02-4328-B0C0-639C789D41CD}_Small.jpg
+renaming to lbumArt_{DAC1127D-E80D-431E-8E29-EB69482F8F06}_Large.jpg
+rename done : AlbumArt_{DAC1127D-E80D-431E-8E29-EB69482F8F06}_Large.jpg -> lbumArt_{DAC1127D-E80D-431E-8E29-EB69482F8F06}_Large.jpg
+renaming to lbumArt_{DAC1127D-E80D-431E-8E29-EB69482F8F06}_Small.jpg
+rename done : AlbumArt_{DAC1127D-E80D-431E-8E29-EB69482F8F06}_Small.jpg -> lbumArt_{DAC1127D-E80D-431E-8E29-EB69482F8F06}_Small.jpg
+renaming to lbumArt_{DB64DD80-A89B-4BB9-914E-1FB20399F676}_Large.jpg
+rename done : AlbumArt_{DB64DD80-A89B-4BB9-914E-1FB20399F676}_Large.jpg -> lbumArt_{DB64DD80-A89B-4BB9-914E-1FB20399F676}_Large.jpg
+renaming to lbumArt_{DB64DD80-A89B-4BB9-914E-1FB20399F676}_Small.jpg
+rename done : AlbumArt_{DB64DD80-A89B-4BB9-914E-1FB20399F676}_Small.jpg -> lbumArt_{DB64DD80-A89B-4BB9-914E-1FB20399F676}_Small.jpg
+renaming to lbumArt_{DCBB65F9-85FA-4105-9E18-707E07AC5F83}_Large.jpg
+rename done : AlbumArt_{DCBB65F9-85FA-4105-9E18-707E07AC5F83}_Large.jpg -> lbumArt_{DCBB65F9-85FA-4105-9E18-707E07AC5F83}_Large.jpg
+renaming to lbumArt_{DCBB65F9-85FA-4105-9E18-707E07AC5F83}_Small.jpg
+rename done : AlbumArt_{DCBB65F9-85FA-4105-9E18-707E07AC5F83}_Small.jpg -> lbumArt_{DCBB65F9-85FA-4105-9E18-707E07AC5F83}_Small.jpg
+renaming to lbumArt_{E2B4C59D-A5C1-460C-9137-31EF587C63A9}_Large.jpg
+rename done : AlbumArt_{E2B4C59D-A5C1-460C-9137-31EF587C63A9}_Large.jpg -> lbumArt_{E2B4C59D-A5C1-460C-9137-31EF587C63A9}_Large.jpg
+renaming to lbumArt_{E2B4C59D-A5C1-460C-9137-31EF587C63A9}_Small.jpg
+rename done : AlbumArt_{E2B4C59D-A5C1-460C-9137-31EF587C63A9}_Small.jpg -> lbumArt_{E2B4C59D-A5C1-460C-9137-31EF587C63A9}_Small.jpg
+renaming to lbumArt_{E819938E-EEA7-4097-8957-84C1F7EAFFF1}_Large.jpg
+rename done : AlbumArt_{E819938E-EEA7-4097-8957-84C1F7EAFFF1}_Large.jpg -> lbumArt_{E819938E-EEA7-4097-8957-84C1F7EAFFF1}_Large.jpg
+renaming to lbumArt_{E819938E-EEA7-4097-8957-84C1F7EAFFF1}_Small.jpg
+rename done : AlbumArt_{E819938E-EEA7-4097-8957-84C1F7EAFFF1}_Small.jpg -> lbumArt_{E819938E-EEA7-4097-8957-84C1F7EAFFF1}_Small.jpg
+renaming to lbumArt_{EA445DCD-D5E0-42C7-B659-8675D562EFB3}_Large.jpg
+rename done : AlbumArt_{EA445DCD-D5E0-42C7-B659-8675D562EFB3}_Large.jpg -> lbumArt_{EA445DCD-D5E0-42C7-B659-8675D562EFB3}_Large.jpg
+renaming to lbumArt_{EA445DCD-D5E0-42C7-B659-8675D562EFB3}_Small.jpg
+rename done : AlbumArt_{EA445DCD-D5E0-42C7-B659-8675D562EFB3}_Small.jpg -> lbumArt_{EA445DCD-D5E0-42C7-B659-8675D562EFB3}_Small.jpg
+renaming to lbumArt_{F3E67C1F-A6CB-4F14-9630-E364D68DC141}_Large.jpg
+rename done : AlbumArt_{F3E67C1F-A6CB-4F14-9630-E364D68DC141}_Large.jpg -> lbumArt_{F3E67C1F-A6CB-4F14-9630-E364D68DC141}_Large.jpg
+renaming to lbumArt_{F3E67C1F-A6CB-4F14-9630-E364D68DC141}_Small.jpg
+rename done : AlbumArt_{F3E67C1F-A6CB-4F14-9630-E364D68DC141}_Small.jpg -> lbumArt_{F3E67C1F-A6CB-4F14-9630-E364D68DC141}_Small.jpg
+renaming to li Maula.mp3
+rename done : Ali Maula.mp3 -> li Maula.mp3
+renaming to lison Gold - Chinese Food [mp3clan.com].mp3
+rename done : Alison Gold - Chinese Food [mp3clan.com].mp3 -> lison Gold - Chinese Food [mp3clan.com].mp3
+renaming to  CHAAT.mp3
+rename done : ALOO CHAAT.mp3 ->  CHAAT.mp3
+renaming to  - Teri Adaaon Mein [DJMaza.Info].mp3
+rename done : AM - Teri Adaaon Mein [DJMaza.Info].mp3 ->  - Teri Adaaon Mein [DJMaza.Info].mp3
+renaming to mplifier.mp3
+rename done : Amplifier.mp3 -> mplifier.mp3
+renaming to njaana Anjaani - 04 - Tumse Hi Tumse.mp3
+rename done : Anjaana Anjaani - 04 - Tumse Hi Tumse.mp3 -> njaana Anjaani - 04 - Tumse Hi Tumse.mp3
+renaming to njaana Anjaani - 08 - Tujhe Bhula Diya (Remix the Dance to Forget Mix).mp3
+rename done : Anjaana Anjaani - 08 - Tujhe Bhula Diya (Remix the Dance to Forget Mix).mp3 -> njaana Anjaani - 08 - Tujhe Bhula Diya (Remix the Dance to Forget Mix).mp3
+renaming to  = GAIRON PE KARAM.mp3
+rename done : ANKHEN = GAIRON PE KARAM.mp3 ->  = GAIRON PE KARAM.mp3
+renaming to ntenna.mp3
+rename done : Antenna.mp3 -> ntenna.mp3
+renaming to rziyan maula mere .mp3
+rename done : Arziyan maula mere .mp3 -> rziyan maula mere .mp3
+renaming to rzo Saman Bane hain.MP3
+rename done : Arzo Saman Bane hain.MP3 -> rzo Saman Bane hain.MP3
+renaming to ssalam e ishkum.mp3
+rename done : Assalam e ishkum.mp3 -> ssalam e ishkum.mp3
+renaming to tif - Mahiya Ve Soniya [DJLUV]1.mp3
+rename done : Atif - Mahiya Ve Soniya [DJLUV]1.mp3 -> tif - Mahiya Ve Soniya [DJLUV]1.mp3
+renaming to tif Aslam-Meri Kahani.mp3
+rename done : Atif Aslam-Meri Kahani.mp3 -> tif Aslam-Meri Kahani.mp3
+renaming to ye Khuda- New York .mp3
+rename done : Aye Khuda- New York .mp3 -> ye Khuda- New York .mp3
+renaming to ye khuda.mp3
+rename done : Aye khuda.mp3 -> ye khuda.mp3
+renaming to ye meri zindagi tu.mp3
+rename done : Aye meri zindagi tu.mp3 -> ye meri zindagi tu.mp3
+renaming to abaji Ki booty.mp3
+rename done : Babaji Ki booty.mp3 -> abaji Ki booty.mp3
+renaming to aby can i hold.mp3
+rename done : Baby can i hold.mp3 -> aby can i hold.mp3
+renaming to aby+1less lonely-jb.mp3
+rename done : Baby+1less lonely-jb.mp3 -> aby+1less lonely-jb.mp3
+renaming to aby-jb.MP3
+rename done : Baby-jb.MP3 -> aby-jb.MP3
+renaming to aby.mp3
+rename done : Baby.mp3 -> aby.mp3
+renaming to aby_Doll_(Ragini_MMS_2)-(FreshMaza.co).mp3
+rename done : Baby_Doll_(Ragini_MMS_2)-(FreshMaza.co).mp3 -> aby_Doll_(Ragini_MMS_2)-(FreshMaza.co).mp3
+renaming to ackstreet_Boys_Quit_Playing_Games_With_My_Heart.mp3
+rename done : Backstreet_Boys_Quit_Playing_Games_With_My_Heart.mp3 -> ackstreet_Boys_Quit_Playing_Games_With_My_Heart.mp3
+renaming to ahut pyar Anuradha.mp3
+rename done : Bahut pyar Anuradha.mp3 -> ahut pyar Anuradha.mp3
+renaming to ally_Sagoo_Aap_Ki_Nazron_Ne_Samjha.mp3
+rename done : Bally_Sagoo_Aap_Ki_Nazron_Ne_Samjha.mp3 -> ally_Sagoo_Aap_Ki_Nazron_Ne_Samjha.mp3
+renaming to ang Bang - Uff [DJMaza.Info].mp3
+rename done : Bang Bang - Uff [DJMaza.Info].mp3 -> ang Bang - Uff [DJMaza.Info].mp3
+renaming to arbie Girl - Aqua.mp3
+rename done : Barbie Girl - Aqua.mp3 -> arbie Girl - Aqua.mp3
+renaming to atameez Dil (Yeh Jawaani Hai Deewani) Benny Dayal -190Kbps [DJMaza].mp3
+rename done : Batameez Dil (Yeh Jawaani Hai Deewani) Benny Dayal -190Kbps [DJMaza].mp3 -> atameez Dil (Yeh Jawaani Hai Deewani) Benny Dayal -190Kbps [DJMaza].mp3
+renaming to eauty in a beats feat nickie minaj-jb.mp3
+rename done : Beauty in a beats feat nickie minaj-jb.mp3 -> eauty in a beats feat nickie minaj-jb.mp3
+renaming to  LAMHEIN MASTER.mp3
+rename done : BEETE LAMHEIN MASTER.mp3 ->  LAMHEIN MASTER.mp3
+renaming to eparwa.mp3
+rename done : Beparwa.mp3 -> eparwa.mp3
+renaming to etter_Than_The_Best.mp3
+rename done : Better_Than_The_Best.mp3 -> etter_Than_The_Best.mp3
+renaming to irthday - (www.SongsLover.pk).mp3
+rename done : Birthday - (www.SongsLover.pk).mp3 -> irthday - (www.SongsLover.pk).mp3
+renaming to lack Eyed Peas -Monkey Business - 05 - My Humps.mp3
+rename done : Black Eyed Peas -Monkey Business - 05 - My Humps.mp3 -> lack Eyed Peas -Monkey Business - 05 - My Humps.mp3
+renaming to lue Eyes - Yo Yo Honey Singh - [Funmaza.com].mp3
+rename done : Blue Eyes - Yo Yo Honey Singh - [Funmaza.com].mp3 -> lue Eyes - Yo Yo Honey Singh - [Funmaza.com].mp3
+renaming to lue-_U_make_me_wanna.mp3
+rename done : Blue-_U_make_me_wanna.mp3 -> lue-_U_make_me_wanna.mp3
+renaming to odyguard_Cell_Phone.mp3
+rename done : Bodyguard_Cell_Phone.mp3 -> odyguard_Cell_Phone.mp3
+renaming to oom Boom (Lip Lock) - Ajab Gazabb Love - 128Kbps.mp3
+rename done : Boom Boom (Lip Lock) - Ajab Gazabb Love - 128Kbps.mp3 -> oom Boom (Lip Lock) - Ajab Gazabb Love - 128Kbps.mp3
+renaming to oom Boom Boom Boom!! - Vengaboys.mp3
+rename done : Boom Boom Boom Boom!! - Vengaboys.mp3 -> oom Boom Boom Boom!! - Vengaboys.mp3
+renaming to oond_Jal_Sajni.mp3
+rename done : Boond_Jal_Sajni.mp3 -> oond_Jal_Sajni.mp3
+renaming to  - Lets Dance [www.DJMaza.Com].mp3
+rename done : BR - Lets Dance [www.DJMaza.Com].mp3 ->  - Lets Dance [www.DJMaza.Com].mp3
+renaming to reak ur heart.mp3
+rename done : Break ur heart.mp3 -> reak ur heart.mp3
+renaming to reathless- If our love was a fairytale... [mp3clan.com].mp3
+rename done : Breathless- If our love was a fairytale... [mp3clan.com].mp3 -> reathless- If our love was a fairytale... [mp3clan.com].mp3
+renaming to ring It Back.mp3
+rename done : Bring It Back.mp3 -> ring It Back.mp3
+renaming to rown rang.mp3
+rename done : Brown rang.mp3 -> rown rang.mp3
+renaming to ryan_Adams_Everything_I_Do_I_Do_It_For_You.mp3
+rename done : Bryan_Adams_Everything_I_Do_I_Do_It_For_You.mp3 -> ryan_Adams_Everything_I_Do_I_Do_It_For_You.mp3
+renaming to ryan_Adams_Here_I_Am.mp3
+rename done : Bryan_Adams_Here_I_Am.mp3 -> ryan_Adams_Here_I_Am.mp3
+renaming to -Quit Playing Games.mp3
+rename done : BSB-Quit Playing Games.mp3 -> -Quit Playing Games.mp3
+renaming to haahata Dil Tumko Tum Nahin Janate.mp3
+rename done : Chaahata Dil Tumko Tum Nahin Janate.mp3 -> haahata Dil Tumko Tum Nahin Janate.mp3
+renaming to hahun Main Ya Naa - [rKmania.me].mp3
+rename done : Chahun Main Ya Naa - [rKmania.me].mp3 -> hahun Main Ya Naa - [rKmania.me].mp3
+renaming to hale chalo chale chalo.mp3
+rename done : Chale chalo chale chalo.mp3 -> hale chalo chale chalo.mp3
+renaming to hamak Challo - Yo Yo Honey Singh Ft J-Star (PagalWorld.com).mp3
+rename done : Chamak Challo - Yo Yo Honey Singh Ft J-Star (PagalWorld.com).mp3 -> hamak Challo - Yo Yo Honey Singh Ft J-Star (PagalWorld.com).mp3
+renaming to hand Sifarish.mp3
+rename done : Chand Sifarish.mp3 -> hand Sifarish.mp3
+renaming to hanna Vey.mp3
+rename done : Channa Vey.mp3 -> hanna Vey.mp3
+renaming to har baj gaye( remix).mp3
+rename done : Char baj gaye( remix).mp3 -> har baj gaye( remix).mp3
+renaming to haska.mp3
+rename done : Chaska.mp3 -> haska.mp3
+renaming to hennai Express - 03 - Tera Rastaa Chhodoon Na.mp3
+rename done : Chennai Express - 03 - Tera Rastaa Chhodoon Na.mp3 -> hennai Express - 03 - Tera Rastaa Chhodoon Na.mp3
+renaming to higgy Wiggy.mp3
+rename done : Chiggy Wiggy.mp3 -> higgy Wiggy.mp3
+renaming to hoolhe-Ke-Angaarey-[Funjalsha.iN].mp3
+rename done : Choolhe-Ke-Angaarey-[Funjalsha.iN].mp3 -> hoolhe-Ke-Angaarey-[Funjalsha.iN].mp3
+renaming to hristina Perri-A Thousand Years(www.krazywap.mobi).mp3
+rename done : Christina Perri-A Thousand Years(www.krazywap.mobi).mp3 -> hristina Perri-A Thousand Years(www.krazywap.mobi).mp3
+renaming to ontacts.vcf
+rename done : Contacts.vcf -> ontacts.vcf
+renaming to ouse You  Are My Zing.mp3
+rename done : Couse You  Are My Zing.mp3 -> ouse You  Are My Zing.mp3
+renaming to razy-Kids-(Remix)_(webmusic.in).mp3
+rename done : Crazy-Kids-(Remix)_(webmusic.in).mp3 -> razy-Kids-(Remix)_(webmusic.in).mp3
+renaming to reature - Ik Pal Yahi [DJMaza.Info].mp3
+rename done : Creature - Ik Pal Yahi [DJMaza.Info].mp3 -> reature - Ik Pal Yahi [DJMaza.Info].mp3
+renaming to reature - Naam-E-Wafa [DJMaza.Info].mp3
+rename done : Creature - Naam-E-Wafa [DJMaza.Info].mp3 -> reature - Naam-E-Wafa [DJMaza.Info].mp3
+renaming to ance Without You.mp3
+rename done : Dance Without You.mp3 -> ance Without You.mp3
+renaming to arda Di Dawa.mp3
+rename done : Darda Di Dawa.mp3 -> arda Di Dawa.mp3
+renaming to arling-prabas (1).mp3
+rename done : Darling-prabas (1).mp3 -> arling-prabas (1).mp3
+renaming to -E-OM SHANTI OM {FILM _ OM SHANTI OM}.mp3
+rename done : DASTAAN-E-OM SHANTI OM {FILM _ OM SHANTI OM}.mp3 -> -E-OM SHANTI OM {FILM _ OM SHANTI OM}.mp3
+renaming to eap in my heart.mp3
+rename done : Deap in my heart.mp3 -> eap in my heart.mp3
+renaming to eewana deewana{Udit} .mp3
+rename done : Deewana deewana{Udit} .mp3 -> eewana deewana{Udit} .mp3
+renaming to elhi Belly (2011) - I Hate You (Like I Love you) [www.DJLUV.in].mp3
+rename done : Delhi Belly (2011) - I Hate You (Like I Love you) [www.DJLUV.in].mp3 -> elhi Belly (2011) - I Hate You (Like I Love you) [www.DJLUV.in].mp3
+renaming to er Lagi Lekin.mp3
+rename done : Der Lagi Lekin.mp3 -> er Lagi Lekin.mp3
+renaming to esi Romance - Shaadi Ke Side Effects - [SongsPk.CC].mp3
+rename done : Desi Romance - Shaadi Ke Side Effects - [SongsPk.CC].mp3 -> esi Romance - Shaadi Ke Side Effects - [SongsPk.CC].mp3
+renaming to hadakne do ( zindagi milegi na doobara).mp3
+rename done : Dhadakne do ( zindagi milegi na doobara).mp3 -> hadakne do ( zindagi milegi na doobara).mp3
+renaming to heera Dhera.mp3
+rename done : Dheera Dhera.mp3 -> heera Dhera.mp3
+renaming to -R.A.KHAN.mp3
+rename done : DHOKA-R.A.KHAN.mp3 -> -R.A.KHAN.mp3
+renaming to il dewana kehta hai ki .MP3
+rename done : Dil dewana kehta hai ki .MP3 -> il dewana kehta hai ki .MP3
+renaming to il hai ke manta nahi {Duet}.mp3
+rename done : Dil hai ke manta nahi {Duet}.mp3 -> il hai ke manta nahi {Duet}.mp3
+renaming to il hai tumhaara.mp3
+rename done : Dil hai tumhaara.mp3 -> il hai tumhaara.mp3
+renaming to il Kaa Jo Haal Hai - Remix.mp3
+rename done : Dil Kaa Jo Haal Hai - Remix.mp3 -> il Kaa Jo Haal Hai - Remix.mp3
+renaming to  KARE.mp3
+rename done : DIL KARE.mp3 ->  KARE.mp3
+renaming to il Me Ho Tum - Satyamev Jayate.mp3
+rename done : Dil Me Ho Tum - Satyamev Jayate.mp3 -> il Me Ho Tum - Satyamev Jayate.mp3
+renaming to  NAHIN LAGDA.mp3
+rename done : DIL NAHIN LAGDA.mp3 ->  NAHIN LAGDA.mp3
+renaming to  PAAGAL DEEWANA - KUMAR.mp3
+rename done : DIL PAAGAL DEEWANA - KUMAR.mp3 ->  PAAGAL DEEWANA - KUMAR.mp3
+renaming to il se re dil se re.mp3
+rename done : Dil se re dil se re.mp3 -> il se re dil se re.mp3
+renaming to ilber Mere Kab Tak @ Mp3HunGama.Com.mp3
+rename done : Dilber Mere Kab Tak @ Mp3HunGama.Com.mp3 -> ilber Mere Kab Tak @ Mp3HunGama.Com.mp3
+renaming to ~1.MP3
+rename done : DILK~1.MP3 -> ~1.MP3
+renaming to  - Desi Kalakaar [DJMaza.Info].mp3
+rename done : DK - Desi Kalakaar [DJMaza.Info].mp3 ->  - Desi Kalakaar [DJMaza.Info].mp3
+renaming to ocomo.mp3
+rename done : Docomo.mp3 -> ocomo.mp3
+renaming to ostana - Khabar Nahi [www.DJMaza.Com].mp3
+rename done : Dostana - Khabar Nahi [www.DJMaza.Com].mp3 -> ostana - Khabar Nahi [www.DJMaza.Com].mp3
+renaming to  Iglesias_Dont_YouAboutMe.mp3
+rename done : E Iglesias_Dont_YouAboutMe.mp3 ->  Iglesias_Dont_YouAboutMe.mp3
+renaming to hsaan.mp3
+rename done : Ehsaan.mp3 -> hsaan.mp3
+renaming to inee minee-jb.mp3
+rename done : Einee minee-jb.mp3 -> inee minee-jb.mp3
+renaming to k Pardesi Mera Dil Le Gaya.mp3
+rename done : Ek Pardesi Mera Dil Le Gaya.mp3 -> k Pardesi Mera Dil Le Gaya.mp3
+renaming to k Tha Tiger - 06 - MashAllah (Remix).mp3
+rename done : Ek Tha Tiger - 06 - MashAllah (Remix).mp3 -> k Tha Tiger - 06 - MashAllah (Remix).mp3
+renaming to k Tha Tiger - 07 - Laapata (Remix).mp3
+rename done : Ek Tha Tiger - 07 - Laapata (Remix).mp3 -> k Tha Tiger - 07 - Laapata (Remix).mp3
+renaming to k Villain - Galliyan.mp3
+rename done : Ek Villain - Galliyan.mp3 -> k Villain - Galliyan.mp3
+renaming to mptiness (Rohan Rathore).mp3
+rename done : Emptiness (Rohan Rathore).mp3 -> mptiness (Rohan Rathore).mp3
+renaming to nrique -Tonight im loving you.mp3
+rename done : Enrique -Tonight im loving you.mp3 -> nrique -Tonight im loving you.mp3
+renaming to nrique Iglesias - Pitbull - I Like It.mp3
+rename done : Enrique Iglesias - Pitbull - I Like It.mp3 -> nrique Iglesias - Pitbull - I Like It.mp3
+renaming to nrique Iglesias - Why Not Me.mp3
+rename done : Enrique Iglesias - Why Not Me.mp3 -> nrique Iglesias - Why Not Me.mp3
+renaming to nrique Iglesias Ft. Romeo Santos - Loco (CDQ).mp3
+rename done : Enrique Iglesias Ft. Romeo Santos - Loco (CDQ).mp3 -> nrique Iglesias Ft. Romeo Santos - Loco (CDQ).mp3
+renaming to nrique-dirty dancer
+rename done : Enrique-dirty dancer -> nrique-dirty dancer
+renaming to nrique_Iglesias_feat_Pitbull_-_I_m_A_Freak.mp3
+rename done : Enrique_Iglesias_feat_Pitbull_-_I_m_A_Freak.mp3 -> nrique_Iglesias_feat_Pitbull_-_I_m_A_Freak.mp3
+renaming to -katy perry.mp3
+rename done : ET-katy perry.mp3 -> -katy perry.mp3
+renaming to urope - Final Countdown.mp3
+rename done : Europe - Final Countdown.mp3 -> urope - Final Countdown.mp3
+renaming to varu Lerani - Malavika.mp3
+rename done : Evaru Lerani - Malavika.mp3 -> varu Lerani - Malavika.mp3
+renaming to verything at once.mp3
+rename done : Everything at once.mp3 -> verything at once.mp3
+renaming to  - 05 - Fully Faltu.mp3
+rename done : F.A.L.T.U - 05 - Fully Faltu.mp3 ->  - 05 - Fully Faltu.mp3
+renaming to alak dekhun {Sonu}.mp3
+rename done : Falak dekhun {Sonu}.mp3 -> alak dekhun {Sonu}.mp3
+renaming to ashion Ka Jalwa (Remix).mp3
+rename done : Fashion Ka Jalwa (Remix).mp3 -> ashion Ka Jalwa (Remix).mp3
+renaming to atboy_Slim_We_Will_Rock_You_2.mp3
+rename done : Fatboy_Slim_We_Will_Rock_You_2.mp3 -> atboy_Slim_We_Will_Rock_You_2.mp3
+renaming to ida_Aaja_Ve_Mahi.mp3
+rename done : Fida_Aaja_Ve_Mahi.mp3 -> ida_Aaja_Ve_Mahi.mp3
+renaming to iqrana.mp3
+rename done : Fiqrana.mp3 -> iqrana.mp3
+renaming to irework_(Katy_Perry)(wapking.cc).mp3
+rename done : Firework_(Katy_Perry)(wapking.cc).mp3 -> irework_(Katy_Perry)(wapking.cc).mp3
+renaming to older.jpg
+rename done : Folder.jpg -> older.jpg
+renaming to ugly - Fugly Fugly Kya Hai.mp3
+rename done : Fugly - Fugly Fugly Kya Hai.mp3 -> ugly - Fugly Fugly Kya Hai.mp3
+renaming to ukrey - 06 - Ambarsariya.mp3
+rename done : Fukrey - 06 - Ambarsariya.mp3 -> ukrey - 06 - Ambarsariya.mp3
+renaming to aurav_Ft_College_Days_Aaj_Tu_Yaad_Aayi.mp3
+rename done : Gaurav_Ft_College_Days_Aaj_Tu_Yaad_Aayi.mp3 -> aurav_Ft_College_Days_Aaj_Tu_Yaad_Aayi.mp3
+renaming to hanchakkar - 01 - Lazy Lad.mp3
+rename done : Ghanchakkar - 01 - Lazy Lad.mp3 -> hanchakkar - 01 - Lazy Lad.mp3
+renaming to hoom-Gayi-[Funjalsha.iN].mp3
+rename done : Ghoom-Gayi-[Funjalsha.iN].mp3 -> hoom-Gayi-[Funjalsha.iN].mp3
+renaming to ive me everything tonight-pitbull.mp3
+rename done : Give me everything tonight-pitbull.mp3 -> ive me everything tonight-pitbull.mp3
+renaming to o Goa Gone  - 02 - Khoon Choos Le.mp3
+rename done : Go Goa Gone  - 02 - Khoon Choos Le.mp3 -> o Goa Gone  - 02 - Khoon Choos Le.mp3
+renaming to odsmack_-_I_Stand_Alone.mp3
+rename done : Godsmack_-_I_Stand_Alone.mp3 -> odsmack_-_I_Stand_Alone.mp3
+renaming to ood music.mp3
+rename done : Good music.mp3 -> ood music.mp3
+renaming to rand Masti - 01 - Grand Masti.mp3
+rename done : Grand Masti - 01 - Grand Masti.mp3 -> rand Masti - 01 - Grand Masti.mp3
+renaming to ulabi - (Shuddh Desi Romance)-(MirchiFun.Mobi).mp3
+rename done : Gulabi - (Shuddh Desi Romance)-(MirchiFun.Mobi).mp3 -> ulabi - (Shuddh Desi Romance)-(MirchiFun.Mobi).mp3
+renaming to ulcharrey (Bewakoofiyaan) -320Kbps [DJMaza.Info].mp3
+rename done : Gulcharrey (Bewakoofiyaan) -320Kbps [DJMaza.Info].mp3 -> ulcharrey (Bewakoofiyaan) -320Kbps [DJMaza.Info].mp3
+renaming to ai Dil Ye Mera - DownloadMing.SE.mp3
+rename done : Hai Dil Ye Mera - DownloadMing.SE.mp3 -> ai Dil Ye Mera - DownloadMing.SE.mp3
+renaming to ai Dil Ye Mera - DownloadMing.SE[1].mp3
+rename done : Hai Dil Ye Mera - DownloadMing.SE[1].mp3 -> ai Dil Ye Mera - DownloadMing.SE[1].mp3
+renaming to ai Yehi Zindagi - KICK (Mohd Irfan) 190Kbps.mp3
+rename done : Hai Yehi Zindagi - KICK (Mohd Irfan) 190Kbps.mp3 -> ai Yehi Zindagi - KICK (Mohd Irfan) 190Kbps.mp3
+renaming to all of Fame.mp3
+rename done : Hall of Fame.mp3 -> all of Fame.mp3
+renaming to  TUMSE PYAR KITNA.mp3
+rename done : HAMEIN TUMSE PYAR KITNA.mp3 ->  TUMSE PYAR KITNA.mp3
+renaming to amma_Hamma-A_R_Rahman[www.Mp3MaD.Com].mp3
+rename done : Hamma_Hamma-A_R_Rahman[www.Mp3MaD.Com].mp3 -> amma_Hamma-A_R_Rahman[www.Mp3MaD.Com].mp3
+renaming to angover (Kick) - [FreshMaza.Info].mp3
+rename done : Hangover (Kick) - [FreshMaza.Info].mp3 -> angover (Kick) - [FreshMaza.Info].mp3
+renaming to asaye Bhi Rulaye Bhi (Remix)-(MyMp3Singer.com).mp3
+rename done : Hasaye Bhi Rulaye Bhi (Remix)-(MyMp3Singer.com).mp3 -> asaye Bhi Rulaye Bhi (Remix)-(MyMp3Singer.com).mp3
+renaming to awaa-Hawaai-Title-[Funjalsha.iN].mp3
+rename done : Hawaa-Hawaai-Title-[Funjalsha.iN].mp3 -> awaa-Hawaai-Title-[Funjalsha.iN].mp3
+renaming to eartbeat (Feat. Nicole Scherzing (Muzikwar.Com).mp3
+rename done : Heartbeat (Feat. Nicole Scherzing (Muzikwar.Com).mp3 -> eartbeat (Feat. Nicole Scherzing (Muzikwar.Com).mp3
+renaming to ide_and_Seek_Kaise_Jiyu.mp3
+rename done : Hide_and_Seek_Kaise_Jiyu.mp3 -> ide_and_Seek_Kaise_Jiyu.mp3
+renaming to ighway - Kahaan Hoon Main.mp3
+rename done : Highway - Kahaan Hoon Main.mp3 -> ighway - Kahaan Hoon Main.mp3
+renaming to ighway - Patakha Guddi (Male).mp3
+rename done : Highway - Patakha Guddi (Male).mp3 -> ighway - Patakha Guddi (Male).mp3
+renaming to  - Manwa Laage [DJMaza.Info].mp3
+rename done : HNY - Manwa Laage [DJMaza.Info].mp3 ->  - Manwa Laage [DJMaza.Info].mp3
+renaming to osanna_-_www.DjPunjab.Com.mp3
+rename done : Hosanna_-_www.DjPunjab.Com.mp3 -> osanna_-_www.DjPunjab.Com.mp3
+renaming to oshwalonKoKhabarKya.mp3
+rename done : HoshwalonKoKhabarKya.mp3 -> oshwalonKoKhabarKya.mp3
+renaming to ousefull - 08 - I Don't Know What To Do (Shabbirs Sexy 70s Mix).mp3
+rename done : Housefull - 08 - I Don't Know What To Do (Shabbirs Sexy 70s Mix).mp3 -> ousefull - 08 - I Don't Know What To Do (Shabbirs Sexy 70s Mix).mp3
+renaming to  SIRF TUMSE  .mp3
+rename done : HUMKO SIRF TUMSE  .mp3 ->  SIRF TUMSE  .mp3
+renaming to  wanna be.mp3
+rename done : I wanna be.mp3 ->  wanna be.mp3
+renaming to cona_Pop_Ft_Charli_Xcx_-_I_Love_It.mp3
+rename done : Icona_Pop_Ft_Charli_Xcx_-_I_Love_It.mp3 -> cona_Pop_Ft_Charli_Xcx_-_I_Love_It.mp3
+renaming to dina Minzel - Let It Go - Frozen.mp3
+rename done : Idina Minzel - Let It Go - Frozen.mp3 -> dina Minzel - Let It Go - Frozen.mp3
+renaming to k Junoon (Paint It Red).mp3
+rename done : Ik Junoon (Paint It Red).mp3 -> k Junoon (Paint It Red).mp3
+renaming to k Junoon (Remix).mp3
+rename done : Ik Junoon (Remix).mp3 -> k Junoon (Remix).mp3
+renaming to mran_Khan_-_Aaja_We_Mahiya.mp3
+rename done : Imran_Khan_-_Aaja_We_Mahiya.mp3 -> mran_Khan_-_Aaja_We_Mahiya.mp3
+renaming to n My City - Priyanka Chopra (ft. will.i.am) (320Kbps).mp3
+rename done : In My City - Priyanka Chopra (ft. will.i.am) (320Kbps).mp3 -> n My City - Priyanka Chopra (ft. will.i.am) (320Kbps).mp3
+renaming to n the end.mp3
+rename done : In the end.mp3 -> n the end.mp3
+renaming to ndiawaale -  Happy New Year [128Kbps LQ LiveRip].mp3
+rename done : Indiawaale -  Happy New Year [128Kbps LQ LiveRip].mp3 -> ndiawaale -  Happy New Year [128Kbps LQ LiveRip].mp3
+renaming to nstant Karma - Baahon Mein Chale Aao.mp3
+rename done : Instant Karma - Baahon Mein Chale Aao.mp3 -> nstant Karma - Baahon Mein Chale Aao.mp3
+renaming to nternational love.mp3
+rename done : International love.mp3 -> nternational love.mp3
+renaming to s it love-nadia ali.mp3
+rename done : Is it love-nadia ali.mp3 -> s it love-nadia ali.mp3
+renaming to ssaq Tera (Male).mp3
+rename done : Issaq Tera (Male).mp3 -> ssaq Tera (Male).mp3
+renaming to yaz-pretty girl.mp3
+rename done : Iyaz-pretty girl.mp3 -> yaz-pretty girl.mp3
+renaming to ll Be Your Fantasy.mp4
+rename done : I_ll Be Your Fantasy.mp4 -> ll Be Your Fantasy.mp4
+renaming to  TERE NAAM = LEKIN CHHUP CHHUP KE.mp3
+rename done : JAAN TERE NAAM = LEKIN CHHUP CHHUP KE.mp3 ->  TERE NAAM = LEKIN CHHUP CHHUP KE.mp3
+renaming to aane Kyun.mp3
+rename done : Jaane Kyun.mp3 -> aane Kyun.mp3
+renaming to aata Hai Tujh Tak - DownloadMing.SE.mp3
+rename done : Jaata Hai Tujh Tak - DownloadMing.SE.mp3 -> aata Hai Tujh Tak - DownloadMing.SE.mp3
+renaming to ab_Kisi_Ki_Taraf_Dil_Jhukne_Lage.mp3
+rename done : Jab_Kisi_Ki_Taraf_Dil_Jhukne_Lage.mp3 -> ab_Kisi_Ki_Taraf_Dil_Jhukne_Lage.mp3
+renaming to annat 2 - 07 - Jannatein Kahan (Power Ballad).mp3
+rename done : Jannat 2 - 07 - Jannatein Kahan (Power Ballad).mp3 -> annat 2 - 07 - Jannatein Kahan (Power Ballad).mp3
+renaming to annat_2_Party_Nights_Mashup_Mp3_(www.5abiMusic.com).mp3
+rename done : Jannat_2_Party_Nights_Mashup_Mp3_(www.5abiMusic.com).mp3 -> annat_2_Party_Nights_Mashup_Mp3_(www.5abiMusic.com).mp3
+renaming to eena_Sirf_Mere_Liye_Jeena_Sirf_Mere_Liye.mp3
+rename done : Jeena_Sirf_Mere_Liye_Jeena_Sirf_Mere_Liye.mp3 -> eena_Sirf_Mere_Liye_Jeena_Sirf_Mere_Liye.mp3
+renaming to essieJ_JasonNevinsRadioA_PriceTag.mp3
+rename done : JessieJ_JasonNevinsRadioA_PriceTag.mp3 -> essieJ_JasonNevinsRadioA_PriceTag.mp3
+renaming to iya - Gunday - [SongsPk.CC].mp3
+rename done : Jiya - Gunday - [SongsPk.CC].mp3 -> iya - Gunday - [SongsPk.CC].mp3
+renaming to ogi Mahi.mp3
+rename done : Jogi Mahi.mp3 -> ogi Mahi.mp3
+renaming to ohnny Johnny - DownloadMing.SE.mp3
+rename done : Johnny Johnny - DownloadMing.SE.mp3 -> ohnny Johnny - DownloadMing.SE.mp3
+renaming to osh_Mere_Khalayon_Ki_.mp3
+rename done : Josh_Mere_Khalayon_Ki_.mp3 -> osh_Mere_Khalayon_Ki_.mp3
+renaming to ourney_&_Guetta_Ft._Usher_-_Journey_Without_You_(3LAU_&_Acetronik_Mashup).mp3
+rename done : Journey_&_Guetta_Ft._Usher_-_Journey_Without_You_(3LAU_&_Acetronik_Mashup).mp3 -> ourney_&_Guetta_Ft._Usher_-_Journey_Without_You_(3LAU_&_Acetronik_Mashup).mp3
+renaming to umme Ki Raat (Kick)[FreshMaza.Info].mp3
+rename done : Jumme Ki Raat (Kick)[FreshMaza.Info].mp3 -> umme Ki Raat (Kick)[FreshMaza.Info].mp3
+renaming to unePothe.mp3
+rename done : JunePothe.mp3 -> unePothe.mp3
+renaming to ustin Bieber - Right Here.mp3
+rename done : Justin Bieber - Right Here.mp3 -> ustin Bieber - Right Here.mp3
+renaming to ustin Bieber - Turn To You [ Art2Music ].mp3
+rename done : Justin Bieber - Turn To You [ Art2Music ].mp3 -> ustin Bieber - Turn To You [ Art2Music ].mp3
+renaming to abhi Aayine Pe Likha Tujhe - DownloadMing.SE[1].mp3
+rename done : Kabhi Aayine Pe Likha Tujhe - DownloadMing.SE[1].mp3 -> abhi Aayine Pe Likha Tujhe - DownloadMing.SE[1].mp3
+renaming to abhi Jo Baadal Barse - Remix - Jackpot - [SongsPk.CC].mp3
+rename done : Kabhi Jo Baadal Barse - Remix - Jackpot - [SongsPk.CC].mp3 -> abhi Jo Baadal Barse - Remix - Jackpot - [SongsPk.CC].mp3
+renaming to abhi Jo Baadal Barse Jackpot.mp3
+rename done : Kabhi Jo Baadal Barse Jackpot.mp3 -> abhi Jo Baadal Barse Jackpot.mp3
+renaming to abhi Mausam.MP3
+rename done : Kabhi Mausam.MP3 -> abhi Mausam.MP3
+renaming to abhi Na Kabhi To Miloge.mp3
+rename done : Kabhi Na Kabhi To Miloge.mp3 -> abhi Na Kabhi To Miloge.mp3
+renaming to abhi_Jo_Baadal_Barse(Female)-Shreya_Ghoshal[www.Mp3MaD.Com].mp3
+rename done : Kabhi_Jo_Baadal_Barse(Female)-Shreya_Ghoshal[www.Mp3MaD.Com].mp3 -> abhi_Jo_Baadal_Barse(Female)-Shreya_Ghoshal[www.Mp3MaD.Com].mp3
+renaming to aboom.mp3
+rename done : Kaboom.mp3 -> aboom.mp3
+renaming to al Aaj Aur Kal_02 (6).mp3
+rename done : Kal Aaj Aur Kal_02 (6).mp3 -> al Aaj Aur Kal_02 (6).mp3
+renaming to amli - DownloadMing.SE.mp3
+rename done : Kamli - DownloadMing.SE.mp3 -> amli - DownloadMing.SE.mp3
+renaming to arthik Calling Karthik - 01 - Hey Ya!.mp3
+rename done : Karthik Calling Karthik - 01 - Hey Ya!.mp3 -> arthik Calling Karthik - 01 - Hey Ya!.mp3
+renaming to arthik Calling Karthik - 03 - Jaane Ye Kya Hua.mp3
+rename done : Karthik Calling Karthik - 03 - Jaane Ye Kya Hua.mp3 -> arthik Calling Karthik - 03 - Jaane Ye Kya Hua.mp3
+renaming to atty perry-roar.mp3
+rename done : Katty perry-roar.mp3 -> atty perry-roar.mp3
+renaming to aty Perry Ft Juicy J - Dark Horse.mp3
+rename done : Katy Perry Ft Juicy J - Dark Horse.mp3 -> aty Perry Ft Juicy J - Dark Horse.mp3
+renaming to aty_Perry_-_Part_Of_Me.mp3
+rename done : Katy_Perry_-_Part_Of_Me.mp3 -> aty_Perry_-_Part_Of_Me.mp3
+renaming to -Suna Suna.mp3
+rename done : KC-Suna Suna.mp3 -> -Suna Suna.mp3
+renaming to e$ha - Die Young (www.SongsLover.pk).mp3
+rename done : Ke$ha - Die Young (www.SongsLover.pk).mp3 -> e$ha - Die Young (www.SongsLover.pk).mp3
+renaming to eisha - Tik Tok.mp3
+rename done : Keisha - Tik Tok.mp3 -> eisha - Tik Tok.mp3
+renaming to hakee_Wada_Raha_.mp3
+rename done : Khakee_Wada_Raha_.mp3 -> hakee_Wada_Raha_.mp3
+renaming to hamoshiyan.mp3
+rename done : Khamoshiyan.mp3 -> hamoshiyan.mp3
+renaming to hiladi 786 - 01 - Lonely.mp3
+rename done : Khiladi 786 - 01 - Lonely.mp3 -> hiladi 786 - 01 - Lonely.mp3
+renaming to hiladi 786 - 03 - Long Drive.mp3
+rename done : Khiladi 786 - 03 - Long Drive.mp3 -> hiladi 786 - 03 - Long Drive.mp3
+renaming to hiladi 786 - 05 - Hookah Bar.mp3
+rename done : Khiladi 786 - 05 - Hookah Bar.mp3 -> hiladi 786 - 05 - Hookah Bar.mp3
+renaming to hiladi 786 - 06 - Khiladi (Title Track).mp3
+rename done : Khiladi 786 - 06 - Khiladi (Title Track).mp3 -> hiladi 786 - 06 - Khiladi (Title Track).mp3
+renaming to huch khasas hai.mp3
+rename done : Khuch khasas hai.mp3 -> huch khasas hai.mp3
+renaming to hudaya_Ve.mp3
+rename done : Khudaya_Ve.mp3 -> hudaya_Ve.mp3
+renaming to  JO.mp3
+rename done : KHWAB JO.mp3 ->  JO.mp3
+renaming to ick - Tu Hi Tu [DJMaza.Info].mp3
+rename done : Kick - Tu Hi Tu [DJMaza.Info].mp3 -> ick - Tu Hi Tu [DJMaza.Info].mp3
+renaming to ill Dil (Kill Dil) -190Kbps [DJMaza.Info].mp3
+rename done : Kill Dil (Kill Dil) -190Kbps [DJMaza.Info].mp3 -> ill Dil (Kill Dil) -190Kbps [DJMaza.Info].mp3
+renaming to ishor_Kumar_Nile_Nile_Ambar_pe.mp3
+rename done : Kishor_Kumar_Nile_Nile_Ambar_pe.mp3 -> ishor_Kumar_Nile_Nile_Ambar_pe.mp3
+renaming to iss me thru the phone.mp3
+rename done : Kiss me thru the phone.mp3 -> iss me thru the phone.mp3
+renaming to uch Is Tarah smv...mp3
+rename done : Kuch Is Tarah smv...mp3 -> uch Is Tarah smv...mp3
+renaming to uchh Khass (Remix).mp3
+rename done : Kuchh Khass (Remix).mp3 -> uchh Khass (Remix).mp3
+renaming to ukkad (www.SongsLover.pk).mp3
+rename done : Kukkad (www.SongsLover.pk).mp3 -> ukkad (www.SongsLover.pk).mp3
+renaming to  MUJHE PYAR (KAY KAY).mp3
+rename done : KYA MUJHE PYAR (KAY KAY).mp3 ->  MUJHE PYAR (KAY KAY).mp3
+renaming to ylie_(webmusic.in).mp3
+rename done : Kylie_(webmusic.in).mp3 -> ylie_(webmusic.in).mp3
+renaming to mp3
+deleting KYON.mp3
+renaming to ast Friday night.mp3
+rename done : Last Friday night.mp3 -> ast Friday night.mp3
+renaming to ata_Mangeshkar_Ajeeb_Dastaa_Hai_Yeh.mp3
+rename done : Lata_Mangeshkar_Ajeeb_Dastaa_Hai_Yeh.mp3 -> ata_Mangeshkar_Ajeeb_Dastaa_Hai_Yeh.mp3
+renaming to auder.mp3
+rename done : Lauder.mp3 -> auder.mp3
+renaming to egendary Lovers - (www.SongsLover.pk).mp3
+rename done : Legendary Lovers - (www.SongsLover.pk).mp3 -> egendary Lovers - (www.SongsLover.pk).mp3
+renaming to iar dawn jay.mp3
+rename done : Liar dawn jay.mp3 -> iar dawn jay.mp3
+renaming to il Wayne - Six Foot Seven Foot.mp3
+rename done : Lil Wayne - Six Foot Seven Foot.mp3 -> il Wayne - Six Foot Seven Foot.mp3
+renaming to inkin Park - Numb          .mp3
+rename done : Linkin Park - Numb          .mp3 -> inkin Park - Numb          .mp3
+renaming to ive My Life (feat. Justin Bieber) (www.SongsLover.com).mp3
+rename done : Live My Life (feat. Justin Bieber) (www.SongsLover.com).mp3 -> ive My Life (feat. Justin Bieber) (www.SongsLover.com).mp3
+renaming to ocha-E-Ulfat - DownloadMing.SE.mp3
+rename done : Locha-E-Ulfat - DownloadMing.SE.mp3 -> ocha-E-Ulfat - DownloadMing.SE.mp3
+renaming to oser.mp3
+rename done : Loser.mp3 -> oser.mp3
+renaming to ove Aaj Kal - Ajj Din Chadheya.mp3
+rename done : Love Aaj Kal - Ajj Din Chadheya.mp3 -> ove Aaj Kal - Ajj Din Chadheya.mp3
+renaming to ove Me - (www.SongsLover.pk).mp3
+rename done : Love Me - (www.SongsLover.pk).mp3 -> ove Me - (www.SongsLover.pk).mp3
+renaming to ove Story.mp3
+rename done : Love Story.mp3 -> ove Story.mp3
+renaming to ove takes so long.mp3
+rename done : Love takes so long.mp3 -> ove takes so long.mp3
+renaming to ove U Mr Kalakaar - 06 - Tera Intezaar (Revisite.mp3
+rename done : Love U Mr Kalakaar - 06 - Tera Intezaar (Revisite.mp3 -> ove U Mr Kalakaar - 06 - Tera Intezaar (Revisite.mp3
+renaming to ove You Till The End - House Mix.mp3
+rename done : Love You Till The End - House Mix.mp3 -> ove You Till The End - House Mix.mp3
+renaming to mp3
+deleting MAA.mp3
+renaming to aahi_Ve-A_R_Rahman[www.MastJatt.Com].mp3
+rename done : Maahi_Ve-A_R_Rahman[www.MastJatt.Com].mp3 -> aahi_Ve-A_R_Rahman[www.MastJatt.Com].mp3
+renaming to ain Dhoondne Ko Zamaane Mein - Heartless - [SongsPk.CC].mp3
+rename done : Main Dhoondne Ko Zamaane Mein - Heartless - [SongsPk.CC].mp3 -> ain Dhoondne Ko Zamaane Mein - Heartless - [SongsPk.CC].mp3
+renaming to ain Jahaan Rahoon-Remix-Namaste Londoni.mp3
+rename done : Main Jahaan Rahoon-Remix-Namaste Londoni.mp3 -> ain Jahaan Rahoon-Remix-Namaste Londoni.mp3
+renaming to anzil-(Full-Song---Life-of-Pi)(Mobi44.com).MP3
+rename done : Manzil-(Full-Song---Life-of-Pi)(Mobi44.com).MP3 -> anzil-(Full-Song---Life-of-Pi)(Mobi44.com).MP3
+renaming to ar Jawaan (Remix).mp3
+rename done : Mar Jawaan (Remix).mp3 -> ar Jawaan (Remix).mp3
+renaming to ary Kom - Adhure [DJMaza.Info].mp3
+rename done : Mary Kom - Adhure [DJMaza.Info].mp3 -> ary Kom - Adhure [DJMaza.Info].mp3
+renaming to atlabi hoja zara .mp3
+rename done : Matlabi hoja zara .mp3 -> atlabi hoja zara .mp3
+renaming to ausam_Hai_Bada_Qatil_-_MobMusic.in_NikMob.CoM.mp3
+rename done : Mausam_Hai_Bada_Qatil_-_MobMusic.in_NikMob.CoM.mp3 -> ausam_Hai_Bada_Qatil_-_MobMusic.in_NikMob.CoM.mp3
+renaming to eherbaan (Bang Bang) -320Kbps [DJMaza.Info].mp3
+rename done : Meherbaan (Bang Bang) -320Kbps [DJMaza.Info].mp3 -> eherbaan (Bang Bang) -320Kbps [DJMaza.Info].mp3
+renaming to ein Tenu Samjhawan.mp3
+rename done : Mein Tenu Samjhawan.mp3 -> ein Tenu Samjhawan.mp3
+renaming to eow (English Version).mp3
+rename done : Meow (English Version).mp3 -> eow (English Version).mp3
+renaming to era Pehla Pehla Pyaar-(MyMp3Singer.com).mp3
+rename done : Mera Pehla Pehla Pyaar-(MyMp3Singer.com).mp3 -> era Pehla Pehla Pyaar-(MyMp3Singer.com).mp3
+renaming to  PALAK KA TU HAI SITARA  (SHOWBIZ).mp3
+rename done : MERE PALAK KA TU HAI SITARA  (SHOWBIZ).mp3 ->  PALAK KA TU HAI SITARA  (SHOWBIZ).mp3
+renaming to eri_Zaat_ZareBenishan_Rahat_Fateh_Ali_Khan.mp3
+rename done : Meri_Zaat_ZareBenishan_Rahat_Fateh_Ali_Khan.mp3 -> eri_Zaat_ZareBenishan_Rahat_Fateh_Ali_Khan.mp3
+renaming to icheal Jackson-They don't care about us.mp3
+rename done : Micheal Jackson-They don't care about us.mp3 -> icheal Jackson-They don't care about us.mp3
+renaming to idnight-Memories_(webmusic.in).mp3
+rename done : Midnight-Memories_(webmusic.in).mp3 -> idnight-Memories_(webmusic.in).mp3
+renaming to iley_Cyrus_-_Party_in_the_Usa_Rmx_dj_RoDolfO_sA.mp3
+rename done : Miley_Cyrus_-_Party_in_the_Usa_Rmx_dj_RoDolfO_sA.mp3 -> iley_Cyrus_-_Party_in_the_Usa_Rmx_dj_RoDolfO_sA.mp3
+renaming to  ISTAANBUL.mp3
+rename done : MISSION ISTAANBUL.mp3 ->  ISTAANBUL.mp3
+renaming to
+Traceback (most recent call last):
+  File "E:\songs\Download\rename.py", line 43, in <module>
+    if os.stat(i).st_size <= os.stat(i[len(extra ):]).st_size:
+WindowsError: [Error 3] The system cannot find the path specified: ''
+
+E:\songs\Download> i[len(extra):]
