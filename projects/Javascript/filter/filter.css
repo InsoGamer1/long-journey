@@ -1,0 +1,64 @@
+* {
+  box-sizing: border-box;
+}
+
+.sort-header{
+	background-image:url(sort-asc.png);
+    background-repeat: no-repeat;
+    background-position: 100% 50%;
+    background-size: 25px;
+}
+.asc{background-image:url(sort-asc.png);}
+.desc{background-image:url(sort-desc.png);}
+
+.filter-input-clear{
+	cursor:pointer;
+	left: -10px;
+	position: relative;
+}
+.filter-input-clear:hover, .filter-input-clear:active {
+    background-color: #c5bfbf !important;
+}
+.filter-input {
+/*
+    background-image: url(searchicon.png);
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    width: 100%;
+    font-size: 12px;
+    padding: 12px 20px 12px 40px;
+    /*#border: 1px solid #ddd;
+    /*#margin-bottom: 12px;
+*/
+    
+    background-image: url(searchicon.png);
+    background-size: 10px;
+    background-position: 5px 8px;
+    background-repeat: no-repeat;
+    width: 100%;
+    font-size: 12px;
+    padding: 6px 10px 6px 20px;
+    border: 1px solid #ddd;
+    /* margin-bottom: 12px; */
+
+}
+
+.filter-table {
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.filter-table th, .filter-table td {
+  text-align: left;
+  padding: 12px;
+  white-space: nowrap;
+}
+
+.filter-table tr {
+  border-bottom: 1px solid #ddd;
+}
+
+.filter-table tr.header, .filter-table tr:hover {
+  background-color: #f1f1f1;
+}
