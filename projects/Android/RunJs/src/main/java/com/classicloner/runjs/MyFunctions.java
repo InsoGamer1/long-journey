@@ -242,6 +242,9 @@ public class MyFunctions extends Activity implements View.OnTouchListener {
         return  tempFolder.getPath();
     }
 
+    public boolean isExist(String filepath) {
+        return new File(filepath).exists();
+    }
     public String createFileInExternal(String filename ){
         File file = new File (filename);
         if (!file.exists ()) {

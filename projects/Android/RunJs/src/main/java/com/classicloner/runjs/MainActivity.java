@@ -76,6 +76,7 @@ import static com.classicloner.runjs.MyFunctions.incognitoDownloadFile;
 import static com.classicloner.runjs.MyFunctions.long_touch_js;
 import static com.classicloner.runjs.MyFunctions.offlineFolder;
 import static com.classicloner.runjs.MyFunctions.scriptFile;
+import static com.classicloner.runjs.MyFunctions.sdcardPath;
 import static com.classicloner.runjs.MyFunctions.settingFile;
 
 //import android.support.v7.widget.SearchView;
@@ -230,6 +231,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 request.setDescription(appName);
                 String internalDownloadPath = getPathfromExternal(defaultDownloadFile);
                 Log.d("DOWNLOAD:downpath" , internalDownloadPath);
+                if ( myfunctionList.isExist(sdcardPath+"/"+internalDownloadPath+"/"+fileName)) {
+                    myfunctionList.deleteFile( sdcardPath+"/"+internalDownloadPath+"/"+fileName);
+                    Toast.makeText(MainActivity.this, fileName +" ALREADY exists!!", Toast.LENGTH_SHORT).show();
+                }
                 request.setDestinationInExternalPublicDir(internalDownloadPath, fileName);
                 DownloadManager dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
                 dm.enqueue(request);
