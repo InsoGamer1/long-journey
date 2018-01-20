@@ -9,6 +9,7 @@ import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.annotation.RequiresApi;
 import android.util.Log;
 import android.view.View;
@@ -24,6 +25,7 @@ import java.io.IOException;
 import static com.classicloner.runjs.MainActivity.mWebView;
 import static com.classicloner.runjs.MyFunctions.READ_REQUEST_CODE;
 import static com.classicloner.runjs.MyFunctions.cacheFile;
+import static com.classicloner.runjs.MyFunctions.currentJsFilePath;
 
 
 /**
@@ -36,7 +38,7 @@ public class JSConsole extends Activity {
     static EditText outputText;
     static EditText consoleText;
     static LinearLayout inputLinearBtns;
-    static LinearLayout outpuLinearBtns;
+    static LinearLayout outputLinearBtns;
     static LinearLayout consoleLinearBtns;
     public boolean fromOnAcitivityResult = true;
     static int isError;
@@ -57,7 +59,7 @@ public class JSConsole extends Activity {
         consoleText.setShowSoftInputOnFocus(false);
 
         inputLinearBtns = (LinearLayout) findViewById(R.id.action_input);
-        outpuLinearBtns = (LinearLayout) findViewById(R.id.action_output);
+        outputLinearBtns = (LinearLayout) findViewById(R.id.action_output);
         consoleLinearBtns = (LinearLayout) findViewById(R.id.action_console);
 
         myfunctionList = new MyFunctions(JSConsole.this);
@@ -80,10 +82,10 @@ public class JSConsole extends Activity {
                     @Override
                     public void onFocusChange(View view, boolean b) {
                         if( b) {
-                            outpuLinearBtns.setVisibility(view.VISIBLE);
+                            outputLinearBtns.setVisibility(view.VISIBLE);
                         }
                         else {
-                            outpuLinearBtns.setVisibility(view.GONE);
+                            outputLinearBtns.setVisibility(view.GONE);
                         }
                     }
                 }
@@ -178,6 +180,15 @@ public class JSConsole extends Activity {
                 break;
 
             case R.id.save:
+                if ( !currentJsFilePath.equals("")) {
+                    myfunctionList.writeToExtFile(currentJsFilePath, inputText.getText().toString());
+                    Toast.makeText(JSConsole.this, "file saved :" + currentJsFilePath, Toast.LENGTH_SHORT).show();
+                }else {
+                    Toast.makeText(JSConsole.this, "Error in saving file", Toast.LENGTH_SHORT).show();
+                }
+
+                break;
+            case R.id.save_as:
                 if ( inputText.getText().length()==0) {
                     ts = Toast.makeText(JSConsole.this, "Empty JS data can't be saved", Toast.LENGTH_SHORT);
                     ts.show();
@@ -217,7 +228,7 @@ public class JSConsole extends Activity {
                 myfunctionList.currentJsFile = uri.getPath().split("/")[uri.getPath().split("/").length-1];
                 Log.i("CHECK1", "Uri: " + myfunctionList.currentJsFile);
                 String jsContent= inputText.getText().toString();
-                Log.i("CHECK2", "data: " + jsContent);
+                //Log.i("CHECK2", "data: " + jsContent);
                 myfunctionList.alterDocument(uri , jsContent , jscontext);
             }
             else{
@@ -232,7 +243,9 @@ public class JSConsole extends Activity {
             Uri uri = null;
             if (resultData != null) {
                 uri = resultData.getData();
+                currentJsFilePath = getPathFromUri( uri);
                 Log.i("CHECK0", "Uri: " + uri.getPath());
+                Log.i("CHECK0", "Uripath: " + currentJsFilePath);
                 try {
                     String jsContent ;
                     jsContent = myfunctionList.readTextFromUri(uri , jscontext);
@@ -246,6 +259,27 @@ public class JSConsole extends Activity {
                 Log.i("CHECK", "Nothing is selected");
             }
         }
+    }
+
+    String getPathFromUri(Uri sourceuri )
+    {
+        if ( sourceuri != null ){
+            String path = sourceuri.getPath();
+            String[] temp = path.split(":");
+            if ( temp.length==1 )
+                return temp[0];
+            else if ( temp.length>1 ){
+                String decider = temp[0];
+                String sdCardName = "primary";
+                if (decider.contains(sdCardName))
+                    return Environment.getExternalStorageDirectory().getPath()+"/"+temp[1];
+                else{
+                    Toast.makeText(JSConsole.this, "Use Save As option for ExtCard files", Toast.LENGTH_SHORT).show();
+                    return "";
+                }
+            }
+        }
+        return "";
     }
 
 

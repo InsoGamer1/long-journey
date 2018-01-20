@@ -50,5 +50,11 @@
         android:orderInCategory="100"
         android:title="Clear History"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/incognito"
+        android:checkable="true"
+        android:orderInCategory="100"
+        android:title="Incognito"
+        app:showAsAction="never" />
 
 </menu>

@@ -34,24 +34,36 @@ public class MyFunctions extends Activity implements View.OnTouchListener {
     public String mimeType = "application/*";
     public static int GOT_PERMISSION_TO_WRITE = 0;
     public static final int MY_WRITE_EXTERNAL_STORAGE_CODE = 1;
+    public static boolean INCOGNITO_MODE = false;
+
+    public static String sdcardPath = Environment.getExternalStorageDirectory().toString();
     public static String appName = "RunJs";
-    static String downloadFile ;
-    static String settingFile ;
-    static String scriptFile =Environment.getExternalStorageDirectory()+"/"+appName+"/Scripts";
-    static String offlineFolder =Environment.getExternalStorageDirectory()+"/"+appName+"/SavedPages";
-    static String configFile = Environment.getExternalStorageDirectory()+"/"+appName+"/Settings/Config.txt";
-    static String cacheFile = Environment.getExternalStorageDirectory()+"/"+appName+"/Settings/.Cache";
-    static String bookmarkFile = Environment.getExternalStorageDirectory()+"/"+appName+"/Settings/.bookmarks";
-    static String historyCache = Environment.getExternalStorageDirectory()+"/"+appName+"/Settings/.history";
+    public static String appPath = sdcardPath+"/"+appName;
+
+    static String scriptFile =sdcardPath+"/"+appName+"/Scripts";
+    static String offlineFolder =sdcardPath+"/"+appName+"/SavedPages";
+    static String settingFile =sdcardPath+"/"+appName+"/Settings";
+    static String downloadFile =sdcardPath+"/"+appName+"/Downloads";
+    static String defaultDownloadFile =downloadFile;
+    static String incognitoDownloadFile =sdcardPath+"/"+appName+"/Downloads/.incognito";
+
+    static String configFile = sdcardPath+"/"+appName+"/Settings/Config.txt";
+    static String cacheFile = sdcardPath+"/"+appName+"/Settings/.Cache";
+    static String bookmarkFile = sdcardPath+"/"+appName+"/Settings/.bookmarks";
+    static String historyCache = sdcardPath+"/"+appName+"/Settings/.history";
+
+    public static String double_touch_js = scriptFile+"/double_touch.js";
+    public static String long_touch_js = scriptFile+"/long_touch.js";
+
     public static String currentJsFile = "Unsaved.js";
+    public static String currentJsFilePath = "";
     public static final int READ_REQUEST_CODE = 42;
     public static final int LONG_TOUCH_REQUEST_CODE = 40;
     public static final int DOUBLE_TOUCH_REQUEST_CODE = 41;
     public static final int LONG_TOUCH = 0;
     public static final int DOUBLE_TOUCH = 1;
-    public static String double_touch_js = scriptFile+"/double_touch.js";
-    public static String long_touch_js = scriptFile+"/longtouch.js";
-    public static String resetConfig = LONG_TOUCH+":"+double_touch_js+"\n"+LONG_TOUCH+":\"+long_touch_js+\"\n";
+
+    public static String resetConfig = LONG_TOUCH+":"+double_touch_js+"\n"+LONG_TOUCH+":"+long_touch_js+"\n";
     public static String long_touch_script ;
     public static String double_touch_script ;
     public static Context main_Activity_Context;
@@ -191,6 +203,7 @@ public class MyFunctions extends Activity implements View.OnTouchListener {
         }
     }
     public String readFromExtFile( String filename ){
+        createFileInExternal(filename);
         FileInputStream fis = null;
         StringBuffer fileContent = new StringBuffer("");
         Integer n;
@@ -217,82 +230,33 @@ public class MyFunctions extends Activity implements View.OnTouchListener {
         return true;
     }
 
-
-    public boolean isFileExists(String filename) {
-        return new File(filename).exists();
-    }
-
     public boolean deleteFile(String filename) {
         return new File(filename).delete();
     }
 
-    public boolean createFile(String filename){
-        File tempFile = new File(filename);
-        if( !tempFile.exists()) {
-            Log.d("file check created" , filename);
-            try {
-                return tempFile.createNewFile();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        Log.d("DIR check already exists" , filename);
-        return  true;
-    }
-
     public String createFolderInExternal(String foldername){
-        String root = Environment.getExternalStorageDirectory().toString();
-        File tempFolder = new File(root ,foldername);
+        File tempFolder = new File(foldername);
         if ( !tempFolder.exists() ) {
             tempFolder.mkdirs();
         }
-        return  root +"/"+foldername;
+        return  tempFolder.getPath();
     }
 
     public String createFileInExternal(String filename ){
-        String fullpath = Environment.getExternalStorageDirectory().toString() + "/" + filename ;
-        File file = new File (Environment.getExternalStorageDirectory().toString(), filename);
+        File file = new File (filename);
         if (!file.exists ()) {
             try {
                 file.createNewFile();
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            return  fullpath;
         }
-        return fullpath;
-    }
-
-    public String createFileInExternal(String foldername , String filename ){
-        createFolderInExternal( foldername);
-        String fullpath = Environment.getExternalStorageDirectory().toString()+ "/" +foldername+"/"+ filename ;
-        File file = new File (Environment.getExternalStorageDirectory().toString()+ "/"+foldername, filename);
-        if (!file.exists ()) {
-            try {
-                file.createNewFile();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            return  fullpath;
-        }
-        return fullpath;
-    }
-
-    public boolean createDir(String filename) {
-        File tempFile = new File(filename);
-        if( !tempFile.exists()) {
-            Log.d("DIR check created" , filename);
-            return tempFile.mkdir();
-        }
-        Log.d("DIR check already exists" , filename);
-        return  true;
+        return file.getPath();
     }
 
     public static void load_scripts(){
         long_touch_script = myfunctionList.readFromExtFile(long_touch_js);
-        if ( long_touch_script == null)
-            return;
-        if ( long_touch_script.isEmpty()){
+        if ( long_touch_script!=null && long_touch_script.isEmpty()){//file exists but empty
             long_touch_script = "" +
                     " var  obj=document.elementFromPoint(_x,_y);\n" +
                     " if ( obj.parentNode ){\n" +
@@ -332,13 +296,13 @@ public class MyFunctions extends Activity implements View.OnTouchListener {
                     "   }\n" +
                     " }" +
                     "return str;";
+                    myfunctionList.writeToExtFile(long_touch_js , long_touch_script);
         }
         double_touch_script = myfunctionList.readFromExtFile(double_touch_js);
-        if ( double_touch_script != null)
-            return;
-        if ( double_touch_script.isEmpty()){
-            double_touch_script = "     console.log(\"long=> Long pressed!! \");\n";
+
+        if ( double_touch_script==null){
             double_touch_script = "";
+            //myfunctionList.writeToExtFile(double_touch_js , double_touch_script);
         }
     }
 
@@ -397,6 +361,9 @@ public class MyFunctions extends Activity implements View.OnTouchListener {
         }
     }
 
+    public static  String getPathfromExternal( String externalPath){
+        return externalPath.replace(sdcardPath+"/" , "");
+    }
 
 
     /*

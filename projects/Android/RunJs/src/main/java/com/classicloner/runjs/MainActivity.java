@@ -6,6 +6,7 @@ import android.app.DownloadManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.res.AssetManager;
 import android.database.AbstractCursor;
 import android.database.Cursor;
 import android.graphics.Bitmap;
@@ -45,7 +46,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.regex.Matcher;
@@ -54,18 +58,23 @@ import java.util.regex.Pattern;
 import static android.webkit.WebSettings.LOAD_CACHE_ELSE_NETWORK;
 import static com.classicloner.runjs.MyFunctions.DOUBLE_TOUCH_REQUEST_CODE;
 import static com.classicloner.runjs.MyFunctions.GOT_PERMISSION_TO_WRITE;
+import static com.classicloner.runjs.MyFunctions.INCOGNITO_MODE;
 import static com.classicloner.runjs.MyFunctions.LONG_TOUCH_REQUEST_CODE;
 import static com.classicloner.runjs.MyFunctions.MY_WRITE_EXTERNAL_STORAGE_CODE;
 import static com.classicloner.runjs.MyFunctions.READ_REQUEST_CODE;
 import static com.classicloner.runjs.MyFunctions.appName;
+import static com.classicloner.runjs.MyFunctions.appPath;
 import static com.classicloner.runjs.MyFunctions.bookmarkFile;
+import static com.classicloner.runjs.MyFunctions.cacheFile;
 import static com.classicloner.runjs.MyFunctions.configFile;
+import static com.classicloner.runjs.MyFunctions.defaultDownloadFile;
 import static com.classicloner.runjs.MyFunctions.double_touch_js;
 import static com.classicloner.runjs.MyFunctions.downloadFile;
+import static com.classicloner.runjs.MyFunctions.getPathfromExternal;
 import static com.classicloner.runjs.MyFunctions.historyCache;
+import static com.classicloner.runjs.MyFunctions.incognitoDownloadFile;
 import static com.classicloner.runjs.MyFunctions.long_touch_js;
 import static com.classicloner.runjs.MyFunctions.offlineFolder;
-import static com.classicloner.runjs.MyFunctions.resetConfig;
 import static com.classicloner.runjs.MyFunctions.scriptFile;
 import static com.classicloner.runjs.MyFunctions.settingFile;
 
@@ -158,10 +167,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             public void onPageStarted(WebView view, String url, Bitmap favicon) {
                 progressBar.setVisibility(view.VISIBLE);
                 pageUrl = url;
-                try {
-                    myWebHistory.put(url, false);
-                } catch (JSONException e) {
-                    e.printStackTrace();
+                if ( !INCOGNITO_MODE ) {
+                    try {
+                        myWebHistory.put(url, false);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
 
@@ -183,7 +194,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mWebView.getSettings().setCacheMode(LOAD_CACHE_ELSE_NETWORK);
         mWebView.getSettings().setLoadWithOverviewMode(true);
         mWebView.getSettings().setUseWideViewPort(true);
-        //mWebView.getSettings().setUserAgentString("Android");
+        mWebView.getSettings().setUserAgentString("Mozilla/5.0 (Linux; Android 7.1.2; MotoG3 Build/N2G47O) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.83 Mobile Safari/537.36");
         mWebView.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
 
         //mWebView.setOnTouchListener(new View.OnTouchListener() {});
@@ -197,7 +208,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
                 request.allowScanningByMediaScanner();
                 request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
-
+                if ( INCOGNITO_MODE)
+                    defaultDownloadFile = incognitoDownloadFile;
+                else
+                    defaultDownloadFile = downloadFile;
                 if (!fileName.endsWith(".mp4")) {
                     if (!fileName.endsWith(".jpg")) {
                         Pattern pattern = Pattern.compile("(\\w+[.\\w]*)$");
@@ -206,7 +220,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                             request.setTitle(matcher.group(1));
                             fileName = matcher.group(1);
                         } else {
-                            request.setTitle(downloadFile + "/" + fileName);
+                            request.setTitle(defaultDownloadFile + "/" + fileName);
                         }
                         if (!fileName.contains("."))
                             fileName = fileName + ".jpg";
@@ -214,7 +228,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 }
                 fileName = fileName.replace(".bin", ".jpg");
                 request.setDescription(appName);
-                request.setDestinationInExternalPublicDir(downloadFile, fileName);
+                String internalDownloadPath = getPathfromExternal(defaultDownloadFile);
+                Log.d("DOWNLOAD:downpath" , internalDownloadPath);
+                request.setDestinationInExternalPublicDir(internalDownloadPath, fileName);
                 DownloadManager dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
                 dm.enqueue(request);
             }
@@ -248,24 +264,37 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mWebView.loadUrl(pageUrl);
         // init stuff
         askForPermission();
-        myfunctionList.load_scripts();
-        String appFolder = myfunctionList.createFolderInExternal(appName );
-        settingFile = myfunctionList.createFolderInExternal(appName + "/Settings");
-        myfunctionList.createFolderInExternal(appName + "/Downloads");
-        downloadFile = appName + "/Downloads";
-        scriptFile = myfunctionList.createFolderInExternal(appName + "/Scripts");
-        offlineFolder = myfunctionList.createFolderInExternal(appName + "/SavedPages");
-        configFile = myfunctionList.createFileInExternal(appName + "/Settings", ".Cache");
-        double_touch_js = myfunctionList.createFileInExternal(appName + "/Scripts", "double_touch.js");
-        long_touch_js = myfunctionList.createFileInExternal(appName + "/Scripts", "long_touch.js");
-        bookmarkFile = myfunctionList.createFileInExternal(appName + "/Settings", ".bookmarks");
-        historyCache = myfunctionList.createFileInExternal(appName + "/Settings/.history");
-        if (!new File(configFile).exists()) {
-            configFile = myfunctionList.createFileInExternal(appName + "/Settings", "Config.txt");
-            myfunctionList.writeToExtFile(configFile, resetConfig);
+
+        //Creates required folder : part of init 1
+        myfunctionList.createFolderInExternal(appPath );//app path
+        myfunctionList.createFolderInExternal(scriptFile );//Scripts folder
+
+        File isAssetAlreadyCopied = new File (scriptFile+"/.done");
+        if (!isAssetAlreadyCopied.exists ()) {
+            Log.d("ASSETS" , "COPYING FOR THE FIRST AND LAST TIME");
+            copyAssets(appName + "/Scripts", scriptFile);
+        }else{
+            Log.d("ASSETS" , "Already at the right place");
         }
-        String savedHistory = myfunctionList.readFromExtFile(historyCache).trim();
+        myfunctionList.createFolderInExternal(offlineFolder );//Savedpages folder
+        myfunctionList.createFolderInExternal(settingFile );//Settings folder
+        myfunctionList.createFolderInExternal(downloadFile );//Downloads folder
+        myfunctionList.createFolderInExternal(defaultDownloadFile );//Downloads folder
+        myfunctionList.createFolderInExternal(incognitoDownloadFile );//Downloads folder
+        //Creates required files : part of init 2
+        myfunctionList.createFileInExternal(configFile);
+        myfunctionList.createFileInExternal(cacheFile);
+        myfunctionList.createFileInExternal(bookmarkFile);
+        myfunctionList.createFileInExternal(historyCache);
+        //Creates required files : part of init 3
+        myfunctionList.createFileInExternal(double_touch_js);
+        myfunctionList.createFileInExternal(long_touch_js);
+
+        myfunctionList.load_scripts();//loads script for long and double touch
+        //loads the saved history into app
+        String savedHistory = myfunctionList.readFromExtFile(historyCache);
         if (savedHistory != null){
+            savedHistory = savedHistory.trim();
             if (!savedHistory.isEmpty()) {
                 try {
                     myWebHistory = new JSONObject(savedHistory);
@@ -274,6 +303,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 }
             }
         }
+        // End of init
     }
 
     public void handleLongTouchScript( String url) throws JSONException {
@@ -289,7 +319,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             String domain_url = matcher.group(1).replace("www.","");//with .com/.in ex:facebook.com
             String url_folder = domain_url.split("\\.")[0];// ex:facebook
             lastLongRunScript = url_folder;
-            downloadFile = appName + "/Downloads/"+url_folder;
+            downloadFile = downloadFile + "/"+url_folder;
             filename = "LONG_TOUCH_"+lastLongRunScript+"_SCRIPT.js";
         }
         else {
@@ -302,7 +332,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         jsContent = myfunctionList.readFromExtFile( filename);
         if ( jsContent == null ) {
             //Log.d("FILE2 _CHECK not found" , filename + " for "+url);
-            downloadFile = appName + "/Downloads/Others";
+            downloadFile = downloadFile+"/Others";
             Toast.makeText(MainActivity.this, filename, Toast.LENGTH_SHORT).show();
             return;
         }
@@ -380,12 +410,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 });
                 return true;
             case R.id.clearHistory:
-                myWebHistory = new JSONObject();
+                myWebHistory = new JSONObject();//browser history is empty
                 myfunctionList.writeToExtFile(historyCache , "");
                 Toast.makeText(MainActivity.this, "Cleared!", Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.bookmark:
                 Toast.makeText(MainActivity.this, "Bookmarks", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.incognito:
+                if ( item.isCheckable() ) {
+                    item.setChecked(!item.isChecked());
+                    INCOGNITO_MODE = item.isChecked();
+                    if ( INCOGNITO_MODE ) {
+                        Toast.makeText(MainActivity.this, "INCOGNITO: ON", Toast.LENGTH_SHORT).show();
+                    }else{
+                        Toast.makeText(MainActivity.this, "INCOGNITO: OFF", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
                 return true;
 
             default:
@@ -577,6 +619,55 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         /******************* Done: Request Permission Handling ********************************/
     }
 
+    public void copyAssets(String assetname,  String destinationDir){
+        AssetManager assetManager = getAssets();
+        String[] files = null;
+        try {
+            files = assetManager.list(assetname);
+        } catch (IOException e) {
+            Log.e("tag", "Failed to get asset file list.", e);
+        }
+        if ( files != null){
+            for( String filename: files){
+                Log.d( "ASSET" , "Copying file : " + filename );
+                InputStream in = null;
+                OutputStream out = null;
+                try {
+                    in = assetManager.open(assetname+"/"+filename);
+                    File outFile = new File(destinationDir, filename);
+                    out = new FileOutputStream(outFile);
+                    copyFile(in, out);
+                } catch(IOException e) {
+                    Log.e("tag", "Failed to copy asset file: " + filename, e);
+                }
+                finally {
+                    if (in != null) {
+                        try {
+                            in.close();
+                        } catch (IOException e) {
+                            // NOOP
+                        }
+                    }
+                    if (out != null) {
+                        try {
+                            out.close();
+                        } catch (IOException e) {
+                            // NOOP
+                        }
+                    }
+                }
+            }
+            myfunctionList.createFileInExternal( scriptFile+"/.done");
+        }
+    }
+
+    public void copyFile(InputStream in, OutputStream out) throws IOException {
+        byte[] buffer = new byte[1024];
+        int read;
+        while((read = in.read(buffer)) != -1){
+            out.write(buffer, 0, read);
+        }
+    }
     @Override
     public void onResume(){
         super.onResume();
@@ -585,9 +676,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public  void onDestroy(){
         super.onDestroy();
-        myfunctionList.writeToExtFile(bookmarkFile , mWebView.getUrl()+"\n");
+        if ( !INCOGNITO_MODE ) {
+            myfunctionList.writeToExtFile(bookmarkFile, mWebView.getUrl() + "\n");
+        }
         try {
-            myfunctionList.writeToExtFile(historyCache , myWebHistory.toString(2));
+            myfunctionList.writeToExtFile(historyCache, myWebHistory.toString(2));
         } catch (JSONException e) {
             e.printStackTrace();
         }

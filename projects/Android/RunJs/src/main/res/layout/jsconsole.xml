@@ -63,61 +63,74 @@
 
     <LinearLayout
         android:id="@+id/jsButtons"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_gravity="center_horizontal"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@drawable/border"
-        >
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="center_horizontal"
+        android:background="#dbdad7"
+        android:orientation="horizontal">
 
 
         <Button
-            android:drawableTop="@android:drawable/ic_media_play"
-            android:background="@android:color/transparent"
-            android:hint="Run"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
             android:id="@+id/run"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
             android:layout_weight="0.25"
-            android:onClick="editActions"
+            android:background="@android:color/transparent"
+            android:clickable="true"
             android:contentDescription="Run"
-            android:clickable="true"
-             />
+            android:drawableTop="@android:drawable/ic_media_play"
+            android:hint="Run"
+            android:onClick="editActions"
+            android:textColorHint="@android:color/darker_gray" />
 
         <Button
-            android:drawableTop="@android:drawable/ic_menu_save"
-            android:background="@android:color/transparent"
-            android:hint="save"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_weight="0.25"
             android:id="@+id/save"
-            android:onClick="editActions"
-            android:clickable="true"/>
-
-        <Button
-            android:drawableTop="@drawable/ic_menu_gallery"
-            android:background="@android:color/transparent"
-            android:hint="load"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:id="@+id/load"
-            android:onClick="editActions"
-            android:clickable="true"/>
-
-        <Button
-            android:drawableTop="@android:drawable/ic_menu_close_clear_cancel"
-            android:background="@android:color/transparent"
-            android:hint="clear"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:onClick="editActions"
-            android:id="@+id/clear"
-            android:clickable="true"
             android:layout_weight="0.25"
-            />
+            android:background="@android:color/transparent"
+            android:clickable="true"
+            android:drawableTop="@android:drawable/ic_menu_save"
+            android:hint="Save"
+            android:onClick="editActions"
+            android:textColorHint="@android:color/darker_gray" />
+
+        <Button
+            android:id="@+id/save_as"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_weight="0.25"
+            android:background="@android:color/transparent"
+            android:clickable="true"
+            android:drawableTop="@android:drawable/stat_sys_download"
+            android:hint="Save As"
+            android:onClick="editActions"
+            android:textColorHint="@android:color/darker_gray" />
+
+        <Button
+            android:id="@+id/load"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:background="@android:color/transparent"
+            android:clickable="true"
+            android:drawableTop="@android:drawable/ic_menu_gallery"
+            android:hint="Load"
+            android:onClick="editActions"
+            android:textColorHint="@android:color/darker_gray" />
+
+        <Button
+            android:id="@+id/clear"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_weight="0.25"
+            android:background="@android:color/transparent"
+            android:clickable="true"
+            android:drawableTop="@android:drawable/ic_menu_close_clear_cancel"
+            android:hint="Clear"
+            android:onClick="editActions"
+            android:textColorHint="@android:color/darker_gray" />
     </LinearLayout>
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
