@@ -150,7 +150,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 // once the page loading is finished
                 progressBar.setVisibility(view.GONE);
                 mySwipeRefreshLayout.setRefreshing(false);
-                view.loadUrl("javascript:MyAppJs.resize(document.body.getBoundingClientRect().height)");
+                //view.loadUrl("javascript:MyAppJs.resize(document.body.getBoundingClientRect().height)");
                 try {
                     myfunctionList.writeToExtFile(historyCache, myWebHistory.toString(2));
                 } catch (JSONException e) {
@@ -181,8 +181,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             public void onReceivedError(WebView view, WebResourceRequest request, WebResourceError error) {
                 progressBar.setVisibility(view.GONE);
                 mySwipeRefreshLayout.setRefreshing(false);
-                Toast tst = Toast.makeText(MainActivity.this, "Error occurred while loading", Toast.LENGTH_SHORT);
-                tst.show();
+                //Toast tst = Toast.makeText(MainActivity.this, "Error occurred while loading", Toast.LENGTH_SHORT);
+                //tst.show();
+            }
+
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                if (Uri.parse(url).getScheme().equals("market")) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
+                }
+                return true;
             }
         };
 
@@ -233,7 +241,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Log.d("DOWNLOAD:downpath" , internalDownloadPath);
                 if ( myfunctionList.isExist(sdcardPath+"/"+internalDownloadPath+"/"+fileName)) {
                     myfunctionList.deleteFile( sdcardPath+"/"+internalDownloadPath+"/"+fileName);
-                    Toast.makeText(MainActivity.this, fileName +" ALREADY exists!!", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(MainActivity.this, fileName +" ALREADY exists!!", Toast.LENGTH_SHORT).show();
                 }
                 request.setDestinationInExternalPublicDir(internalDownloadPath, fileName);
                 DownloadManager dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
