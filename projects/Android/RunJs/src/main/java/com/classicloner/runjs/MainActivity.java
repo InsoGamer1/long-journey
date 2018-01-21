@@ -95,6 +95,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     static JSONObject myWebHistory;
     static String lastLongRunScript;
     static String lastDoubleRunScript;
+    static String desktopUA = "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.4) Gecko/20100101 Firefox/4.0";
+    static String mobileUA = "Mozilla/5.0 (Linux; Android 7.1.2; MotoG3 Build/N2G47O) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.83 Mobile Safari/537.36";
 
 
     @Override
@@ -187,10 +189,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                if (Uri.parse(url).getScheme().equals("market")) {
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
+                if (Uri.parse(url).getScheme().equals("http") || Uri.parse(url).getScheme().equals("https")) {
+                    return false;
                 }
-                return true;
+                else{
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
+                    return true;
+                }
             }
         };
 
@@ -203,7 +208,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mWebView.getSettings().setCacheMode(LOAD_CACHE_ELSE_NETWORK);
         mWebView.getSettings().setLoadWithOverviewMode(true);
         mWebView.getSettings().setUseWideViewPort(true);
-        mWebView.getSettings().setUserAgentString("Mozilla/5.0 (Linux; Android 7.1.2; MotoG3 Build/N2G47O) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.83 Mobile Safari/537.36");
+        mWebView.getSettings().setDomStorageEnabled(true);
+        mWebView.getSettings().setUserAgentString(mobileUA);
         mWebView.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
 
         //mWebView.setOnTouchListener(new View.OnTouchListener() {});
@@ -440,7 +446,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         Toast.makeText(MainActivity.this, "INCOGNITO: OFF", Toast.LENGTH_SHORT).show();
                     }
                 }
-
+                return true;
+            case R.id.desktopView:
+                if ( item.isCheckable() ) {
+                    item.setChecked(!item.isChecked());
+                    boolean isDesktop = item.isChecked();
+                    if ( isDesktop ) {
+                        mWebView.getSettings().setUserAgentString(desktopUA);
+                    }else{
+                        mWebView.getSettings().setUserAgentString(mobileUA);
+                    }
+                    //Toast.makeText(this , mWebView.getSettings().getUserAgentString() , Toast.LENGTH_SHORT).show();
+                    mWebView.reload();
+                }
                 return true;
 
             default:
