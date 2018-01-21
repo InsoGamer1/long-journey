@@ -244,11 +244,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 fileName = fileName.replace(".bin", ".jpg");
                 request.setDescription(appName);
                 String internalDownloadPath = getPathfromExternal(defaultDownloadFile);
-                Log.d("DOWNLOAD:downpath" , internalDownloadPath);
+
                 if ( myfunctionList.isExist(sdcardPath+"/"+internalDownloadPath+"/"+fileName)) {
                     myfunctionList.deleteFile( sdcardPath+"/"+internalDownloadPath+"/"+fileName);
                     //Toast.makeText(MainActivity.this, fileName +" ALREADY exists!!", Toast.LENGTH_SHORT).show();
                 }
+                Log.d("DOWNLOAD:downpath" , internalDownloadPath);
                 request.setDestinationInExternalPublicDir(internalDownloadPath, fileName);
                 DownloadManager dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
                 dm.enqueue(request);
@@ -325,7 +326,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         // End of init
     }
 
-    public void handleLongTouchScript( String url) throws JSONException {
+    public void handleLongTouchScript( String url) throws JSONException {//decides the download folder and long_press script
         if (url.contains(lastLongRunScript))
                 return;
         String filename = null;
@@ -338,7 +339,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             String domain_url = matcher.group(1).replace("www.","");//with .com/.in ex:facebook.com
             String url_folder = domain_url.split("\\.")[0];// ex:facebook
             lastLongRunScript = url_folder;
-            downloadFile = downloadFile + "/"+url_folder;
+            //download in a particular folder ( site-specific )
+            //downloadFile = downloadFile + "/"+url_folder;
             filename = "LONG_TOUCH_"+lastLongRunScript+"_SCRIPT.js";
         }
         else {
@@ -351,7 +353,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         jsContent = myfunctionList.readFromExtFile( filename);
         if ( jsContent == null ) {
             //Log.d("FILE2 _CHECK not found" , filename + " for "+url);
-            downloadFile = downloadFile+"/Others";
+            //download in a particular folder ( non site-specific )
+            //downloadFile = downloadFile+"/Others";
             Toast.makeText(MainActivity.this, filename, Toast.LENGTH_SHORT).show();
             return;
         }
