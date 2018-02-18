@@ -204,6 +204,10 @@ public class MyFunctions extends Activity implements View.OnTouchListener {
     }
     public String readFromExtFile( String filename ){
         createFileInExternal(filename);
+        File file = new File (filename);
+        if (!file.exists ()) {
+            return null;
+        }
         FileInputStream fis = null;
         StringBuffer fileContent = new StringBuffer("");
         Integer n;

@@ -352,10 +352,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Log.d("FILE1 _CHECK" , filename);
         jsContent = myfunctionList.readFromExtFile( filename);
         if ( jsContent == null ) {
-            //Log.d("FILE2 _CHECK not found" , filename + " for "+url);
+            Log.d("FILE2 _CHECK not found" , filename + " for "+url);
             //download in a particular folder ( non site-specific )
             //downloadFile = downloadFile+"/Others";
-            Toast.makeText(MainActivity.this, filename, Toast.LENGTH_SHORT).show();
+            //Toast.makeText(MainActivity.this, filename, Toast.LENGTH_SHORT).show();
             return;
         }
         myfunctionList.load_scripts_for_touch_event( jsContent , myfunctionList.LONG_TOUCH_REQUEST_CODE);
