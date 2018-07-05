@@ -1,4 +1,5 @@
-mport urllib2,os
+import urllib2,os
+from bs4 import BeautifulSoup
 import sys
 import time
 import types
@@ -135,8 +136,6 @@ def check_file_size( file , filesize ):
     raise Exception("OSError : Unable to exec df" )
     
 def get_links(url):
-    import urllib2
-    from bs4 import BeautifulSoup
     mediaList = []
     r  = urllib2.urlopen(url)
     data = r.read()
