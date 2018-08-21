@@ -107,14 +107,17 @@ def download1( url , filename ):
 		return False
 		
 def download( url , filename ):
-	if os.path.exists( filename ):
-		print  "already exists " + filename
-		return
-	
 	try:
 	    req = urllib2.urlopen( url )
+		filesize = get_url_size( url , req )
+		if os.path.exists( filename ):
+			existing_file_size = get_size( filename )
+			if existing_file_size < filesize:
+				os.remove( filename )
+			else:
+				print  "already exists " + filename
+				return
 	    print "downloading ... "  ,filename
-	    filesize = get_url_size( url , req )
 	    issafe ,dsize = check_file_size( filename , filesize )
 	    if not issafe:
 	        print "File : " , filename 
@@ -129,6 +132,8 @@ def download( url , filename ):
 	    songfd.write( songcontent )
 	    songfd.close()
 	    print "downloaded"
+	    shakeit()
+	    shakeit()
 	    shakeit()
 	except Exception as e:
     	 print "##########  error" , url ,e
@@ -252,7 +257,7 @@ if True:
     url = 'http://www.doomsdayent.com/videos/'
     if not os.path.exists( dir ):
         os.makedirs( dir )
-    links = get_links(url,"Royal")
+    links = get_links(url,"filter_string")
     for link in links[:]:
         print link
         #continue
