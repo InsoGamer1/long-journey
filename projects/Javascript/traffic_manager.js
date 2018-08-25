@@ -1,16 +1,19 @@
 // enable Ajax
 injectJs();
-$('#__traffic_man').remove();
-var tm_html = ' <div id="__traffic_man" style="position:fixed;left:4%;top:4%; height:92%;width:92%;z-index:10000;border:2px solid green;border-radius:0%;">\
-<center style="display:flex;position:relative; width:100%;height:5%;background-color:green;color:white;">\
-<center><p> TRAFFIC MANAGER </p></center>\
-<right><button>x</button></right>\
-</center>\
-<div  id ="tm_result" style="position: relative;height:95%; width:100%; background-color: white;overflow:scroll;">RESULT</div>\
+//$('#__traffic_man').remove();
+var tm_html = ' <div id="__traffic_man" style="position:fixed;left:4%;top:4%; height:92%;width:88%;z-index:10000;border:2px solid green;border-radius:0%;">\
+<div style="display:flex;position:relative;width:100%;height: 4%;background-color:green;color:white;text-align: center;">\
+    <p style="display: inline-block;margin:auto;">TRAFFIC MANAGER</p>\
+	<button style="float: right;" onclick="$(\'#__traffic_man\').toggle()">x</button>\
+</div>\
+<div id ="tm_result" style="position: relative;height:95%; width:100%; background-color: white;overflow:scroll;">RESULT</div>\
 </div>';
+
+
+
 if( $('#__traffic_man')[0] == undefined ){
          $(tm_html).appendTo( "body" );
-         console.log( 'added button!!');  
+         console.log( 'traffic manager added!!');  
 }else{
           console.log( 'traffic manager already existing');
 }
@@ -30,6 +33,7 @@ $(document).on(
       function(x,y) {
 
 console.log('start');
+console.log(x);
 /*
 for( v in x){
         console.log(v);
@@ -37,7 +41,7 @@ for( v in x){
 }
 */
 logx( x.type );
-logx( x.target.location.keys() );
+logx( x.target.location );
 $('#tm_result').append( '<div id="'+x.target.id+'" ><pre>'+JSON.stringify( x.target )+'</pre></div>');
 
 //logx(y);
