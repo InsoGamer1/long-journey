@@ -1,12 +1,46 @@
-
-
-
 /* Author : Ahad Raheman */
 /* scripts.js */
 /* here lies the all the common functions  */ 
 /* */
 
 var download_dict = {};
+var downloadList={};
+
+/* Download an img */
+function download500px(src,prefix,name) {
+	downloadList["__download_these_urls__"].push ({ "src":src , "name":name} );
+	//var xdata = { "__download_these_urls__" : [ { "src":src , "name":name}]};
+	//console.log( JSON.stringify(xdata) );
+	return;
+}
+
+
+/* Download an img */
+function download(src,prefix,name) {
+	var title = src.split("?")[0].split("/").pop();
+    if ( prefix!=undefined)
+        title = prefix + title ;
+    if ( name!=undefined )
+        title = name;
+    //alert( title );
+    var link = document.createElement("a");
+    link.href = src;
+    download_dict [ src ] = title ;
+    link.download = title;
+    link.style.display = "none";
+    link.target='_blank';
+    var evt = new MouseEvent("click", {
+        "view": window,
+        "bubbles": true,
+        "cancelable": true
+    });
+
+    document.body.appendChild(link);
+    link.dispatchEvent(evt);
+    document.body.removeChild(link);
+    console.log("Downloaded...: "+ src);
+}
+
 function listFunctions(){
 	console.log( " function listFunctions() " );
 	console.log( " function addStyle( my_style_css_data ,id='__my__style' ) ");
@@ -30,7 +64,7 @@ function addStyle( my_style_css_data ,id ){
   .brightness {-webkit-filter: brightness(250%);filter: brightness(250%);}\
   .contrast {-webkit-filter: contrast(180%);filter: contrast(180%);}\
   .grayscale {-webkit-filter: grayscale(100%);filter: grayscale(100%);}
-  .synced {  border: 4px solid green; }
+  .synced {  border: 4px solid green; }
   *****************/
      
    if( $('#'+id)[0] == undefined ){
@@ -38,7 +72,7 @@ function addStyle( my_style_css_data ,id ){
        $(my_style_css).appendTo( "head" );
        console.log( 'added style!!');
    }else{
-        console.log( 'style already existing');
+        //console.log( 'style already existing');
    }
 
 }
@@ -83,38 +117,14 @@ function copyToClipboard(text) {
 }
 
 function guessFileName( src ){
-    console.log( download_dict[src] );
+    //console.log( download_dict[src] );
     if ( download_dict[src] == null || download_dict[src] == undefined )
         return  "" ;
     else
         return download_dict[src] ;
 }
 
-/* Download an img */
-function download(src,prefix,name) {
-    //alert( name   );
-    var title = src.split("?")[0].split("/").pop();
-    if ( prefix!=undefined)
-        title = prefix + title ;
-    if ( name!=undefined )
-        title = name;
-    //alert( title );
-    var link = document.createElement("a");
-    link.href = src;
-    download_dict [ src ] = title ;
-    link.download = title;
-    link.style.display = "none";
-    var evt = new MouseEvent("click", {
-        "view": window,
-        "bubbles": true,
-        "cancelable": true
-    });
 
-    document.body.appendChild(link);
-    link.dispatchEvent(evt);
-    document.body.removeChild(link);
-    console.log("Downloaded...: "+ src);
-}
 
 /* Download all images in 'imgs'.
  * Optionaly filter them by extension (e.g. "jpg") and/or
@@ -222,19 +232,20 @@ function injectScript(script_name , script_folder ,waitingSecs=1000){//1 sec wai
 }
 
 function get500px_url( url ){
+    //console.log("get500px ");
     if( url.indexOf("photo")!=-1){
         var photoId = url.split("/");
         if ( photoId.length < 5 )
              return null;
         photoId = photoId[4];
-        var  url = "https://webapi.500px.com/photos/"+photoId;
+        var url = "https://webapi.500px.com/photos/"+photoId;
         $.ajax({ url : url,
 			type : "get", 
 			async: false,
 			success :  
 			      function(data, status){
 					if( status != "success"){ 
-						console.log("error: " , status);
+						//console.log(JSON.stringify({"error": status }));
 						return null;
 					}else{
 						//alert ( JSON.stringify ( data.photo.id ) );
@@ -242,7 +253,7 @@ function get500px_url( url ){
 						var dwn_link = null;
 						dwn_link = data.photo.images.pop().https_url;
 						//alert( dwn_link );
-						download( dwn_link , null ,"HQ_500px_"+ data.photo.id+".jpg" );
+						download500px( dwn_link , null ,"HQ_500px_"+ data.photo.id+".jpg" );
 					}
 				},
 			error: function() { connectionError(); } 
@@ -283,7 +294,6 @@ function fetchall( url_parser, cssClass){
 // Uncomment this section ( remove / * and * / )
 // to add your script after the page loads 
 // and add your file and folder to below list injectingList
-
 var injectingList = [
 {"file":"hello" , "folder":'file:///sdcard/RunJs/Scripts'},
 ];
@@ -291,7 +301,6 @@ for( var i=0; i < injectingLists.length ; i++){
 	injectScript( injectingList[i].file , injectingList[i].folder );
 }
 */
-
 
 function sync_500px(query, cssClass){
       if ( !cssClass )
@@ -304,7 +313,6 @@ function sync_500px(query, cssClass){
              return false;
       });
 }
-
 
 function sync_tumblr(query, cssClass){
       if ( !cssClass )
@@ -334,19 +342,22 @@ function _addButtons(query,   cssClass, sync_func , url_parser){
    ';
 
    addStyle ( my_style_css_data, '__my__style'  );
-   var download_btn ='<button id="__download__all"  style="position:fixed;left:89%;top:93%; height:50px;width:50px;z-index:1000;border:2px solid purple;border-radius:20%;">#</button>';
+   var download_btn ='<button id="__download__all"  style="position:fixed;right:5%;top:93%; height:50px;width:50px;z-index:1000;border:2px solid purple;border-radius:20%;">#</button>';
 
     if( $('#__download__all')[0] == undefined ){
          $(download_btn).appendTo( "body" ).click( 
-         function (){
-               fetchall( url_parser , cssClass);
+         async function (){
+         	   downloadList["__download_these_urls__"]=[];
+               await fetchall( url_parser , cssClass);
+               console.log ( JSON.stringify(downloadList ));
+               downloadList["__download_these_urls__"]=[];
           });
          console.log( 'added button!!');
     }else{
-          console.log( 'button already existing');
+          //console.log( 'button already existing');
     }
     
-    var sync_btn ='<button id="__sync"  style="position:fixed;left:78%;top:93%; height:50px;width:50px;z-index:1000;border:2px solid purple;border-radius:20%;">S</button>';
+    var sync_btn ='<button id="__sync"  style="position:fixed;left:5%;top:93%; height:50px;width:50px;z-index:1000;border:2px solid purple;border-radius:20%;">S</button>';
 
    if( $('#__sync')[0] == undefined ){
          $(sync_btn).appendTo( "body" ).click( 
@@ -356,7 +367,7 @@ function _addButtons(query,   cssClass, sync_func , url_parser){
          );
          console.log( 'sync added button!!');
     }else{
-          console.log( 'sync button already existing');
+          //console.log( 'sync button already existing');
     }
 }
 
@@ -387,4 +398,4 @@ if  ( document.URL.indexOf('instagram.com')!=-1) {
      
     }
 //***********************************************************
-
+//$("#__download__all").click()
