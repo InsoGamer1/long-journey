@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Remind Me</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="Header">Set Reminder Text</string>
+    <string name="hint">Reminder message</string>
+    <string name="textColor">#ffffff</string>
+    <string name="background">#000000</string>
+</resources>
