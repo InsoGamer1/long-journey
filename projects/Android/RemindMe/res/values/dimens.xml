@@ -1,3 +1,5 @@
 <resources>
-    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="fab_margin">0dp</dimen>
+    <dimen name="fab_marginVertical">10dp</dimen>
+    <dimen name="layout_weight">0.20</dimen>
 </resources>

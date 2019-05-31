@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#C9C9C9"
     tools:context=".MainActivity">
 
     <android.support.design.widget.AppBarLayout
@@ -22,29 +23,90 @@
 
     <include layout="@layout/content_main" />
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fabHome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="start|bottom"
-        android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_menu_gallery" />
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fabLock"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center|bottom"
-        android:layout_margin="@dimen/fab_margin"
-        app:backgroundTint="@color/colorAccent"
-        app:srcCompat="@android:drawable/ic_lock_idle_lock" />
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fabNotification"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
         android:layout_gravity="end|bottom"
-        android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/stat_notify_more" />
+        android:background="#039BE5"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/fabHome"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_weight="0.25"
+            android:background="@android:color/holo_blue_dark"
+            android:clickable="true"
+            android:focusable="true"
+            android:drawableTop="@android:drawable/ic_menu_gallery"
+            android:hint="home"
+            android:onClick="toolAction"
+            android:layout_marginTop="@dimen/fab_marginVertical"
+            android:textColorHint="@android:color/white" />
+
+        <Button
+            android:id="@+id/fabLock"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_weight="@dimen/layout_weight"
+            android:background="@android:color/holo_blue_dark"
+            android:clickable="true"
+            android:focusable="true"
+            android:drawableTop="@android:drawable/ic_lock_idle_lock"
+            android:hint="lockscreen"
+            android:onClick="toolAction"
+            android:layout_marginTop="@dimen/fab_marginVertical"
+            android:textColorHint="@android:color/white" />
+
+        <Button
+            android:id="@+id/PickImage"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_weight="@dimen/layout_weight"
+            android:background="@android:color/holo_blue_dark"
+            android:clickable="true"
+            android:drawableTop="@android:drawable/ic_menu_add"
+            android:focusable="true"
+            android:hint="pick image"
+            android:onClick="toolAction"
+            android:layout_marginTop="@dimen/fab_marginVertical"
+            android:textColorHint="@android:color/white" />
+
+        <Button
+            android:id="@+id/fabNotification"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_weight="@dimen/layout_weight"
+            android:background="@android:color/holo_blue_dark"
+            android:clickable="true"
+            android:focusable="true"
+            android:drawableTop="@android:drawable/stat_notify_more"
+            android:hint="notification"
+            android:onClick="toolAction"
+            android:layout_marginTop="@dimen/fab_marginVertical"
+            android:textColorHint="@android:color/white" />
+
+        <Button
+            android:id="@+id/action_share"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_weight="@dimen/layout_weight"
+            android:background="@android:color/holo_blue_dark"
+            android:clickable="true"
+            android:focusable="true"
+            android:drawableTop="@android:drawable/ic_menu_share"
+            android:hint="share"
+            android:onClick="toolAction"
+            android:layout_marginTop="@dimen/fab_marginVertical"
+            android:textColorHint="@android:color/white" />
+
+    </LinearLayout>
+
 
 </android.support.design.widget.CoordinatorLayout>

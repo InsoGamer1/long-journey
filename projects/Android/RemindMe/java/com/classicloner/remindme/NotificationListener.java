@@ -16,8 +16,6 @@ public class NotificationListener  extends BroadcastReceiver {
         if ( extras!=null) {
             String tag = extras.getString("NOTIFICATION_TAG");
             int notifId = extras.getInt("INTENT_EXTRA_NOTIFICATION_ID");
-            Log.d("NotificationListenerS", tag);
-            Log.d("NotificationListenerI", String.valueOf(notifId));
 
             if (notifManager == null) {
                 notifManager = (NotificationManager)context.getSystemService(Context.NOTIFICATION_SERVICE);

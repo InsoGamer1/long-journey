@@ -82,8 +82,8 @@ public class AutoResizeEditText extends android.support.v7.widget.AppCompatEditT
                             _widthLimit, Layout.Alignment.ALIGN_NORMAL, _spacingMult,
                             _spacingAdd, true);
                     // return early if we have more lines
-                    Log.d("NLN", "Current Lines = "+Integer.toString(layout.getLineCount()));
-                    Log.d("NLN", "Max Lines = "+Integer.toString(getMaxLines()));
+                    //Log.d("NLN", "Current Lines = "+Integer.toString(layout.getLineCount()));
+                    //Log.d("NLN", "Max Lines = "+Integer.toString(getMaxLines()));
                     if (getMaxLines() != NO_LINE_LIMIT
                             && layout.getLineCount() > getMaxLines())
                         return 1;

@@ -1,63 +1,94 @@
-<!--<?xml version="1.0" encoding="utf-8"?>-->
-<!--<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
-    <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
-    <!--xmlns:tools="http://schemas.android.com/tools"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="match_parent"-->
-    <!--android:paddingBottom="80dp"-->
-    <!--app:layout_behavior="@string/appbar_scrolling_view_behavior"-->
-    <!--tools:context=".MainActivity"-->
-    <!--tools:showIn="@layout/activity_main">-->
-
-    <!--<EditText-->
-        <!--android:id="@+id/editText"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:autoSizeTextType="uniform"-->
-        <!--android:autoSizeMinTextSize="12sp"-->
-        <!--android:autoSizeMaxTextSize="100sp"-->
-        <!--android:autoSizeStepGranularity="2sp"-->
-        <!--android:gravity="center"-->
-        <!--android:hint="@string/hint"-->
-        <!--android:isScrollContainer="false"-->
-
-        <!--android:inputType="text"-->
-        <!--/>-->
-    <!---->
-    <!---->
-
-<!--</android.support.constraint.ConstraintLayout>-->
-
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:real="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/rlRoot"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity" >
+    android:layout_marginBottom="70dp"
+    tools:context=".MainActivity">
 
     <FrameLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_centerInParent="true"
         >
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:contentDescription="TODO" />
 
         <com.classicloner.remindme.AutoResizeEditText
             android:id="@+id/rET"
-            android:layout_height="match_parent"
             android:layout_width="match_parent"
-            android:focusable="true"
+            android:layout_height="match_parent"
+
+            android:background="@android:color/transparent"
+            android:textCursorDrawable="@null"
+
             android:focusableInTouchMode="true"
             android:gravity="center_vertical|center_horizontal"
             android:hint="@string/hint"
-            android:textColorHint="@android:color/white"
-            android:isScrollContainer="false"
             android:inputType="textMultiLine|textNoSuggestions"
-            android:maxLength="240"
-            android:textColor="@android:color/white"
-            android:background="@android:color/darker_gray"
+            android:isScrollContainer="true"
+            android:padding="50dp"
+            android:textColor="#3F51B5"
+            android:textColorHint="#6A404242"
             android:textSize="50sp" />
+            <!--android:maxLength="240"-->
+
+
+    </FrameLayout>
+    <FrameLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+        <Button
+            android:id="@+id/removeImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:height="5dp"
+            android:width="5dp"
+            android:layout_gravity="top|end"
+            android:layout_marginTop="50dp"
+            android:background="@android:color/transparent"
+            android:drawableLeft="@android:drawable/ic_menu_close_clear_cancel"
+            android:padding="10dp"
+            android:visibility="gone"
+            android:drawableStart="@android:drawable/ic_menu_close_clear_cancel" />
+
+        <com.rtugeek.android.colorseekbar.ColorSeekBar
+            android:id="@+id/colorBackgroundSlider"
+            android:layout_width="wrap_content"
+            android:layout_gravity="top|end"
+            app:colorSeeds="@array/custom_material_colors"
+            app:barHeight="5dp"
+            app:thumbHeight="40dp"
+            app:isVertical="true"
+            app:bgColor="@android:color/transparent"
+            app:colorBarPosition="74"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="15dp"
+            android:layout_height="match_parent" />
+
+        <com.rtugeek.android.colorseekbar.ColorSeekBar
+            android:id="@+id/colorSlider"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="top|start"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="15dp"
+            app:barHeight="5dp"
+            app:bgColor="@android:color/transparent"
+            app:colorBarPosition="100"
+            app:colorSeeds="@array/custom_material_colors_text"
+            app:isVertical="true"
+            app:thumbHeight="40dp" />
+
     </FrameLayout>
 
 </RelativeLayout>
