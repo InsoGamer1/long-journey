@@ -48,9 +48,10 @@ public class MyFunctions extends Activity implements View.OnTouchListener {
     static String incognitoDownloadFile =sdcardPath+"/"+appName+"/Downloads/.incognito";
 
     static String configFile = sdcardPath+"/"+appName+"/Settings/Config.txt";
-    static String cacheFile = sdcardPath+"/"+appName+"/Settings/.Cache";
-    static String bookmarkFile = sdcardPath+"/"+appName+"/Settings/.bookmarks";
-    static String historyCache = sdcardPath+"/"+appName+"/Settings/.history";
+    static String cacheFile = sdcardPath+"/"+appName+"/Settings/Cache";
+    static String bookmarkFile = sdcardPath+"/"+appName+"/Settings/bookmarks";
+    static String historyCache = sdcardPath+"/"+appName+"/Settings/history";
+    static String startupScript = scriptFile + "/init.js";
 
     public static String double_touch_js = scriptFile+"/double_touch.js";
     public static String long_touch_js = scriptFile+"/long_touch.js";
@@ -63,7 +64,7 @@ public class MyFunctions extends Activity implements View.OnTouchListener {
     public static final int LONG_TOUCH = 0;
     public static final int DOUBLE_TOUCH = 1;
 
-    public static String resetConfig = LONG_TOUCH+":"+double_touch_js+"\n"+LONG_TOUCH+":"+long_touch_js+"\n";
+    public static String resetConfig = DOUBLE_TOUCH+":"+double_touch_js+"\n"+LONG_TOUCH+":"+long_touch_js+"\n";
     public static String long_touch_script ;
     public static String double_touch_script ;
     public static Context main_Activity_Context;
@@ -303,7 +304,7 @@ public class MyFunctions extends Activity implements View.OnTouchListener {
                     "   }\n" +
                     " }" +
                     "return str;";
-                    myfunctionList.writeToExtFile(long_touch_js , long_touch_script);
+            myfunctionList.writeToExtFile(long_touch_js , long_touch_script);
         }
         double_touch_script = myfunctionList.readFromExtFile(double_touch_js);
 
@@ -383,5 +384,4 @@ public class MyFunctions extends Activity implements View.OnTouchListener {
     }
     */
 }
-
 

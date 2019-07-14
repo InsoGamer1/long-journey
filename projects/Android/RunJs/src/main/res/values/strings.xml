@@ -7,4 +7,25 @@
     <string name="action_settings">Settings</string>
     <string name="About">About</string>
     <string name="Search">search</string>
+    <string name="script_sample">(function(){ \n\tconsole.log(\'Hello World!\'); \n\treturn document.URL.toString();\n})</string>
+    <string name="run_btn">Run</string>
+    <string name="save_btn">Save</string>
+    <string name="save_as_btn">Save As</string>
+    <string name="load_btn">Load</string>
+    <string name="clear_btn">Clear</string>
+    <string name="toggle_btn">Toggle</string>
+    <string name="read_btn">Read</string>
+    <string name="console_edittext">Console</string>
+    <string name="output_edittext">Output</string>
+    <string name="dark_background">#272626</string>
+    <string name="run">Run</string>
+    <string name="code_goes_here">Code goes here</string>
+    <string name="function_n_tconsole_log_hello_world_n_treturn_document_url_tostring_n">(function(){ \tconsole.log(\'Hello World!\'); \treturn document.URL.toString(); })()</string>
+    <string name="save">Save</string>
+    <string name="save_as">Save As</string>
+    <string name="load">Load</string>
+    <string name="clear">Clear</string>
+    <string name="toggle">Toggle</string>
+    <string name="read">Read</string>
+    <string name="console">Console</string>
 </resources>

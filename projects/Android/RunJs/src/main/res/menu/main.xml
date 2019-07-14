@@ -56,5 +56,11 @@
         android:orderInCategory="100"
         android:title="Incognito"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/desktopView"
+        android:checkable="true"
+        android:orderInCategory="100"
+        android:title="Desktop View"
+        app:showAsAction="never" />
 
 </menu>

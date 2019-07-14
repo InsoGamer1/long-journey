@@ -1,31 +1,30 @@
 (function(){
-  var src = null;
-  var obj=document.elementFromPoint(_x,_y);
-   if ( obj == undefined ){
-		console.log("No object found!! :" + obj.innerHTML);
-   }
-  var imgSrc = obj.parentNode.getElementsByTagName("IMG");
-  //console.log( "	 Length:" + imgSrc.length);
-  for( xx=0 ;xx<1;xx++){
-        var src = null;
-		var srcset = imgSrc[xx].src;
-		//console.log( "	 srcset:" + srcset);
-		var src = srcset.split("/");
-		if ( src.length >3 ){
-			//console.log( "	 srcset:" + src[3]);
-			src[3] = 'originals';
-			//console.log( "	 srcset:" + src[3]);
-			src =  src.join("/");
-			//console.log( "	 Src:" + src);
-		}
-	if ( src ){
-		var img = ".jpg" ;
-		var vid = ".mp4" ;
-		var gif = ".gif" ;
-		if ( src.indexOf(img) != -1 || src.indexOf(vid) != -1 || src.indexOf(gif) != -1 ){
-			console.log( " downloading started...: " );//src
-            //return; 
-			var link = document.createElement("a");
+	 var obj=document.elementFromPoint(_x,_y);
+     console.log ( _x + " : " +_y );
+	 if ( obj.parentNode ){
+		tag = 'video';
+		if (obj.parentNode.getElementsByTagName(tag).length == 0 )
+			tag = 'img';
+		if(srcNode = obj.parentNode.getElementsByTagName(tag)[0] )
+			var src = srcNode.src; 
+		else
+			var src = null;
+	 }
+	 else{
+		if ( srcNode = obj.getElementsByTagName(tag)[0] )
+			var src = srcNode.src; 
+		else
+			var src = null;
+	 }
+     console.log ( src );
+	 var str ='No Image/Video found';
+	 if ( src ){
+	   var filterkeyImage = ".jpg" ;
+	   var filterkeyVideo = ".mp4" ;
+       var filterkeyGif = ".gif" ;
+	   if ( src.indexOf(filterkeyImage) != -1 || src.indexOf(filterkeyVideo) != -1 || src.indexOf(filterkeyGif) != -1 ){
+			console.log( "Starting download: "+src );       
+            var link = document.createElement("a");
 			link.href = src.split("?")[0];
 			link.download = src.split("?")[0].split("/").pop();
 			link.style.display = "none";
@@ -37,7 +36,6 @@
 			document.body.appendChild(link);
 			link.dispatchEvent(evt);
 			document.body.removeChild(link);
-		}
-	}//eo src
- }
+	   }
+	 }
 })();

@@ -21,6 +21,7 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Base64;
 import android.util.Log;
 import android.view.GestureDetector;
 import android.view.KeyEvent;
@@ -28,10 +29,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.webkit.ConsoleMessage;
 import android.webkit.DownloadListener;
 import android.webkit.JavascriptInterface;
 import android.webkit.URLUtil;
 import android.webkit.ValueCallback;
+import android.webkit.WebChromeClient;
 import android.webkit.WebResourceError;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
@@ -42,6 +45,7 @@ import android.widget.SearchView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -50,8 +54,10 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.text.AttributedString;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -78,6 +84,7 @@ import static com.classicloner.runjs.MyFunctions.offlineFolder;
 import static com.classicloner.runjs.MyFunctions.scriptFile;
 import static com.classicloner.runjs.MyFunctions.sdcardPath;
 import static com.classicloner.runjs.MyFunctions.settingFile;
+import static com.classicloner.runjs.MyFunctions.startupScript;
 
 //import android.support.v7.widget.SearchView;
 
@@ -93,10 +100,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     static ArrayList<String> mResults;
     static ArrayList<String> mCompResults;
     static JSONObject myWebHistory;
+    static JSONObject myConfigJson;
     static String lastLongRunScript;
     static String lastDoubleRunScript;
     static String desktopUA = "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.4) Gecko/20100101 Firefox/4.0";
     static String mobileUA = "Mozilla/5.0 (Linux; Android 7.1.2; MotoG3 Build/N2G47O) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.83 Mobile Safari/537.36";
+    static String _DOWNLOAD_THESE_URLS = "__download_these_urls__";
 
 
     @Override
@@ -106,6 +115,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         myWebHistory = new JSONObject();
+        myConfigJson = new JSONObject();
         myfunctionList = new MyFunctions(MainActivity.this);
         lastLongRunScript = "_some__#$Thing_";
         Uri data = getIntent().getData();
@@ -158,11 +168,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-                try {
-                    handleLongTouchScript(url);
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
+                loadStartupScript( );
+                //handleLongTouchScript(url);
                 super.onPageFinished(view, url);
             }
 
@@ -211,48 +218,82 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mWebView.getSettings().setDomStorageEnabled(true);
         mWebView.getSettings().setUserAgentString(mobileUA);
         mWebView.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
+        mWebView.getSettings().setAllowFileAccess(true);
+        mWebView.getSettings().setAllowContentAccess(true);
+        mWebView.getSettings().setAllowFileAccessFromFileURLs(true);
 
         //mWebView.setOnTouchListener(new View.OnTouchListener() {});
 
         mWebView.setDownloadListener(new DownloadListener() {
-            public void onDownloadStart(String url, String userAgent, String contentDisposition, String mimetype, long contentLength) {
-                String fileName = URLUtil.guessFileName(url, contentDisposition, mimetype);
+            public void onDownloadStart(final String url, String userAgent, String contentDisposition, String mimetype, long contentLength) {
                 if (url.startsWith("content://"))
                     return;
-                //for downloading directly through download manager
-                DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
-                request.allowScanningByMediaScanner();
-                request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
-                if ( INCOGNITO_MODE)
-                    defaultDownloadFile = incognitoDownloadFile;
-                else
-                    defaultDownloadFile = downloadFile;
-                if (!fileName.endsWith(".mp4")) {
-                    if (!fileName.endsWith(".jpg")) {
-                        Pattern pattern = Pattern.compile("(\\w+[.\\w]*)$");
-                        Matcher matcher = pattern.matcher(url);
-                        if (matcher.find()) {
-                            request.setTitle(matcher.group(1));
-                            fileName = matcher.group(1);
-                        } else {
-                            request.setTitle(defaultDownloadFile + "/" + fileName);
-                        }
-                        if (!fileName.contains("."))
-                            fileName = fileName + ".jpg";
-                    }
-                }
-                fileName = fileName.replace(".bin", ".jpg");
-                request.setDescription(appName);
-                String internalDownloadPath = getPathfromExternal(defaultDownloadFile);
+                //Toast.makeText(MainActivity.this, mimetype, Toast.LENGTH_SHORT).show();
 
-                if ( myfunctionList.isExist(sdcardPath+"/"+internalDownloadPath+"/"+fileName)) {
-                    myfunctionList.deleteFile( sdcardPath+"/"+internalDownloadPath+"/"+fileName);
-                    //Toast.makeText(MainActivity.this, fileName +" ALREADY exists!!", Toast.LENGTH_SHORT).show();
+                String fileName = URLUtil.guessFileName(url, contentDisposition, mimetype);
+                if ( fileName.endsWith(".bin")){
+                    fileName = fileName.replace(".bin", ".jpg");
+                    //read from javascript download_dict[url]
+                    final String finalFileName = fileName;
+                    mWebView.evaluateJavascript("( function(){return guessFileName('"+url+"');} )()" , new ValueCallback<String>() {
+                        @Override
+                        public void onReceiveValue(String s) {
+                            if ( s == "")
+                                s = finalFileName;
+                            else
+                                s = s.replace("\"" , "");
+                            DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
+                            request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+                            if ( INCOGNITO_MODE) {
+                                defaultDownloadFile = incognitoDownloadFile;
+                            }
+                            else {
+                                request.allowScanningByMediaScanner();
+                                defaultDownloadFile = downloadFile;
+                            }
+                            request.setDescription(appName);
+                            String internalDownloadPath = getPathfromExternal(defaultDownloadFile);
+
+                            if ( myfunctionList.isExist(sdcardPath+"/"+internalDownloadPath+"/"+ s)) {
+                                myfunctionList.deleteFile( sdcardPath+"/"+internalDownloadPath+"/"+ s);
+                                //Toast.makeText(MainActivity.this, fileName +" ALREADY exists!!", Toast.LENGTH_SHORT).show();
+                            }
+                            Log.d("DOWNLOAD:downpath" , internalDownloadPath);
+                            request.setDestinationInExternalPublicDir(internalDownloadPath, s);
+                            DownloadManager dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
+                            dm.enqueue(request);
+                            //Toast.makeText(MainActivity.this,s , Toast.LENGTH_SHORT).show();
+                        }
+                    });
                 }
-                Log.d("DOWNLOAD:downpath" , internalDownloadPath);
-                request.setDestinationInExternalPublicDir(internalDownloadPath, fileName);
-                DownloadManager dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
-                dm.enqueue(request);
+                else{
+                    fileName = fileName.replace(".bin", ".jpg");
+                    //for downloading directly through download manager
+                    DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
+
+                    request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+                    if ( INCOGNITO_MODE) {
+                        defaultDownloadFile = incognitoDownloadFile;
+                    }
+                    else {
+                        request.allowScanningByMediaScanner();
+                        defaultDownloadFile = downloadFile;
+                    }
+                    request.setDescription(appName);
+                    String internalDownloadPath = getPathfromExternal(defaultDownloadFile);
+
+                    if ( myfunctionList.isExist(sdcardPath+"/"+internalDownloadPath+"/"+fileName)) {
+                        myfunctionList.deleteFile( sdcardPath+"/"+internalDownloadPath+"/"+fileName);
+                        //Toast.makeText(MainActivity.this, fileName +" ALREADY exists!!", Toast.LENGTH_SHORT).show();
+                    }
+                    Log.d("DOWNLOAD:downpath" , internalDownloadPath);
+                    request.setDestinationInExternalPublicDir(internalDownloadPath, fileName);
+                    DownloadManager dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
+                    dm.enqueue(request);
+                }
+
+
+
             }
         });
 
@@ -288,11 +329,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         //Creates required folder : part of init 1
         myfunctionList.createFolderInExternal(appPath );//app path
         myfunctionList.createFolderInExternal(scriptFile );//Scripts folder
+        myfunctionList.createFolderInExternal(settingFile );//Scripts folder
 
         File isAssetAlreadyCopied = new File (scriptFile+"/.done");
         if (!isAssetAlreadyCopied.exists ()) {
             Log.d("ASSETS" , "COPYING FOR THE FIRST AND LAST TIME");
             copyAssets(appName + "/Scripts", scriptFile);
+            copyAssets(appName + "/Settings", settingFile);
+            String configContent = "{'startup':['"+startupScript+"']}";
+            myfunctionList.writeToExtFile( configFile , configContent);
+            myfunctionList.createFileInExternal( scriptFile+"/.done");
         }else{
             Log.d("ASSETS" , "Already at the right place");
         }
@@ -310,6 +356,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         myfunctionList.createFileInExternal(double_touch_js);
         myfunctionList.createFileInExternal(long_touch_js);
 
+        String configText = myfunctionList.readFromExtFile(configFile);
+        if (configText != null){
+            configText = configText.trim();
+            if (!configText.isEmpty()) {
+                try {
+                    myConfigJson = new JSONObject(configText);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
         myfunctionList.load_scripts();//loads script for long and double touch
         //loads the saved history into app
         String savedHistory = myfunctionList.readFromExtFile(historyCache);
@@ -326,9 +383,125 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         // End of init
     }
 
+    public void loadStartupScript(){
+        JSONArray startupScripList;
+        String script_name = "";
+        String scriptCode;
+        String filename;
+        if ( myConfigJson==null || myConfigJson.length()==0)
+            return;
+        try {
+            startupScripList = myConfigJson.getJSONArray("startup");
+            if (startupScripList == null)
+                return ;
+            for ( int i=0; i<startupScripList.length();i++){
+                filename = startupScripList.getString(i);
+                script_name = new File(filename).getName().replace(".js","");
+                Log.d("SCRIPT_CODE" , filename);
+                Log.d("SCRIPT_CODE" , script_name);
+                scriptCode = myfunctionList.readFromExtFile(filename);
+                if ( scriptCode !=null && !scriptCode.isEmpty()) {
+                    String encoded = Base64.encodeToString(scriptCode.getBytes() , Base64.NO_WRAP);
+                    String injectScriptCode = "(\n" +
+                            "function (script_name,waitingSecs=1000){//1 sec waits after loads \n" +
+                            "    console.log( \"................injecting .................\");\n" +
+                            "    var d=document;\n" +
+                            "    var timeOutfn;\n" +
+                            "    var script_id = script_name+\"_id\";\n" +
+                            "    if(!d.getElementById(script_id)){\n" +
+                            "        var s=d.createElement('script');\n" +
+                            "        s.type=\"text/javascript\";\n" +
+                            "        s.id=script_id;\n" +
+                            "        s.innerHTML = window.atob('"+ encoded+"');\n" +
+                            "        d.head.appendChild(s);\n" +
+                            "        console.log( \"all good things to those who waits\" );\n" +
+                            "        setTimeout(function(){\n" +
+                            "            console.log( script_name +\" is now loaded!!\" );\n" +
+                            "            return ;\n" +
+                            "        }, waitingSecs); // wait for a sec\n" +
+                            "    }\n" +
+                            "    else{\n" +
+                            "        console.log( script_name+\" is already loaded\" );\n" +
+                            "        return;\n" +
+                            "    }\n" +
+                            "})( '"+script_name+"');";
+                    Log.d("SCRIPT_CODE" , injectScriptCode);
+                    mWebView.evaluateJavascript(injectScriptCode , new ValueCallback<String>() {
+                        @Override
+                        public void onReceiveValue(String s) {
+                            //Toast.makeText(MainActivity.this,s , Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                    mWebView.setWebChromeClient(new WebChromeClient() {
+                        String console_data = "";
+                        public boolean onConsoleMessage(ConsoleMessage cm) {
+                            String consoleMessage = cm.message();
+                            if( consoleMessage.contains(_DOWNLOAD_THESE_URLS)) {
+                                try {
+                                    JSONObject consoleJson = new JSONObject(consoleMessage);//browser history is empty
+                                    if ( consoleJson.has(_DOWNLOAD_THESE_URLS)){
+                                        JSONArray downloadUrlObjects = consoleJson.getJSONArray(_DOWNLOAD_THESE_URLS);
+                                        JSONObject tempObj ;
+                                        String url;
+                                        String fileName;
+                                        for ( int i=0; i<downloadUrlObjects.length();i++) {
+                                            tempObj = downloadUrlObjects.getJSONObject(i);
+                                            url = tempObj.getString("src");
+                                            fileName = tempObj.getString("name");
+                                            Log.d(_DOWNLOAD_THESE_URLS , url );
+
+                                            DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
+
+                                            request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+                                            if (INCOGNITO_MODE) {
+                                                defaultDownloadFile = incognitoDownloadFile;
+                                            } else {
+                                                request.allowScanningByMediaScanner();
+                                                defaultDownloadFile = downloadFile;
+                                            }
+                                            request.setDescription(appName);
+                                            String internalDownloadPath = getPathfromExternal(defaultDownloadFile);
+
+                                            if (myfunctionList.isExist(sdcardPath + "/" + internalDownloadPath + "/" + fileName)) {
+                                                myfunctionList.deleteFile(sdcardPath + "/" + internalDownloadPath + "/" + fileName);
+                                                //Toast.makeText(MainActivity.this, fileName +" ALREADY exists!!", Toast.LENGTH_SHORT).show();
+                                            }
+                                            Log.d("DOWNLOAD:downpath", internalDownloadPath);
+                                            request.setDestinationInExternalPublicDir(internalDownloadPath, fileName);
+                                            DownloadManager dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
+                                            dm.enqueue(request);
+                                        }
+                                    }
+                                } catch (JSONException e) {
+                                    Toast.makeText(MainActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                                    e.printStackTrace();
+                                }
+                            }
+                            else {
+                                if (consoleMessage.contains("_EOS_")) {
+                                    Toast.makeText(MainActivity.this, console_data, Toast.LENGTH_SHORT).show();
+                                    console_data = "";
+                                } else {
+                                    console_data += consoleMessage;
+                                }
+                            }
+                            Log.d("error" , consoleMessage+"\n@ "+cm.lineNumber()+" of "+cm.sourceId());
+                            return true;
+                        }
+                    });
+                }
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+            return;
+        }
+
+
+
+    }
     public void handleLongTouchScript( String url) throws JSONException {//decides the download folder and long_press script
         if (url.contains(lastLongRunScript))
-                return;
+            return;
         String filename = null;
         String jsContent ;
 
@@ -573,13 +746,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             Toast.makeText(MainActivity.this, "Send ", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_exit) {
             MainActivity.this.finish();
-        } else if (id == R.id.config_long) {
-            Toast.makeText(MainActivity.this, "Pick the javascript or .js file ", Toast.LENGTH_SHORT).show();
-            myfunctionList.performFileSearch(maincontext , LONG_TOUCH_REQUEST_CODE);
-        } else if (id == R.id.config_double) {
-            Toast.makeText(MainActivity.this, "Pick the javascript or .js file ", Toast.LENGTH_SHORT).show();
-            myfunctionList.performFileSearch(maincontext , DOUBLE_TOUCH_REQUEST_CODE);
         }
+//        } else if (id == R.id.config_long) {
+//            Toast.makeText(MainActivity.this, "Pick the javascript or .js file ", Toast.LENGTH_SHORT).show();
+//            myfunctionList.performFileSearch(maincontext , LONG_TOUCH_REQUEST_CODE);
+//        } else if (id == R.id.config_double) {
+//            Toast.makeText(MainActivity.this, "Pick the javascript or .js file ", Toast.LENGTH_SHORT).show();
+//            myfunctionList.performFileSearch(maincontext , DOUBLE_TOUCH_REQUEST_CODE);
+//        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
@@ -691,7 +865,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     }
                 }
             }
-            myfunctionList.createFileInExternal( scriptFile+"/.done");
+
         }
     }
 

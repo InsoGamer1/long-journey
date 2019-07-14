@@ -11,14 +11,14 @@
             android:icon="@android:drawable/ic_input_add"
             android:title="Load" />
 
-        <item
-            android:id="@+id/config_long"
-            android:icon="@android:drawable/stat_notify_sync_noanim"
-            android:title="Long Touch" />
-        <item
-            android:id="@+id/config_double"
-            android:icon="@android:drawable/stat_notify_sync_noanim"
-            android:title="Double Touch" />
+        <!--<item-->
+            <!--android:id="@+id/config_long"-->
+            <!--android:icon="@android:drawable/stat_notify_sync_noanim"-->
+            <!--android:title="Long Touch" />-->
+        <!--<item-->
+            <!--android:id="@+id/config_double"-->
+            <!--android:icon="@android:drawable/stat_notify_sync_noanim"-->
+            <!--android:title="Double Touch" />-->
     </group>
 
     <item

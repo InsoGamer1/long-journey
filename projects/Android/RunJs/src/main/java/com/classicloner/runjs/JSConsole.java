@@ -1,6 +1,7 @@
 package com.classicloner.runjs;
 
 import android.app.Activity;
+import android.app.DownloadManager;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
@@ -10,6 +11,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
 import android.util.Log;
 import android.view.View;
@@ -20,12 +22,24 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.IOException;
 
+import static com.classicloner.runjs.MainActivity._DOWNLOAD_THESE_URLS;
 import static com.classicloner.runjs.MainActivity.mWebView;
+import static com.classicloner.runjs.MyFunctions.INCOGNITO_MODE;
 import static com.classicloner.runjs.MyFunctions.READ_REQUEST_CODE;
+import static com.classicloner.runjs.MyFunctions.appName;
 import static com.classicloner.runjs.MyFunctions.cacheFile;
 import static com.classicloner.runjs.MyFunctions.currentJsFilePath;
+import static com.classicloner.runjs.MyFunctions.defaultDownloadFile;
+import static com.classicloner.runjs.MyFunctions.downloadFile;
+import static com.classicloner.runjs.MyFunctions.getPathfromExternal;
+import static com.classicloner.runjs.MyFunctions.incognitoDownloadFile;
+import static com.classicloner.runjs.MyFunctions.sdcardPath;
 
 
 /**
@@ -165,8 +179,8 @@ public class JSConsole extends Activity {
                 mWebView.evaluateJavascript(inputText.getText().toString() , new ValueCallback<String>() {
                     @Override
                     public void onReceiveValue(String s) {
-                            outputText.setTextColor(Color.BLUE);
-                            outputText.setText( outputText.getText()+"\n"+s);
+                        outputText.setTextColor(Color.BLUE);
+                        outputText.setText( outputText.getText()+"\n"+s);
                     }
                 });
                 mWebView.setWebChromeClient(new WebChromeClient() {
@@ -174,6 +188,48 @@ public class JSConsole extends Activity {
                         Log.d("error" , cm.message()+"\n@ "+cm.lineNumber()+" of "+cm.sourceId());
                         consoleText.setTextColor(Color.RED);
                         consoleText.setText( consoleText.getText()+"\n"+myfunctionList.currentJsFile+":"+cm.lineNumber() +":\t" + cm.message());
+                        String consoleMessage = cm.message();
+                        if( consoleMessage.contains(_DOWNLOAD_THESE_URLS)) {
+                            try {
+                                JSONObject consoleJson = new JSONObject(consoleMessage);//browser history is empty
+                                if ( consoleJson.has(_DOWNLOAD_THESE_URLS)){
+                                    JSONArray downloadUrlObjects = consoleJson.getJSONArray(_DOWNLOAD_THESE_URLS);
+                                    JSONObject tempObj ;
+                                    String url;
+                                    String fileName;
+                                    for ( int i=0; i<downloadUrlObjects.length();i++) {
+                                        tempObj = downloadUrlObjects.getJSONObject(i);
+                                        url = tempObj.getString("src");
+                                        fileName = tempObj.getString("name");
+                                        Log.d(_DOWNLOAD_THESE_URLS , url );
+
+                                        DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
+
+                                        request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+                                        if (INCOGNITO_MODE) {
+                                            defaultDownloadFile = incognitoDownloadFile;
+                                        } else {
+                                            request.allowScanningByMediaScanner();
+                                            defaultDownloadFile = downloadFile;
+                                        }
+                                        request.setDescription(appName);
+                                        String internalDownloadPath = getPathfromExternal(defaultDownloadFile);
+
+                                        if (myfunctionList.isExist(sdcardPath + "/" + internalDownloadPath + "/" + fileName)) {
+                                            myfunctionList.deleteFile(sdcardPath + "/" + internalDownloadPath + "/" + fileName);
+                                            //Toast.makeText(MainActivity.this, fileName +" ALREADY exists!!", Toast.LENGTH_SHORT).show();
+                                        }
+                                        Log.d("DOWNLOAD:downpath", internalDownloadPath);
+                                        request.setDestinationInExternalPublicDir(internalDownloadPath, fileName);
+                                        DownloadManager dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
+                                        dm.enqueue(request);
+                                    }
+                                }
+                            } catch (JSONException e) {
+                                Toast.makeText(JSConsole.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                                e.printStackTrace();
+                            }
+                        }
                         return true;
                     }
                 });
@@ -197,7 +253,7 @@ public class JSConsole extends Activity {
                 myfunctionList.createFile(myfunctionList.mimeType, "File.js" ,jscontext);
                 break;
 
-           case R.id.clear:
+            case R.id.clear:
                 //inputText.setText("");
                 outputText.setText("");
                 consoleText.setText("");
@@ -206,6 +262,35 @@ public class JSConsole extends Activity {
                 Toast.makeText(JSConsole.this, "Pick the javascript file ", Toast.LENGTH_SHORT).show();
                 myfunctionList.performFileSearch(jscontext , READ_REQUEST_CODE);
                 break;
+            case R.id.toggle:
+                if ( findViewById(R.id.console_wrapper).getVisibility() == View.GONE) {
+                    findViewById(R.id.console_wrapper).setVisibility(View.VISIBLE);
+                    findViewById(R.id.output_wrapper).setVisibility(View.VISIBLE);
+                }else {
+                    findViewById(R.id.console_wrapper).setVisibility(View.GONE);
+                    findViewById(R.id.output_wrapper).setVisibility(View.GONE);
+                }
+                break;
+            case R.id.read_exit:
+                if ( findViewById(R.id.read_exit).getVisibility() == View.VISIBLE) {
+                    findViewById(R.id.input).setEnabled(true);
+                    findViewById(R.id.console_wrapper).setVisibility(View.VISIBLE);
+                    findViewById(R.id.jsButtons_parent).setVisibility(View.VISIBLE);
+                    findViewById(R.id.output_wrapper).setVisibility(View.VISIBLE);
+                    findViewById(R.id.read_exit).setVisibility(View.GONE);
+                }
+                break;
+            case R.id.read:
+                if ( findViewById(R.id.read_exit).getVisibility() == View.GONE) {
+                    findViewById(R.id.read_exit).setVisibility(View.VISIBLE);
+                    findViewById(R.id.input).setEnabled(false);
+                    findViewById(R.id.console_wrapper).setVisibility(View.GONE);
+                    findViewById(R.id.output_wrapper).setVisibility(View.GONE);
+                    findViewById(R.id.jsButtons_parent).setVisibility(View.GONE);
+
+                }
+                break;
+
         }
 
         //something TODO
