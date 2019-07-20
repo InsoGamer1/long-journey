@@ -54,37 +54,33 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.text.AttributedString;
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import static android.webkit.WebSettings.LOAD_CACHE_ELSE_NETWORK;
-import static com.classicloner.runjs.MyFunctions.DOUBLE_TOUCH_REQUEST_CODE;
-import static com.classicloner.runjs.MyFunctions.GOT_PERMISSION_TO_WRITE;
-import static com.classicloner.runjs.MyFunctions.INCOGNITO_MODE;
-import static com.classicloner.runjs.MyFunctions.LONG_TOUCH_REQUEST_CODE;
-import static com.classicloner.runjs.MyFunctions.MY_WRITE_EXTERNAL_STORAGE_CODE;
-import static com.classicloner.runjs.MyFunctions.READ_REQUEST_CODE;
-import static com.classicloner.runjs.MyFunctions.appName;
-import static com.classicloner.runjs.MyFunctions.appPath;
-import static com.classicloner.runjs.MyFunctions.bookmarkFile;
-import static com.classicloner.runjs.MyFunctions.cacheFile;
-import static com.classicloner.runjs.MyFunctions.configFile;
-import static com.classicloner.runjs.MyFunctions.defaultDownloadFile;
-import static com.classicloner.runjs.MyFunctions.double_touch_js;
-import static com.classicloner.runjs.MyFunctions.downloadFile;
-import static com.classicloner.runjs.MyFunctions.getPathfromExternal;
-import static com.classicloner.runjs.MyFunctions.historyCache;
-import static com.classicloner.runjs.MyFunctions.incognitoDownloadFile;
-import static com.classicloner.runjs.MyFunctions.long_touch_js;
-import static com.classicloner.runjs.MyFunctions.offlineFolder;
-import static com.classicloner.runjs.MyFunctions.scriptFile;
-import static com.classicloner.runjs.MyFunctions.sdcardPath;
-import static com.classicloner.runjs.MyFunctions.settingFile;
-import static com.classicloner.runjs.MyFunctions.startupScript;
+import static com.classicloner.runjs.Common.GOT_PERMISSION_TO_WRITE;
+import static com.classicloner.runjs.Common.INCOGNITO_MODE;
+import static com.classicloner.runjs.Common.MY_WRITE_EXTERNAL_STORAGE_CODE;
+import static com.classicloner.runjs.Common.READ_REQUEST_CODE;
+import static com.classicloner.runjs.Common.appName;
+import static com.classicloner.runjs.Common.appPath;
+import static com.classicloner.runjs.Common.bookmarkFile;
+import static com.classicloner.runjs.Common.cacheFile;
+import static com.classicloner.runjs.Common.configFile;
+import static com.classicloner.runjs.Common.defaultDownloadFile;
+import static com.classicloner.runjs.Common.double_touch_js;
+import static com.classicloner.runjs.Common.downloadFile;
+import static com.classicloner.runjs.Common.getPathfromExternal;
+import static com.classicloner.runjs.Common.historyCache;
+import static com.classicloner.runjs.Common.incognitoDownloadFile;
+import static com.classicloner.runjs.Common.long_touch_js;
+import static com.classicloner.runjs.Common.offlineFolder;
+import static com.classicloner.runjs.Common.scriptFile;
+import static com.classicloner.runjs.Common.sdcardPath;
+import static com.classicloner.runjs.Common.settingFile;
+import static com.classicloner.runjs.Common.startupScript;
 
 //import android.support.v7.widget.SearchView;
 
@@ -93,7 +89,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     static WebView mWebView;
     ProgressBar progressBar;
     static String pageUrl = "https://www.google.com";//Default page
-    static MyFunctions myfunctionList;
+    static Common myfunctionList;
     final Context maincontext = this;
     private SwipeRefreshLayout mySwipeRefreshLayout;
     private Menu mMenu = null;
@@ -116,7 +112,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setSupportActionBar(toolbar);
         myWebHistory = new JSONObject();
         myConfigJson = new JSONObject();
-        myfunctionList = new MyFunctions(MainActivity.this);
+        myfunctionList = new Common(MainActivity.this);
         lastLongRunScript = "_some__#$Thing_";
         Uri data = getIntent().getData();
         if (data != null) {

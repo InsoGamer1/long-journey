@@ -11,8 +11,8 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
-import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
+import android.support.v7.widget.AppCompatEditText;
 import android.util.Log;
 import android.view.View;
 import android.webkit.ConsoleMessage;
@@ -30,16 +30,16 @@ import java.io.IOException;
 
 import static com.classicloner.runjs.MainActivity._DOWNLOAD_THESE_URLS;
 import static com.classicloner.runjs.MainActivity.mWebView;
-import static com.classicloner.runjs.MyFunctions.INCOGNITO_MODE;
-import static com.classicloner.runjs.MyFunctions.READ_REQUEST_CODE;
-import static com.classicloner.runjs.MyFunctions.appName;
-import static com.classicloner.runjs.MyFunctions.cacheFile;
-import static com.classicloner.runjs.MyFunctions.currentJsFilePath;
-import static com.classicloner.runjs.MyFunctions.defaultDownloadFile;
-import static com.classicloner.runjs.MyFunctions.downloadFile;
-import static com.classicloner.runjs.MyFunctions.getPathfromExternal;
-import static com.classicloner.runjs.MyFunctions.incognitoDownloadFile;
-import static com.classicloner.runjs.MyFunctions.sdcardPath;
+import static com.classicloner.runjs.Common.INCOGNITO_MODE;
+import static com.classicloner.runjs.Common.READ_REQUEST_CODE;
+import static com.classicloner.runjs.Common.appName;
+import static com.classicloner.runjs.Common.cacheFile;
+import static com.classicloner.runjs.Common.currentJsFilePath;
+import static com.classicloner.runjs.Common.defaultDownloadFile;
+import static com.classicloner.runjs.Common.downloadFile;
+import static com.classicloner.runjs.Common.getPathfromExternal;
+import static com.classicloner.runjs.Common.incognitoDownloadFile;
+import static com.classicloner.runjs.Common.sdcardPath;
 
 
 /**
@@ -56,7 +56,7 @@ public class JSConsole extends Activity {
     static LinearLayout consoleLinearBtns;
     public boolean fromOnAcitivityResult = true;
     static int isError;
-    MyFunctions myfunctionList ;
+    Common myfunctionList ;
     final Context jscontext = this;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -66,7 +66,7 @@ public class JSConsole extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.jsconsole);
 
-        inputText = (EditText)findViewById(R.id.input);
+        inputText = (LinedEditText)findViewById(R.id.input);
         outputText = (EditText)findViewById(R.id.output);
         consoleText = (EditText)findViewById(R.id.console);
         outputText.setShowSoftInputOnFocus(false);//block keyboard on focus
@@ -76,7 +76,7 @@ public class JSConsole extends Activity {
         outputLinearBtns = (LinearLayout) findViewById(R.id.action_output);
         consoleLinearBtns = (LinearLayout) findViewById(R.id.action_console);
 
-        myfunctionList = new MyFunctions(JSConsole.this);
+        myfunctionList = new Common(JSConsole.this);
 
         inputText.setOnFocusChangeListener(
                 new View.OnFocusChangeListener() {
@@ -124,7 +124,7 @@ public class JSConsole extends Activity {
             if ( jsData.toString().contains("__NOJSDATA__")){
                 String initData = "(function(){\n\tsrc = document.URL;\n\treturn src.toString();\n})();";
                 String fileData = myfunctionList.readFromExtFile(cacheFile);
-                if( !fileData.isEmpty()){
+                if( fileData!=null && !fileData.isEmpty()){
                     initData = fileData;
                 }
                 inputText.setText(initData);
@@ -273,7 +273,7 @@ public class JSConsole extends Activity {
                 break;
             case R.id.read_exit:
                 if ( findViewById(R.id.read_exit).getVisibility() == View.VISIBLE) {
-                    findViewById(R.id.input).setEnabled(true);
+                    inputText.setEnabled(true);
                     findViewById(R.id.console_wrapper).setVisibility(View.VISIBLE);
                     findViewById(R.id.jsButtons_parent).setVisibility(View.VISIBLE);
                     findViewById(R.id.output_wrapper).setVisibility(View.VISIBLE);
@@ -283,7 +283,7 @@ public class JSConsole extends Activity {
             case R.id.read:
                 if ( findViewById(R.id.read_exit).getVisibility() == View.GONE) {
                     findViewById(R.id.read_exit).setVisibility(View.VISIBLE);
-                    findViewById(R.id.input).setEnabled(false);
+                    inputText.setEnabled(false);
                     findViewById(R.id.console_wrapper).setVisibility(View.GONE);
                     findViewById(R.id.output_wrapper).setVisibility(View.GONE);
                     findViewById(R.id.jsButtons_parent).setVisibility(View.GONE);

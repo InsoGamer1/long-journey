@@ -11,8 +11,8 @@ import android.widget.Scroller;
 import android.widget.Toast;
 
 import static com.classicloner.runjs.MainActivity.mWebView;
-import static com.classicloner.runjs.MyFunctions.double_touch_script;
-import static com.classicloner.runjs.MyFunctions.long_touch_script;
+import static com.classicloner.runjs.Common.double_touch_script;
+import static com.classicloner.runjs.Common.long_touch_script;
 
 public class GestureListener extends GestureDetector.SimpleOnGestureListener {
     private static final int SWIPE_THRESHOLD = 100;
