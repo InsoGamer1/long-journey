@@ -100,7 +100,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     static String lastLongRunScript;
     static String lastDoubleRunScript;
     static String desktopUA = "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.4) Gecko/20100101 Firefox/4.0";
-    static String mobileUA = "Mozilla/5.0 (Linux; Android 7.1.2; MotoG3 Build/N2G47O) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.83 Mobile Safari/537.36";
+//    static String mobileUA = "Mozilla/5.0 (Linux; Android 7.1.2; MotoG3 Build/N2G47O) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.83 Mobile Safari/537.36";
+    static String mobileUA = System.getProperty("http.agent");
     static String _DOWNLOAD_THESE_URLS = "__download_these_urls__";
 
 
