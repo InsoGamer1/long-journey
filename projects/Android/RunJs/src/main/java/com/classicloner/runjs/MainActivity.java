@@ -59,6 +59,7 @@ import java.util.Iterator;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import static android.content.Intent.FLAG_ACTIVITY_MULTIPLE_TASK;
 import static android.webkit.WebSettings.LOAD_CACHE_ELSE_NETWORK;
 import static com.classicloner.runjs.Common.GOT_PERMISSION_TO_WRITE;
 import static com.classicloner.runjs.Common.INCOGNITO_MODE;
@@ -633,6 +634,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     mWebView.reload();
                 }
                 return true;
+            case R.id.floating_console_toggle:
+                bringUpConsole("__NOJSDATA__" , true);
+                return true;
 
             default:
                 return super.onOptionsItemSelected(item);
@@ -757,10 +761,27 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return true;
     }
 
-    public boolean bringUpConsole(String jsData){
+    public boolean bringUpConsole(String jsData ){
         Intent intent = new Intent(MainActivity.this,JSConsole.class);
         intent.putExtra("url", "https://www.instagram.com/accounts/login");
         intent.putExtra("jsData", jsData);
+        intent.putExtra("FLOAT", false);
+        startActivity(intent);
+        return true;
+    }
+
+    public boolean bringUpConsole(String jsData , boolean isFloat){
+        Intent intent = new Intent(MainActivity.this,JSConsole.class);
+        intent.putExtra("url", "https://www.instagram.com/accounts/login");
+        intent.putExtra("jsData", jsData);
+        intent.putExtra("FLOAT", isFloat);
+//        intent.setFlags(
+//                Intent.FLAG_ACTIVITY_NEW_TASK
+//        );
+        intent.setFlags(Intent.FLAG_ACTIVITY_LAUNCH_ADJACENT |
+                        Intent.FLAG_ACTIVITY_NEW_TASK |
+                        Intent.FLAG_ACTIVITY_MULTIPLE_TASK
+                        );
         startActivity(intent);
         return true;
     }

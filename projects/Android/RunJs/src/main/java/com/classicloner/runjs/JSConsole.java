@@ -7,6 +7,7 @@ import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.PixelFormat;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -15,6 +16,8 @@ import android.support.annotation.RequiresApi;
 import android.support.v7.widget.AppCompatEditText;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.webkit.ConsoleMessage;
 import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
@@ -46,7 +49,6 @@ import static com.classicloner.runjs.Common.sdcardPath;
  * Created by Raheman on 10/23/2016.
  */
 
-
 public class JSConsole extends Activity {
     static EditText inputText;
     static EditText outputText;
@@ -54,6 +56,8 @@ public class JSConsole extends Activity {
     static LinearLayout inputLinearBtns;
     static LinearLayout outputLinearBtns;
     static LinearLayout consoleLinearBtns;
+    static JSONObject Cache;
+
     public boolean fromOnAcitivityResult = true;
     static int isError;
     Common myfunctionList ;
@@ -65,6 +69,7 @@ public class JSConsole extends Activity {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
         setContentView(R.layout.jsconsole);
+        myfunctionList = new Common(JSConsole.this);
 
         inputText = (LinedEditText)findViewById(R.id.input);
         outputText = (EditText)findViewById(R.id.output);
@@ -76,7 +81,17 @@ public class JSConsole extends Activity {
         outputLinearBtns = (LinearLayout) findViewById(R.id.action_output);
         consoleLinearBtns = (LinearLayout) findViewById(R.id.action_console);
 
-        myfunctionList = new Common(JSConsole.this);
+        Cache = new JSONObject();
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            Object jsData = extras.get("jsData");
+            if ( jsData.toString().contains("__NOJSDATA__")){
+                setInputText();
+            }
+            else{
+                inputText.setText(jsData.toString());
+            }
+        }
 
         inputText.setOnFocusChangeListener(
                 new View.OnFocusChangeListener() {
@@ -84,6 +99,10 @@ public class JSConsole extends Activity {
                     public void onFocusChange(View view, boolean b) {
                         if( b) {
                             inputLinearBtns.setVisibility(view.VISIBLE);
+                            try {
+                                inputText.setSelection(Cache.getInt("cursor"));
+                            } catch (JSONException e) {
+                            }
                         }
                         else {
                             inputLinearBtns.setVisibility(view.GONE);
@@ -118,21 +137,20 @@ public class JSConsole extends Activity {
                 }
         );
 
-        Bundle extras = getIntent().getExtras();
-        if (extras != null) {
-            Object jsData = extras.get("jsData");
-            if ( jsData.toString().contains("__NOJSDATA__")){
-                String initData = "(function(){\n\tsrc = document.URL;\n\treturn src.toString();\n})();";
-                String fileData = myfunctionList.readFromExtFile(cacheFile);
-                if( fileData!=null && !fileData.isEmpty()){
-                    initData = fileData;
-                }
-                inputText.setText(initData);
-            }
-            else{
-                inputText.setText(jsData.toString());
-            }
-        }
+    }
+
+    public void setWindowParams() {
+        Window window = getWindow();
+        WindowManager.LayoutParams wlp = window.getAttributes();
+        wlp.flags = WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS |
+                WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL |
+                WindowManager.LayoutParams.FLAG_DIM_BEHIND;
+        wlp.dimAmount = (float) 1;
+        wlp.format = PixelFormat.TRANSLUCENT;
+        wlp.alpha = (float) 0.5;
+        wlp.x = 200;
+        wlp.y = 200;
+        window.setAttributes(wlp);
     }
 
     public void clearActions( View view){
@@ -374,17 +392,42 @@ public class JSConsole extends Activity {
         super.onResume();
         // put your code here...
         if ( !fromOnAcitivityResult ) {
-            String CacheText;
-            CacheText = myfunctionList.readFromExtFile(cacheFile);
-            if( CacheText!= null)
-                inputText.setText(CacheText);
-            fromOnAcitivityResult = false;
+            setInputText();
         }
     }
 
     @Override
     public  void onDestroy(){
         super.onDestroy();
-        myfunctionList.writeToExtFile(cacheFile , inputText.getText().toString());
+        try {
+            Cache.put("content" , inputText.getText().toString());
+            Cache.put("cursor" , inputText.getSelectionStart());
+            myfunctionList.writeToExtFile(cacheFile , Cache.toString(2));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public void setInputText(){
+        String initData = "(function(){\n\tsrc = document.URL;\n\treturn src.toString();\n})();";
+        String CacheText = myfunctionList.readFromExtFile(cacheFile);
+        if (CacheText != null){
+            CacheText = CacheText.trim();
+            if (!CacheText.isEmpty()) {
+                try {
+                    Cache = new JSONObject(CacheText);
+                    String fileData = Cache.getString("content");
+                    if( fileData!=null && !fileData.isEmpty()){
+                        inputText.setText(fileData);
+                        inputText.setSelection(Cache.getInt("cursor"));
+                    }else{
+                        inputText.setText(initData);
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 }

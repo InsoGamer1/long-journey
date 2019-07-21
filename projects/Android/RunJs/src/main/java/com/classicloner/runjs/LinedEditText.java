@@ -5,7 +5,6 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.util.TypedValue;
 
 
@@ -24,9 +23,8 @@ public class LinedEditText extends android.support.v7.widget.AppCompatEditText {
         fontPaint = new Paint();
         fontPaint.setColor(getResources().getColor(R.color.dark_line_color));
         fontPaint.setStyle(Paint.Style.STROKE);
-        Log.d("font" , String.valueOf(this.spToPx(15 , this.getContext() )));
         fontPaint.setTextSize(this.spToPx(15 , this.getContext()));
-        //fontPaint.setTextSize(50);
+
     }
 
     public LinedEditText(Context context, AttributeSet attributes) {
@@ -42,10 +40,8 @@ public class LinedEditText extends android.support.v7.widget.AppCompatEditText {
 
         for (int i = 0; i < totalLines; i++) {
             int lineY = firstLineY + i * lineHeight;
-            Log.d("canvas" ,"left: " + bounds.left +" right: " + bounds.right + " lineY:  "+ lineY  );
             canvas.drawLine(bounds.left, lineY, bounds.right, lineY, linePaint);
             canvas.drawText(String.valueOf(i+1)+". ",0,lineY,fontPaint);
-            //canvas.drawText(String.valueOf(i+1)+". ",bounds.left, lineY, bounds.right, lineY,linePaint);
         }
         super.onDraw(canvas);
     }

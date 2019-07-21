@@ -45,7 +45,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="30dp"
                 android:background="@android:color/transparent"
                 android:fontFamily="sans-serif"
                 android:hint="@string/code_goes_here"
@@ -59,6 +59,7 @@
                 android:textColor="@android:color/white"
                 android:textColorHighlight="@android:color/holo_blue_dark"
                 android:textSize="15sp"
+                android:focusedByDefault="true"
                 android:lineHeight="18sp"
                 tools:ignore="RtlCompat" />
         </ScrollView>

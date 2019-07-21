@@ -62,5 +62,11 @@
         android:orderInCategory="100"
         android:title="Desktop View"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/floating_console_toggle"
+        android:orderInCategory="100"
+        android:title="JSConsole"
+        app:showAsAction="never" />
+
 
 </menu>
