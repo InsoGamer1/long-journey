@@ -5,6 +5,7 @@
 
 var download_dict = {};
 var downloadList={};
+var url_parser_param_is_node = false;
 
 /* Download an img */
 function download500px(src,prefix,name) {
@@ -280,12 +281,21 @@ function get500px_url( url ){
 function gettumblr_url( url ){
   download( url );
 }
+
 function getinstagram_url( url ){
   try{
 	download(  url.split("?")[0].split("/").pop() );
   }catch(err){
   	alert( "error: " + JSON.stringify( err ) );
   }
+}
+
+function getquora_url( img ){
+  let src = img.getAttribute("master_src");
+  if (!src)
+    src = img.src;
+  //download(src);
+  download500px( src , null ,"HQ_Quora_"+ src.split("/").pop().split("-").pop()+".jpg" );
 }
 
 
@@ -295,11 +305,14 @@ function fetchall( url_parser, cssClass){
       //alert ( url_parser + cssClass );
       if ( !cssClass )
           cssClass = colorClass;
-      $('.'+cssClass).each( function (i,x){
-                //alert( x.outerHTML );
-                url_parser( x.src );
-                $(x).toggleClass( cssClass );
-       });
+	  let selected = document.getElementsByClassName(cssClass);
+	  for(let i=0;i<selected.length;i++){
+	  	if ( url_parser_param_is_node)
+	  		url_parser( selected[i] );
+	  	else
+	  		url_parser( selected[i].src );
+	  	selected[i].classList.toggle(cssClass);
+	  }
 }// End of fetchall
 
 //console.log ( "__runjs__script.js is loaded " );
@@ -341,11 +354,29 @@ function sync_tumblr(query, cssClass){
       });
 }
 
+function sync_quora(query, cssClass){
+      if ( !cssClass )
+          cssClass = colorClass;
+      document.querySelectorAll(query).forEach( 
+        function(i){ 
+            i.classList.add('synced');
+            console.log(i.parentNode) ;
+            i.addEventListener("click", function(ev){ 
+                ev.preventDefault();
+                ev.target.classList.toggle(cssClass);
+                return true;
+         	});
+      });
+}
+
 async function downBtnHandler(ev){
 	downloadList["__download_these_urls__"]=[];
-	$("#__download__all").css("background-color","grey");
-	await fetchall( ev.data.url_parser , ev.data.cssClass);
-	$("#__download__all").css("background-color","rgba(0,0,0,0.7)");
+	document.getElementById("__download__all").style.backgroundColor = "grey";
+	if ( ev.data)
+		await fetchall( ev.data.url_parser , ev.data.cssClass);
+	else
+		await fetchall( ev.url_parser , ev.cssClass);
+	document.getElementById("__download__all").style.backgroundColor = "rgba(0,0,0,0.7)";
 	if ( downloadList["__download_these_urls__"].length > 0) 
 		console.log ( JSON.stringify(downloadList ));
 	downloadList["__download_these_urls__"]=[];
@@ -380,9 +411,16 @@ function _addButtons(query,cssClass, sync_func , url_parser){
 		color: #ffffff;"\
     >Get</button>';
 
-    if( !$('#__download__all') || !$('#__download__all')[0]){
-         $(download_btn).appendTo( "body" ).click( {url_parser: url_parser , cssClass : cssClass}, downBtnHandler );
-         console.log( 'added button!!');
+    if( !document.getElementById('__download__all') ){
+        var dn_btn = document.createElement("button");
+        dn_btn.innerHTML = download_btn;
+
+        dn_btn.addEventListener("click", function(e) {
+	       downBtnHandler({url_parser: url_parser , cssClass : cssClass});
+        });
+        document.body.appendChild(dn_btn);
+
+        console.log( 'added button!!');
     }else{
           //console.log( 'button already existing');
     }
@@ -400,13 +438,14 @@ function _addButtons(query,cssClass, sync_func , url_parser){
 			color: #ffffff;"\
 		">Sync</button>';
 
-   if( $('#__sync')[0] == undefined ){
-         $(sync_btn).appendTo( "body" ).click( 
-         	function(){ 
+   if( !document.getElementById('__sync') ){
+        let sn_btn = document.createElement("button");
+        sn_btn.innerHTML = sync_btn;
+        sn_btn.addEventListener("click", function(){ 
          		sync_func( query , cssClass );
-         	}
-         );
-         console.log( 'sync added button!!');
+        });
+        document.body.appendChild(sn_btn);
+        console.log( 'sync added button!!');
     }else{
           //console.log( 'sync button already existing');
     }
@@ -496,4 +535,13 @@ if  ( document.URL.indexOf('instagram.com')!=-1) {
 	_addButtonsInsta();
 }
 //***********************************************************
+
+//********************** Quora *************************
+if  ( document.URL.indexOf('quora.com')!=-1) {
+	var quora_tag = 'img[master_src]';
+	url_parser_param_is_node = true;
+	_addButtons( quora_tag ,'grayscale', sync_quora ,getquora_url ); 
+}
+//***********************************************************
+
 //$("#__download__all").click()
