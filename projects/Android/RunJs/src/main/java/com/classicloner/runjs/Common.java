@@ -6,9 +6,11 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Environment;
 import android.os.ParcelFileDescriptor;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 
 import java.io.BufferedReader;
@@ -373,6 +375,11 @@ public class Common extends Activity implements View.OnTouchListener {
         return externalPath.replace(sdcardPath+"/" , "");
     }
 
+    public static String getLastnameFromFile( String Filename){
+        if ( Filename!=null)
+            return Filename.split("/")[Filename.split("/").length-1];
+        return Filename;
+    }
 
     /*
     public void showSoftKeyboard(View view) {

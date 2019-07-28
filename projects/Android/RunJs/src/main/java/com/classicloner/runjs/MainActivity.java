@@ -11,7 +11,9 @@ import android.database.AbstractCursor;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -21,6 +23,8 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.transition.Fade;
+import android.transition.Visibility;
 import android.util.Base64;
 import android.util.Log;
 import android.view.GestureDetector;
@@ -106,6 +110,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     static String _DOWNLOAD_THESE_URLS = "__download_these_urls__";
 
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -319,6 +324,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 }
         );
 
+//        mWebView.setOnScrollChangeListener(
+//                new View.OnScrollChangeListener() {
+//                    @Override
+//                    public void onScrollChange(View v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
+//                        if ( (oldScrollY-scrollY) > 10 ){//scroll down
+//                            Log.d("SCROLL" , "down");
+////                            getSupportActionBar().show();
+//                        }else if ( (oldScrollY-scrollY) <  -10 ){//scroll up
+//                            Log.d("SCROLL" , "up");
+////                            getSupportActionBar().hide();
+//                        }
+//                    }
+//                }
+//        );
 
         mWebView.loadUrl(pageUrl);
         // init stuff

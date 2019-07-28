@@ -7,20 +7,20 @@ import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.PixelFormat;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.annotation.RequiresApi;
-import android.support.v7.widget.AppCompatEditText;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
-import android.view.Window;
+import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.webkit.ConsoleMessage;
 import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -31,18 +31,20 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 
-import static com.classicloner.runjs.MainActivity._DOWNLOAD_THESE_URLS;
-import static com.classicloner.runjs.MainActivity.mWebView;
 import static com.classicloner.runjs.Common.INCOGNITO_MODE;
 import static com.classicloner.runjs.Common.READ_REQUEST_CODE;
 import static com.classicloner.runjs.Common.appName;
 import static com.classicloner.runjs.Common.cacheFile;
+import static com.classicloner.runjs.Common.currentJsFile;
 import static com.classicloner.runjs.Common.currentJsFilePath;
 import static com.classicloner.runjs.Common.defaultDownloadFile;
 import static com.classicloner.runjs.Common.downloadFile;
 import static com.classicloner.runjs.Common.getPathfromExternal;
 import static com.classicloner.runjs.Common.incognitoDownloadFile;
 import static com.classicloner.runjs.Common.sdcardPath;
+import static com.classicloner.runjs.Common.getLastnameFromFile;
+import static com.classicloner.runjs.MainActivity._DOWNLOAD_THESE_URLS;
+import static com.classicloner.runjs.MainActivity.mWebView;
 
 
 /**
@@ -57,6 +59,8 @@ public class JSConsole extends Activity {
     static LinearLayout outputLinearBtns;
     static LinearLayout consoleLinearBtns;
     static JSONObject Cache;
+    static DisplayMetrics metrics;
+    static String ConsoleFileName="Untitled";
 
     public boolean fromOnAcitivityResult = true;
     static int isError;
@@ -71,11 +75,44 @@ public class JSConsole extends Activity {
         setContentView(R.layout.jsconsole);
         myfunctionList = new Common(JSConsole.this);
 
+        metrics = new DisplayMetrics();
+        WindowManager wm = (WindowManager) this.getSystemService(Context.WINDOW_SERVICE);
+        wm.getDefaultDisplay().getMetrics(metrics);
+
+
         inputText = (LinedEditText)findViewById(R.id.input);
+        inputText.setMinWidth(metrics.widthPixels);
+
+        // pass edittext object to TextViewUndoRedo class
+        final TextViewUndoRedo helper = new TextViewUndoRedo(inputText);
+
+        Button redoBtn = (Button) findViewById(R.id.redo);
+        Button undoBtn = (Button) findViewById(R.id.undo);
+
+        // call the method from TextViewUndoRedo class
+        undoBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                helper.undo(); // perform undo
+            }
+        });
+        redoBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                helper.redo(); // perform redo
+            }
+        });
+
         outputText = (EditText)findViewById(R.id.output);
         consoleText = (EditText)findViewById(R.id.console);
         outputText.setShowSoftInputOnFocus(false);//block keyboard on focus
         consoleText.setShowSoftInputOnFocus(false);
+        EditText consoleTitle = (EditText)findViewById(R.id.console_title);
+        if( consoleTitle!= null)
+            if( mWebView.getTitle()!= null)
+                consoleTitle.setText(mWebView.getTitle());
+            else
+                consoleTitle.setText("untitled-blank");
 
         inputLinearBtns = (LinearLayout) findViewById(R.id.action_input);
         outputLinearBtns = (LinearLayout) findViewById(R.id.action_output);
@@ -110,6 +147,7 @@ public class JSConsole extends Activity {
                     }
                 }
         );
+
         outputText.setOnFocusChangeListener(
                 new View.OnFocusChangeListener() {
                     @Override
@@ -136,21 +174,6 @@ public class JSConsole extends Activity {
                     }
                 }
         );
-
-    }
-
-    public void setWindowParams() {
-        Window window = getWindow();
-        WindowManager.LayoutParams wlp = window.getAttributes();
-        wlp.flags = WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS |
-                WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL |
-                WindowManager.LayoutParams.FLAG_DIM_BEHIND;
-        wlp.dimAmount = (float) 1;
-        wlp.format = PixelFormat.TRANSLUCENT;
-        wlp.alpha = (float) 0.5;
-        wlp.x = 200;
-        wlp.y = 200;
-        window.setAttributes(wlp);
     }
 
     public void clearActions( View view){
@@ -180,6 +203,9 @@ public class JSConsole extends Activity {
                 myClip = ClipData.newPlainText("text", outputText.getText());
                 myClipboard.setPrimaryClip(myClip);
                 Toast.makeText(JSConsole.this, "Copied to clipboard", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.info_console:
+                Toast.makeText(JSConsole.this, getConsoleFileTitle(), Toast.LENGTH_SHORT).show();
                 break;
         }
     }
@@ -354,6 +380,7 @@ public class JSConsole extends Activity {
                     jsContent = myfunctionList.readTextFromUri(uri , jscontext);
                     inputText.setText(jsContent.toString());
                     fromOnAcitivityResult = true;
+                    setConsoleFileTitle(currentJsFilePath,"Untitled");
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -429,5 +456,16 @@ public class JSConsole extends Activity {
                 }
             }
         }
+    }
+
+    public void setConsoleFileTitle(String fileName,String defaultText) {
+        if (fileName != null)
+            ConsoleFileName = getLastnameFromFile(fileName);
+        else
+            ConsoleFileName = defaultText;
+    }
+
+    public String getConsoleFileTitle() {
+        return ConsoleFileName;
     }
 }

@@ -11,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="7">
+
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/read_exit"
             android:layout_width="wrap_content"
@@ -18,86 +19,131 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:clickable="true"
+            android:focusable="true"
             android:onClick="editActions"
             android:visibility="gone"
             app:backgroundTint="#CD141414"
-            app:srcCompat="@android:drawable/ic_menu_close_clear_cancel"
-            android:focusable="true" />
-        <HorizontalScrollView
-            android:id="@+id/scrollView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scrollbarStyle="insideOverlay">
-        <ScrollView
-            style="@android:style/Widget.DeviceDefault.Light.ScrollView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:background="#272626"
-            android:saveEnabled="true"
-            android:scrollbarSize="8dp"
-            android:scrollbarStyle="insideOverlay"
-            android:touchscreenBlocksFocus="true">
+            app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
 
-            <com.classicloner.runjs.LinedEditText
-                android:id="@+id/input"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top"
-                android:layout_marginTop="30dp"
-                android:background="@android:color/transparent"
-                android:fontFamily="sans-serif"
-                android:hint="@string/code_goes_here"
-                android:importantForAutofill="no"
-                android:inputType="textMultiLine"
-                android:paddingLeft="30dp"
-                android:paddingTop="20dp"
-                android:paddingBottom="50dp"
-                android:text="@string/script_sample"
-                android:textAlignment="textStart"
-                android:textColor="@android:color/white"
-                android:textColorHighlight="@android:color/holo_blue_dark"
-                android:textSize="15sp"
-                android:focusedByDefault="true"
-                android:lineHeight="18sp"
-                tools:ignore="RtlCompat" />
-        </ScrollView>
+        <HorizontalScrollView
+            android:id="@+id/horizontalScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/light_red"
+            android:fadeScrollbars="false"
+            android:scrollbarFadeDuration="0"
+            android:scrollbarStyle="outsideOverlay"
+            android:tooltipText="Long press to expand">
+
+            <ScrollView
+                android:id="@+id/verticalScrollView"
+                style="@android:style/Widget.DeviceDefault.ScrollView"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:background="#272626"
+                android:saveEnabled="true"
+                android:scrollbarSize="8dp"
+                android:scrollbarStyle="insideOverlay"
+                android:touchscreenBlocksFocus="true">
+
+                <com.classicloner.runjs.LinedEditText
+                    android:id="@+id/input"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:layout_marginTop="30dp"
+                    android:background="@android:color/transparent"
+                    android:focusedByDefault="true"
+                    android:fontFamily="sans-serif"
+                    android:hint="@string/code_goes_here"
+                    android:importantForAutofill="no"
+                    android:inputType="textMultiLine"
+                    android:lineHeight="18sp"
+                    android:paddingLeft="30dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="50dp"
+                    android:text="@string/script_sample"
+                    android:textAlignment="textStart"
+                    android:textColor="@android:color/white"
+                    android:textColorHighlight="@android:color/holo_blue_dark"
+                    android:textSize="15sp"
+                    tools:ignore="RtlCompat" />
+            </ScrollView>
         </HorizontalScrollView>
 
         <LinearLayout
             android:id="@+id/action_input"
+            style="?android:attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
-            android:layout_alignParentEnd="true"
             android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
             android:background="@android:color/transparent"
-            style="?android:attr/buttonBarButtonStyle"
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/copy_input"
+                android:id="@+id/undo"
                 style="?android:attr/buttonBarButtonStyle"
-                android:focusable="true"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:background="@android:color/transparent"
                 android:clickable="true"
-                android:drawableTop="?android:attr/actionModeCopyDrawable"
+                android:drawableTop="@drawable/ic_undo_white"
+                android:focusable="true" />
+
+            <Button
+                android:id="@+id/redo"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@android:color/transparent"
+                android:clickable="true"
+                android:drawableTop="@drawable/ic_redo_white"
+                android:focusable="true" />
+
+            <Button
+                android:id="@+id/copy_input"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@android:color/transparent"
+                android:clickable="true"
+                android:drawableTop="@drawable/ic_content_copy_white"
+                android:focusable="true"
                 android:onClick="clearActions" />
 
             <Button
                 android:id="@+id/clr_input"
                 style="?android:attr/buttonBarButtonStyle"
-                android:focusable="true"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:background="@android:color/transparent"
                 android:clickable="true"
-                android:drawableTop="@android:drawable/ic_notification_clear_all"
+                android:drawableTop="@drawable/ic_clear_white"
+                android:focusable="true"
                 android:onClick="clearActions" />
 
         </LinearLayout>
+
+        <EditText
+            android:id="@+id/console_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/action_input"
+            android:layout_marginEnd="198dp"
+            android:background="@android:color/transparent"
+            android:clickable="true"
+            android:ems="10"
+            android:enabled="true"
+            android:hint="Title"
+            android:inputType="text"
+            android:text="Untitled-blank"
+            android:textAlignment="center"
+            android:textColor="#566573"
+            android:textSize="14sp"
+            android:textStyle="normal|bold|italic" />
 
     </RelativeLayout>
 
@@ -105,11 +151,11 @@
         android:id="@+id/jsButtons_parent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="12"
+        android:layout_weight="12.2"
+        android:animateLayoutChanges="true"
         android:background="@drawable/border"
         android:visibility="visible"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        android:animateLayoutChanges="true">
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <LinearLayout
             android:id="@+id/jsButtons"
@@ -119,8 +165,7 @@
             android:layout_alignParentBottom="true"
             android:layout_gravity="center_horizontal"
             android:background="#272626"
-            android:orientation="horizontal"
-            >
+            android:orientation="horizontal">
 
             <Button
                 android:id="@+id/run"
@@ -130,8 +175,8 @@
                 android:layout_weight="0.25"
                 android:background="@android:color/transparent"
                 android:clickable="true"
+                android:drawableTop="@drawable/ic_chevron_right"
                 android:focusable="true"
-                android:drawableTop="@android:drawable/ic_media_play"
                 android:hint="@string/run_btn"
                 android:onClick="editActions"
                 android:textColorHint="@android:color/white" />
@@ -144,8 +189,8 @@
                 android:layout_weight="0.25"
                 android:background="@android:color/transparent"
                 android:clickable="true"
+                android:drawableTop="@drawable/ic_save"
                 android:focusable="true"
-                android:drawableTop="@android:drawable/ic_menu_save"
                 android:hint="@string/save_btn"
                 android:onClick="editActions"
                 android:textColorHint="@android:color/white" />
@@ -158,8 +203,8 @@
                 android:layout_weight="0.25"
                 android:background="@android:color/transparent"
                 android:clickable="true"
+                android:drawableTop="@drawable/ic_save"
                 android:focusable="true"
-                android:drawableTop="@android:drawable/stat_sys_download"
                 android:hint="@string/save_as_btn"
                 android:onClick="editActions"
                 android:textColorHint="@android:color/white" />
@@ -172,7 +217,7 @@
                 android:layout_weight="0.25"
                 android:background="@android:color/transparent"
                 android:clickable="true"
-                android:drawableTop="@android:drawable/ic_menu_gallery"
+                android:drawableTop="@drawable/ic_attach_file"
                 android:focusable="true"
                 android:hint="@string/load_btn"
                 android:onClick="editActions"
@@ -186,8 +231,8 @@
                 android:layout_weight="0.25"
                 android:background="@android:color/transparent"
                 android:clickable="true"
+                android:drawableTop="@drawable/ic_clear_white"
                 android:focusable="true"
-                android:drawableTop="@android:drawable/ic_menu_close_clear_cancel"
                 android:hint="@string/clear_btn"
                 android:onClick="editActions"
                 android:textColorHint="@android:color/white" />
@@ -200,8 +245,8 @@
                 android:layout_weight="0.25"
                 android:background="@android:color/transparent"
                 android:clickable="true"
-                android:focusable="true"
                 android:drawableTop="@android:drawable/ic_menu_more"
+                android:focusable="true"
                 android:hint="@string/toggle_btn"
 
                 android:onClick="editActions"
@@ -215,7 +260,7 @@
                 android:layout_weight="0.25"
                 android:background="@android:color/transparent"
                 android:clickable="true"
-                android:drawableTop="@android:drawable/ic_menu_sort_by_size"
+                android:drawableTop="@drawable/ic_chrome_reader_mode"
                 android:focusable="true"
 
                 android:hint="@string/read_btn"
@@ -228,7 +273,7 @@
         android:id="@+id/console_wrapper"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="11"
+        android:layout_weight="9.8"
         android:background="@drawable/border"
         android:visibility="visible"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
@@ -241,42 +286,52 @@
             android:contextClickable="true"
             android:ems="10"
             android:hint="@string/console_edittext"
-            android:textColorHint="@android:color/darker_gray"
+            android:importantForAutofill="no"
+            android:inputType=""
             android:padding="5dp"
             android:textColor="@android:color/white"
-            android:textSize="14sp"
-            android:importantForAutofill="no"
-            android:inputType="" />
+            android:textColorHint="@android:color/darker_gray"
+            android:textSize="14sp" />
 
         <LinearLayout
             android:id="@+id/action_console"
+            style="?android:attr/buttonBarStyle"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:background="@android:color/transparent"
             android:orientation="horizontal"
-            android:visibility="visible"
-            style="?android:attr/buttonBarStyle">
+            android:visibility="visible">
 
             <Button
-                android:id="@+id/copy_console"
+                android:id="@+id/info_console"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_marginTop="-3dp"
                 android:background="@android:color/transparent"
-                android:drawableTop="?android:attr/actionModeCopyDrawable"
-                android:onClick="clearActions"
-                style="?android:attr/buttonBarButtonStyle"/>
+                android:drawableTop="@drawable/ic_info_outline_white"
+                android:onClick="clearActions" />
+
+            <Button
+                android:id="@+id/copy_console"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="-3dp"
+                android:background="@android:color/transparent"
+                android:drawableTop="@drawable/ic_content_copy_white"
+                android:onClick="clearActions" />
 
             <Button
                 android:id="@+id/clr_console"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:background="@android:color/transparent"
-                android:drawableTop="@android:drawable/ic_notification_clear_all"
-                android:onClick="clearActions"
-                style="?android:attr/buttonBarButtonStyle"/>
+                android:drawableTop="@drawable/ic_clear_white"
+                android:onClick="clearActions" />
         </LinearLayout>
 
     </RelativeLayout>
@@ -285,7 +340,7 @@
         android:id="@+id/output_wrapper"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="10"
+        android:layout_weight="11"
         android:background="@drawable/border"
         android:visibility="visible"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
@@ -298,12 +353,12 @@
             android:contextClickable="true"
             android:ems="10"
             android:hint="@string/output_edittext"
-            android:textColorHint="@android:color/darker_gray"
+            android:importantForAutofill="no"
+            android:inputType=""
             android:padding="5dp"
             android:textColor="@android:color/white"
-            android:textSize="15sp"
-            android:importantForAutofill="no"
-            android:inputType="" />
+            android:textColorHint="@android:color/darker_gray"
+            android:textSize="15sp" />
 
         <LinearLayout
             android:id="@+id/action_output"
@@ -321,7 +376,7 @@
                 android:layout_height="30dp"
                 android:layout_marginTop="-3dp"
                 android:background="@android:color/transparent"
-                android:drawableTop="?android:attr/actionModeCopyDrawable"
+                android:drawableTop="@drawable/ic_content_copy_white"
                 android:onClick="clearActions" />
 
             <Button
@@ -329,7 +384,7 @@
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:background="@android:color/transparent"
-                android:drawableTop="@android:drawable/ic_notification_clear_all"
+                android:drawableTop="@drawable/ic_clear_white"
                 android:onClick="clearActions" />
         </LinearLayout>
     </RelativeLayout>
