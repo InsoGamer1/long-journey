@@ -10,6 +10,7 @@ class RemoveDups(object):
 		self.size_dict = {}
 		self.duplicate_files = []
 		self.deleted_files = []
+		self.skipped_files = []
 		self.dryrun = dryrun
 		self.force = force
 		self.logname = "duplicate.log"
@@ -22,7 +23,7 @@ class RemoveDups(object):
 		except:
 			pass
 	def write_log ( self , buff):
-		print "%s : %s"%(__file__,buff)
+		print "\t%s : %s"%(__file__,buff)
 		self.logbuff += str( buff ) + "\n"
 		
 	@staticmethod
@@ -55,24 +56,29 @@ class RemoveDups(object):
 		count = 0
 		print "Scanning in %s with filters %s ( if any )" %( self.dir , filters) 
 		for fileName in os.listdir( self.dir ):
-			recFilesList = [fileName]
 			if os.path.isdir(os.path.join( self.dir , fileName )):#file
 				recFilesList = RemoveDups.scandir( os.path.join( self.dir , fileName ) )
+			else:
+				recFilesList = [fileName]
 			for recFile in recFilesList:
 				if any(map(lambda filter:recFile.endswith(filter),filters )):#match with any of filter
 					# f_dict = { recFile : fileSize }
 					count+=1
-					self.f_dict[recFile]= os.stat(os.path.join(self.dir , recFile )).st_size 
-			
-				
-		
+					try:
+						self.f_dict[recFile]= os.stat(os.path.join(self.dir , recFile )).st_size 
+					except Exception,e:
+						print "scan error for %s: \t"%recFile , e
+						self.skipped_files.append( os.path.join(self.dir , recFile ) )
+		print "=====================",count
+
+	def create_size_dict(self):
 		for fname in self.f_dict:
 			# size_dict = { fileSize : [ fileName1 , fileName2 ] }
 			try:
 				self.size_dict[ self.f_dict[fname] ].append ( fname )
 			except:
 				self.size_dict[ self.f_dict[fname] ] = [ fname ]
-		print "=====================",count
+	
 	
 	def get_duplicate(self):
 		#duplicate_files = [ [ duplicateFileName1,duplicateFileName2,fileSize] , ... ]
@@ -83,11 +89,17 @@ class RemoveDups(object):
 		return self.duplicate_files
 		
 	def printDuplicates(self):
+		print "Duplicates are : "
 		for x in self.duplicate_files:# [ [ duplicateFileName1,duplicateFileName2,fileSize] , ... ]
 			print "["
 			print "\t--- size : %d"%(x[-1])
 			print "\n".join ( ["\t"+str(f) for f in x[:-1] ])
 			print "]\n"
+
+	def printSkipped(self):
+		print "Skipped files are : "
+		for x in self.skipped_files:# [ f1,f2,f3 , ... ]
+			print "\t%s"%x
 
 	def delete( self , files ):
 		files = map( lambda x:os.path.join(self.dir,x) , files )
@@ -101,18 +113,20 @@ class RemoveDups(object):
 							self.write_log( "--> Deleted %s..."%(ff) )
 							self.deleted_files.append ( ff )
 						else:
-							print "Delete %s from \n\t%s"%(ff,"\n\t".join( files ) )
+							print "Delete %s __FROM__ \n\t\t%s"%(ff,"\n\t\t".join( files ) )
 							if raw_input("y/n ----> ")=="y": 
 								os.unlink( ff )
 								self.write_log( "--> Deleted %s..."%(ff) )
 								self.deleted_files.append ( ff )
 							else: print "skipped %s"%ff
+					else:
+						print "DRYRUN --> Delete %s __FROM__ \n\t\t%s"%(ff,"\n\t\t".join( files ) )
 					
 				except Exception,e:
-					# print "Delete error " , e
 					self.write_log ( "   XXXX Delete error :  %s"%(ff) )
 							
 	def delete_all( self ):
+		print "Performing checks on duplicate files ..."
 		for files in self.duplicate_files:
 			filesWithoutSize = files[:-1]
 			self.delete( filesWithoutSize )
@@ -135,12 +149,14 @@ def main():
                     action="store_true")
 	parser.add_argument("-ff","--filter", help="filter of fileType ex: .mp4,.mkv",default="",dest="filter",)
 	parser.add_argument("-f","--force", help="delete without promt",default=False,action="store_true")
+	parser.add_argument("-vv","--verbose", help="show debug ",default=False,action="store_true")
 	args = parser.parse_args()
 	print "---------------------------------------------------"
 	print "Directory : \t"+str(args.dir)
 	print "Filter(s) : \t"+str(args.filter)
 	print "DryRun : \t"+str(args.dryrun)
 	print "Force : \t"+str(args.force)
+	print "Verbose : \t"+str(args.verbose)
 	print "---------------------------------------------------\n"
 		
 	cwd = args.dir
@@ -151,10 +167,11 @@ def main():
 	# exit()
 	rd = RemoveDups( cwd ,args.dryrun , args.force)
 	rd.scan(args.filter.rstrip().split(","))
+	rd.create_size_dict()
 	rd.get_duplicate()
-	
-	print "Duplicates are : "
-	rd.printDuplicates()
+	if args.verbose:
+		rd.printDuplicates()
+	rd.printSkipped()
 	rd.delete_all()
 	rd.show_deleted()
 	if args.dryrun:
@@ -162,5 +179,3 @@ def main():
 	
 if __name__=="__main__":
 	main()
-	
-	
