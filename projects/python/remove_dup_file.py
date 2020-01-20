@@ -119,11 +119,10 @@ class RemoveDups(object):
 								self.write_log( "--> Deleted %s..."%(ff) )
 								self.deleted_files.append ( ff )
 							else: print "skipped %s"%ff
-					else:
-						print "DRYRUN --> Delete %s __FROM__ \n\t\t%s"%(ff,"\n\t\t".join( files ) )
-					
 				except Exception,e:
 					self.write_log ( "   XXXX Delete error :  %s"%(ff) )
+			if self.dryrun:
+				print "DRYRUN --> Deleted \n\t\t%s"%("\n\t\t".join( files[:-1] ) )
 							
 	def delete_all( self ):
 		print "Performing checks on duplicate files ..."
