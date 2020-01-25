@@ -51,7 +51,7 @@ class MouseController(SimpleHTTPRequestHandler):
 			self.send_response(200)
 			self.end_headers()
 			data = json.loads( self.data_string )
-			print data , data["type"]
+			print data
 			if "type" in data:
 				print data["type"]
 				if data["type"] == "Lclick":
@@ -69,6 +69,14 @@ class MouseController(SimpleHTTPRequestHandler):
 					y = data_int["y"]
 					print data_int , x , y
 					pyautogui.moveRel(x, y, duration = 0.2) 
+				elif data["type"] == "scroll":
+					scroll = int(data["data"]["scroll"])
+					print "scroll" ,  scroll
+					pyautogui.scroll(scroll*10) 
+				elif data["type"] == "hscroll":
+					scroll = int(data["data"]["scroll"])
+					print "hscroll" , scroll
+					pyautogui.hscroll(scroll) 
 				else:
 					print "Invalid move!!"
 			# Doesn't do anything with posted data
