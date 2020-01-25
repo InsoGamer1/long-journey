@@ -24,3 +24,21 @@
   /* Making the wrapper stack above the body */
   z-index: 2;
 }
+
+.visible-scrollbar, .invisible-scrollbar, .mostly-customized-scrollbar {
+  display: block;
+  width: 10em;
+  overflow: auto;
+  height: 2em;
+}
+
+.mostly-customized-scrollbar::-webkit-scrollbar {
+  width: 100%;
+  height: 8px;
+  height: 8px;
+  background-color: #aaa; /* or add it to the track */
+}
+
+.mostly-customized-scrollbar::-webkit-scrollbar-thumb {
+    background: #000; 
+}

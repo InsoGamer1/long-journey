@@ -8,8 +8,8 @@ function startup() {
   var ka = document.getElementById("key_area");
   var ss = document.getElementById("scroll_section");
   var hs = document.getElementById("hscroll_section");
-  
-  
+//   var sb = document.getElementById("scrollbar");
+    
   width_ratio = 1920/el.offsetWidth;
   height_ratio = 1080/el.offsetHeight;
   //console.log( "ratio , " , width_ratio , height_ratio);
@@ -25,6 +25,8 @@ function startup() {
   hs.addEventListener("touchstart", handleStart, false);
   hs.addEventListener("touchend", handleEnd, false);
   hs.addEventListener("touchcancel", handleCancel, false);
+
+//   sb.addEventListener("scroll", handleScroll, false);
 
   ka.addEventListener("click", keyHandler, false);
   lc.addEventListener("click", handleClick, false);
@@ -105,7 +107,16 @@ function handleClick(evt) {
   }
 }
 
-
+let lastScroll = 0;
+function handleScroll(evt) {
+  evt.preventDefault();
+//   console.log("scroll" , evt.target.scrollTop - lastScroll);
+  moveData.data = {};
+  moveData.type = "scroll";
+  moveData.data.scroll = evt.target.scrollTop - lastScroll;
+  lastScroll = evt.target.scrollTop
+  sendSignal();
+}
 
 
 
