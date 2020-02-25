@@ -3,13 +3,33 @@
         <title>Mouse Web</title>
         <script src="js/jquery-3.4.1.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="style.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Add icon library -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<style>
+		.btn {
+		  background-color: DodgerBlue;
+		  border: none;
+		  color: white;
+		  font-size: 16px;
+		  cursor: pointer;
+		  height: 50px;
+	      width: 50px;
+		  margin: 5%;
+		}
+
+		/* Darker background on mouse-over */
+		.btn:hover {
+		  background-color: RoyalBlue;
+		}
+		</style>
 	</head>
     <body class="body">
 		<div class="wrapper">
 			<div style="
 				width: 99%;
 				position: fixed;
-				height: 88%;
+				height: 95%;
 				display: inline-flex;
 				margin-top: 5px;
 			">
@@ -117,16 +137,38 @@
 						margin-bottom: 2%;
 					">
 					</div>
-					<div id="key_area" style="
-						width: 90%;
-						background-color: #3e3e3e91;
-						border: #3e6360 solid 5px;
-						border-radius: 50%;
-						height: 60%;
-						display: grid;
-						margin: 4%;
-						z-index: 1000;
-					">
+					<div>
+						<div id="key_area" style="width: 90%;background-color: rgba(62, 62, 62, 0.57);border: 5px solid rgb(62, 99, 96);border-radius: 50%;height: 60%;display: none;margin: 4%;z-index: 1000;/* visibility: hidden; */" hidden="">
+						</div>
+						<div id="youtube_key_area" 
+							style="
+								width: 90%;background-color: rgba(62, 62, 62, 0.57);
+								border: 5px solid rgb(62, 99, 96);/* border-radius: 50%;
+								*/height: 60%;display: table;margin: 4%;z-index: 1000;/* visibility: hidden; */"
+							hidden="">
+							<table width="100%">
+								<tbody>
+									<tr>
+										<td width="20%"><button value="k" class="btn"><i class="fa fa-play"></i></button></td>
+										<td width="20%"><button value="k" class="btn"><i class="fa fa-pause"></i></button></td>
+										<td width="20%"><button value="l" class="btn"><i class="fa fa-forward"></i></button></td>
+										<td width="20%"><button value="j" class="btn"><i class="fa fa-backward"></i></button></td>
+									</tr>
+									<tr>
+										<td width="20%"><button value="f" class="btn"><i class="fa fa-arrows-alt"></i></button></td>
+										<td width="20%"><button value="esc" class="btn"><i class="fa fa-compress"></i></button></td>
+										<td width="20%"><button value="volumeup" class="btn"><i class="fa fa-volume-up"></i></button></td>
+										<td width="20%"><button value="volumedown" class="btn"><i class="fa fa-volume-down"></i></button></td>
+									</tr>
+									<tr>
+										<td width="20%"><button value="m" class="btn"><i class="fa fa-volume-off"></i></button></td>
+										<td width="20%"><button value="shift+n" class="btn"><i class="fa fa-step-forward"></i></button></td>
+										<td width="20%"><button value="shift+n" class="btn"><i class="fa fa-step-backward"></i></button></td>
+										<td width="20%"><button value="/" class="btn"><i class="fa fa-search"></i></button></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
 					</div>
 				</div>
 			</div>

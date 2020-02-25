@@ -29,8 +29,8 @@ class MouseController(SimpleHTTPRequestHandler):
 
 	def do_GET(self):
 		print self.path
-		if self.path == '/':
-			self.path = '/mouse_web.html'
+		if self.path == '/' or self.path == '/youtube':
+			self.path = '/index.html'
 		return SimpleHTTPServer.SimpleHTTPRequestHandler.do_GET(self)
 		# else:
 			# self._set_headers()
@@ -61,8 +61,11 @@ class MouseController(SimpleHTTPRequestHandler):
 				elif data["type"] == "Dclick":
 					pyautogui.doubleClick()
 				elif data["type"] == "key":
-					print data["string"]
-					pyautogui.press(data["string"])
+					key = data["string"]
+					if "+" in key:#hotkeys
+						pyautogui.hotkey(*key.split("+"))
+					else:
+						pyautogui.press(key)
 				elif data["type"] == "move":
 					data_int = { i:int(data["data"][i]) for i in data["data"] }
 					x = data_int["x"]

@@ -6,9 +6,19 @@ function startup() {
   var rc = document.getElementById("right_click");
   var ml = document.getElementById("middle_click");
   var ka = document.getElementById("key_area");
+  var yka = document.getElementById("youtube_key_area");
+  var btns = document.querySelectorAll("button>i.fa");
   var ss = document.getElementById("scroll_section");
   var hs = document.getElementById("hscroll_section");
-//   var sb = document.getElementById("scrollbar");
+  //   var sb = document.getElementById("scrollbar");
+
+  if ( window.location.href.indexOf("youtube")!= -1){
+  	ka.style.display = "none";
+  	yka.style.display = "table";
+  }else{
+  	ka.style.display = "grid";
+    yka.style.display = "none";
+  }
     
   width_ratio = 1920/el.offsetWidth;
   height_ratio = 1080/el.offsetHeight;
@@ -29,6 +39,11 @@ function startup() {
 //   sb.addEventListener("scroll", handleScroll, false);
 
   ka.addEventListener("click", keyHandler, false);
+  btns.forEach( function(btn){
+  	//btn.addEventListener("click", youtubeKeyHandler);
+    btn.addEventListener("touchstart", youtubeKeyHandler);
+  } );
+  
   lc.addEventListener("click", handleClick, false);
   rc.addEventListener("click", handleClick, false);
   ml.addEventListener("click", handleClick, false);
@@ -44,6 +59,13 @@ function keyHandler(){
     moveData.string = inputData;
     sendSignal();
   }
+}
+
+function youtubeKeyHandler(evt){
+  console.log( evt.type, evt.target);
+  moveData.type = "key";
+  moveData.string = evt.target.parentNode.value;
+  sendSignal();
 }
 
 function handleStart(evt) {
@@ -82,7 +104,7 @@ function sendSignal(){
 			data:JSON.stringify(moveData),
 	})
 	.done(function (x) { moveData={}; } )
-	.fail( function (x){ console.log(x);moveData={}; });	
+	.fail( function (x){ /*console.log(x);*/moveData={}; });	
 }
 function handleCancel(evt) {
   evt.preventDefault();
