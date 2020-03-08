@@ -5,15 +5,18 @@ import os,sys
 
 class LogPrint():
     def __init__(self,fname=None):
-        now = datetime.datetime.now()
-        fname = "temp_"+ now.strftime("%Y-%m-%d")+"_log.txt"
-        if os.name == 'nt': #windows
-            self.filename = os.environ['USERPROFILE']
+        if fname:
+            self.filename = fname
         else:
-            self.filename = "/tmp/"+os.environ['USER']
-        if not os.path.exists( self.filename ):
-            os.makedirs( self.filename )
-        self.filename = os.path.join( self.filename , fname )
+            now = datetime.datetime.now()
+            fname = "temp_"+ now.strftime("%Y-%m-%d")+"_log.txt"
+            if os.name == 'nt': #windows
+                self.filename = os.environ['USERPROFILE']
+            else:
+                self.filename = "/tmp/"+os.environ['USER']
+            if not os.path.exists( self.filename ):
+                os.makedirs( self.filename )
+            self.filename = os.path.join( self.filename , fname )
         self.new_fd = open( self.filename , 'a+' )
         self.buff = ""
         
@@ -28,7 +31,13 @@ class LogPrint():
         self.new_fd.close()
         print "check this %s for output"%self.filename
         
+#examples
 with LogPrint() as _:
     print "this will not be printed"
+
+log_file = os.path.join( os.getcwd(), "myLogt.txt" )
+with LogPrint( log_file) as _:
+    print "this will not be printed"
+    print "but log is added to "+ log_file
     
 print "this wil be printed "
