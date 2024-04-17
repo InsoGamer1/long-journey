@@ -31,7 +31,17 @@ def get_type(f ):
 	
 #Start of Main():
 if __name__ == '__main__':
-	logf = open (  "D:\Ahad\\copy_log_dont_delete.txt" , "a+")
+	if "USERPROFILE" in os.environ:
+		home_dir = os.environ["USERPROFILE"]
+	elif "HOME" in os.environ:
+		home_dir = os.environ["HOME"]
+	elif "TMP" in os.environ:
+		home_dir = os.environ["TMP"]
+	else:
+		home_dir = os.getcwd()
+	logfilename = os.path.join(home_dir, "mra_copy_log_dont_delete.txt")
+	print ("logfilename:", logfilename)
+	logf = open (logfilename, "a+")
 	logf.write ( "\nDate : " +str(datetime.date.today())+"\n\n")
 	cond = 1 
 	if len(sys.argv) == 2:
